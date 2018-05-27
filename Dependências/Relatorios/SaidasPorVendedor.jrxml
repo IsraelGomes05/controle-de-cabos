@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cabos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0bc189d5-b319-47e6-bf3b-0713dcabd172">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="status" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dataInicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dataFim" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nomeVendedor" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT s.idSaida,s.Data,c.idCabo,
+                c.Descricao,s.Quantidade,v.Nome
+                FROM Saida s
+                INNER JOIN Cabo c
+                ON s.id_Cabo = c.idCabo
+                INNER JOIN Bobina b
+                ON c.idCabo = b.id_Cabo
+                INNER JOIN Vendedor v
+                ON s.id_Vendedor = v.idVendedor AND s.Data
+	      BETWEEN $P{dataInicio} AND  $P{dataFim}
+	      AND v.Nome = $P{nomeVendedor}
+                AND c.PossuiBobina = 's' AND b.Ativo = 's'
+UNION
+SELECT s.idSaida,s.Data,c.idCabo,
+               c.Descricao,s.Quantidade,v.Nome
+                FROM Saida s
+                INNER JOIN Cabo c
+                ON s.id_Cabo = c.idCabo
+                INNER JOIN Vendedor v
+                ON s.id_Vendedor = v.idVendedor AND s.Data
+	      BETWEEN $P{dataInicio} AND $P{dataFim}
+	      AND v.Nome = $P{nomeVendedor}
+                AND c.PossuiBobina = 'n'
+                ORDER BY s.data, v.Nome;]]>
+	</queryString>
+	<field name="idSaida" class="java.lang.Object"/>
+	<field name="Data" class="java.lang.Object"/>
+	<field name="idCabo" class="java.lang.Object"/>
+	<field name="Descricao" class="java.lang.Object"/>
+	<field name="Quantidade" class="java.lang.Object"/>
+	<field name="Nome" class="java.lang.Object"/>
+	<variable name="idCabo_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{idCabo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="34" uuid="f2fb6167-3efa-47f5-96ae-b0b585975068"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="46" y="11" width="160" height="17" uuid="6ddcf7a5-27a8-4873-934e-248e839a35c0"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Controle de Cabos]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="417" y="8" width="138" height="20" uuid="4fcaf0dc-5de3-4599-b2fa-124c2b85ba8d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="4" y="34" width="551" height="1" uuid="1f7e173d-7838-41c3-9f2d-2c947a9e5af8"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="43" width="62" height="20" uuid="a81100a7-f64e-49d5-86d4-ee2700b150f9"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Saídas ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="3" y="2" width="30" height="30" uuid="e00b7bc8-bf22-4b82-947b-82f45c9cfedd"/>
+				<imageExpression><![CDATA["C:\\Controle de Cabos\\Logo Sistema.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="75" y="43" width="35" height="20" uuid="45153471-d16c-4c66-97b8-9196beba2e16"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataInicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="43" width="73" height="20" uuid="8648419c-6b65-403a-9f02-b0239047b442"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dataFim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="111" y="43" width="13" height="20" uuid="ed6b0012-a319-4ab9-8af3-a9673f65d55a"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<text><![CDATA[a]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="473" y="43" width="80" height="20" uuid="3e9f4c63-2c1a-4cd9-aa03-8eb40849ac0e"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="381" y="43" width="90" height="20" uuid="5c695803-043a-4d56-a174-0ad427df76c0"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Vendedor(a):]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="75" y="6" width="51" height="20" uuid="827a720c-030c-4453-87be-0607b4f8b3e8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ CÓDIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="6" width="233" height="20" uuid="5a5f93f8-ec16-4127-8bbc-e3cf29d287f2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="6" width="62" height="20" uuid="f740f6ce-32d1-4513-91f7-381279fd6867"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="6" width="41" height="20" uuid="0023bdf0-7ed4-4425-afc1-70754b07acbb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTD]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="25" width="551" height="1" uuid="c9515295-49e8-485b-9cb7-f2d0f0073611"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="63" height="20" uuid="c2dca362-ea02-40e1-9246-b2632d5c7900"/>
+				<textFieldExpression><![CDATA[""+$F{Data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="51" height="20" uuid="f69f218d-65ca-4479-ba8d-55089dc5a461"/>
+				<textFieldExpression><![CDATA[""+$F{idCabo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="0" width="233" height="20" uuid="41f827ec-031c-4997-84cc-7d0d7925e7fd"/>
+				<textFieldExpression><![CDATA[""+$F{Descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="0" width="41" height="20" uuid="36b9dc81-274f-4cb4-91f4-659f43b8e482"/>
+				<textFieldExpression><![CDATA[""+$F{Quantidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="465" y="18" width="50" height="20" uuid="1701cbe8-09c6-4f45-99ac-5618713f7205"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pag "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="18" width="40" height="20" uuid="0a1b0b4f-2328-4501-b21d-aadd13f72f68"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

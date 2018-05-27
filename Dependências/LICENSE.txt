@@ -1,0 +1,39 @@
+
+<html>
+<head>
+        <meta charset="utf-8"/>
+        <style> 
+                p{
+                width:400px;
+                text-align: justify;
+                text-indent: 15px;
+                }
+        </style>
+</head>
+<body>
+        <h3>Licença MIT</h3>
+        <br/>
+        <h4>Copyright &copy; 2018 Israel Gomes</h4>
+        <br/>
+        <p>É concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia
+        deste software e dos arquivos de documentação associados a  <i>"Controle de Cabos"</i> 
+        para conceder sem limitação, os direitos de: usar, copiar, modificar, mesclar,
+        publicar, distribuir, sublicenciar e/ou vender cópias do Software e para permitir
+        que pessoas a quem o Software esteja fornecido, para tal sujeito às seguintes condições:</p>
+        <br/>
+        <p>O aviso de copyright acima e este aviso de permissão devem ser incluídos em todas
+        as cópias ou partes substanciais do Software.</p>
+        <br/>
+        <p>O SOFTWARE É FORNECIDO NO ESTADO EM QUE SE ENCONTRA,SEM NENHUM TIPO DE GARANTIA,
+        EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS DE
+        COMERCIALIZAÇÃO, ADEQUAÇÃO A UM FIM ESPECÍFICO E NÃO VIOLAÇÃO. EM NENHUMA 
+        CIRCUNSTÂNCIA, OS AUTORES OU PROPRIETÁRIOS DE DIREITOS DE AUTOR PODERÃO SER 
+        RESPONSABILIZADOS POR QUAISQUER REIVINDICAÇÕES, DANOS OU OUTRAS RESPONSABILIDADES,
+        QUER EM ACÇÃO DE CONTRATO, DELITO OU DE OUTRA FORMA, DECORRENTES DE,
+        OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO PROGRAMA.</p>
+        <br/>
+        Contatos para Obter Ajuda:<br/>
+        <b>E-mail :</b> israelgomes05@gmail.com<br/>
+        <b>Tel :</b> (65) 98122-5343
+</body> 
+</html>

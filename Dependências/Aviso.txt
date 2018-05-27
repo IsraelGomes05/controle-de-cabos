@@ -1,0 +1,5 @@
+Controle de Cabos V1.0.0 BETA
+
+Este software está em versão de testes
+podem ocorrer erros e falhas, caso ocorram
+Contacte o desenvolvedor da aplicação.

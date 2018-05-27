@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cabos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0bc189d5-b319-47e6-bf3b-0713dcabd172">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="status" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ca.idCabo,
+       ca.Descricao,
+       b.idbobina,
+       b.QtdAtual + ifnull( (
+                                SELECT sum(b.QtdAtual)
+                                  FROM Cabo c
+                                       INNER JOIN
+                                       Bobina b ON ca.idCabo = b.id_Cabo AND
+                                                   b.Ativo = 'n'
+                                 GROUP BY idCabo
+                            ), 0) AS [QTD Total bobinas],
+       ifnull( (
+                   SELECT sum(Quantidade)
+                     FROM Ponta p
+                          INNER JOIN
+                          Cabo ON p.id_Cabo = ca.idCabo
+                    GROUP BY idCabo
+               ), 0) AS [QTD Total em pontas ],
+       (b.QtdAtual + ifnull( (
+                                 SELECT sum(b.QtdAtual)
+                                   FROM Cabo c
+                                        INNER JOIN
+                                        Bobina b ON ca.idCabo = b.id_Cabo AND
+                                                    b.Ativo = 'n'
+                                  GROUP BY idCabo
+                             ), 0) ) + (ifnull( (
+                                                    SELECT sum(Quantidade)
+                                                      FROM Ponta p
+                                                           INNER JOIN
+                                                           Cabo ON p.id_Cabo = ca.idCabo
+                                                     GROUP BY idCabo
+                                                ), 0) ) AS [QTD Total]
+  FROM Cabo ca
+       INNER JOIN
+       Bobina b ON ca.idCabo = b.id_Cabo AND
+                   b.Ativo = 's'
+ ORDER BY 2,
+          4,
+          5;]]>
+	</queryString>
+	<field name="idCabo" class="java.lang.Object"/>
+	<field name="Descricao" class="java.lang.Object"/>
+	<field name="idBobina" class="java.lang.Object"/>
+	<field name="QTD Total bobinas" class="java.lang.Object"/>
+	<field name="QTD Total em pontas " class="java.lang.Object"/>
+	<field name="QTD Total" class="java.lang.Object"/>
+	<variable name="idCabo_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{idCabo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="34" uuid="f2fb6167-3efa-47f5-96ae-b0b585975068"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="46" y="11" width="160" height="17" uuid="6ddcf7a5-27a8-4873-934e-248e839a35c0"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Controle de Cabos]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="426" y="8" width="129" height="20" uuid="4fcaf0dc-5de3-4599-b2fa-124c2b85ba8d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="4" y="34" width="551" height="1" uuid="1f7e173d-7838-41c3-9f2d-2c947a9e5af8"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="43" width="444" height="20" uuid="a81100a7-f64e-49d5-86d4-ee2700b150f9"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Relatório geral: Cabos que possuem bobinas]]></text>
+			</staticText>
+			<image>
+				<reportElement x="3" y="2" width="30" height="30" uuid="e00b7bc8-bf22-4b82-947b-82f45c9cfedd"/>
+				<imageExpression><![CDATA["C:\\Controle de Cabos\\Logo Sistema.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<line>
+				<reportElement x="4" y="26" width="551" height="2" uuid="8edcd513-812f-4064-b88c-922c6b347263"/>
+			</line>
+			<staticText>
+				<reportElement x="1" y="6" width="50" height="22" uuid="38328a23-ed13-479e-a6dd-5fbc09048433"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CÓDIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="6" width="65" height="20" uuid="5a5f93f8-ec16-4127-8bbc-e3cf29d287f2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="8" width="103" height="20" uuid="66700048-d083-46e1-a9c4-25206fac176c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTD. EM BOBINAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="8" width="71" height="20" uuid="86c170cf-a6d9-45d7-a4be-32a4b469ac68"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTD. PONTAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="515" y="8" width="40" height="20" uuid="e91f9d14-22da-4fe5-81b1-3127a973a4d3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="8" width="59" height="20" uuid="3ac1e9d0-f21a-41fd-a175-f7cb57a66d3f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOB.ATUAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="3" width="50" height="20" uuid="52ae446a-8f42-4ef9-9bd4-57c6f7193c1b"/>
+				<textFieldExpression><![CDATA[""+$F{idCabo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="3" width="212" height="20" uuid="02b37645-8cf6-46bb-a90d-51d5efb5cbe2"/>
+				<textFieldExpression><![CDATA[""+$F{Descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="273" y="3" width="27" height="20" uuid="ae19e921-7000-4509-85d7-b6645a3af9b7"/>
+				<textFieldExpression><![CDATA[""+$F{idBobina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="3" width="56" height="20" uuid="e99576b3-e567-4d93-ac5b-bc9b70344d76"/>
+				<textFieldExpression><![CDATA[""+$F{QTD Total bobinas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="3" width="33" height="20" uuid="5711eb87-2f92-4409-abd4-1b67a042001b"/>
+				<textFieldExpression><![CDATA[""+$F{QTD Total em pontas }]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="3" width="40" height="20" uuid="99749585-9888-4d49-b572-52a386fe4880"/>
+				<textFieldExpression><![CDATA[""+$F{QTD Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="465" y="18" width="50" height="20" uuid="1701cbe8-09c6-4f45-99ac-5618713f7205"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pag "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="18" width="40" height="20" uuid="0a1b0b4f-2328-4501-b21d-aadd13f72f68"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
