@@ -1,6 +1,6 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+/** 
+ * @created  10/03/2018
+ * @lastModified 28/03/2018 
  */
 package br.com.sisnet.controledecabos.conexaobd;
 
@@ -14,16 +14,19 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
- * @author Israel Gomes Da Silva
- * @contact israelgomes05@gmail.com
- * @created 10/03/2018
- * @lastModified 28/03/2018
+ * Classe para realizar CRUD no BD, na tabela <b>bobina</b>.
+ * @author Israel Gomes
  * @version 2.0
- *
- * @Function...
+ * @since 1.0
  */
 public class BobinaDAO {
 
+    /**
+     * Realiza o insert na tabela bobina
+     * 
+     * @param caboBobina Cabo
+     * @return <b>true</b> se obteve sucesso <b>false</b> caso contrário.
+     */
     public static boolean salvar(Cabo caboBobina) {
 
         String sql = "INSERT INTO Bobina (idBobina,id_Cabo,Quantidade,QtdAtual,Ativo)"
@@ -40,7 +43,7 @@ public class BobinaDAO {
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "                        "
+            JOptionPane.showMessageDialog(null, "       "
                     + "A bobina não pode ser salva, Verifique!\n"
                     + "" + ex.getMessage(),
                     "Falha", JOptionPane.ERROR_MESSAGE);
@@ -48,7 +51,13 @@ public class BobinaDAO {
         }
     }
 
-    public static List<Cabo> buscaPorCodigoCabo(int numero) {
+    /**
+     * Realiza uma busca por código de cabo.
+     * 
+     * @param codigoCabo int - Código do cabo.
+     * @return List Cabo ou null caso não encontre nenhum registro.
+     */
+    public static List<Cabo> buscaPorCodigoCabo(int codigoCabo) {
         String sql = "SELECT c.Descricao,b.QtdAtual,b.Ativo,b.idBobina "
                 + "FROM Bobina b "
                 + "INNER JOIN Cabo c "
@@ -59,7 +68,7 @@ public class BobinaDAO {
         try (Connection com = ConnectionFactory.getConexao();
                 PreparedStatement ps = com.prepareStatement(sql);) {
 
-            ps.setInt(1, numero);
+            ps.setInt(1, codigoCabo);
             resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
@@ -79,6 +88,11 @@ public class BobinaDAO {
         return null;
     }
 
+    /**
+     * Devolve uma lista com todos os números de bobinas cadastrados.
+     * 
+     * @return List Integer.
+     */
     public static List<Integer> buscaSomenteNumBobina() {
         String sql = "SELECT idBobina FROM Bobina ORDER BY idBobina;";
 
@@ -102,6 +116,12 @@ public class BobinaDAO {
         return null;
     }
 
+    /**
+     * Realiza uma busca que devolve os dados da bobina.
+     * 
+     * @param numeroBobina int - Número da bobina para buscar.
+     * @return list Cabo
+     */
     public static List<Cabo> buscaPorNumBobina(int numeroBobina) {
         String sql = "SELECT c.idCabo,c.Descricao,c.PossuiBobina, "
                 + "b.idBobina,b.QtdAtual,b.Quantidade,b.Ativo "
@@ -136,6 +156,11 @@ public class BobinaDAO {
         return null;
     }
 
+    /**
+     * Retorna todos os registros de bobinas cadastradas.
+     * 
+     * @return lsita com todos os registros de bobinas.
+     */
     public static List<Cabo> buscaTudoBobina() {
         String sql = "SELECT c.idCabo,c.Descricao,c.PossuiBobina, "
                 + "b.idBobina,b.QtdAtual,b.Quantidade,b.Ativo "
@@ -171,6 +196,12 @@ public class BobinaDAO {
         return null;
     }
 
+    /**
+     * Exclui um registro de bobina.
+     * 
+     * @param bobinaCabo Cabo 
+     * @return <b>true</b> Se obtiver sucesso <b>false</b> caso contrário. 
+     */
     public static boolean excluir(Cabo bobinaCabo) {
         String sql = "DELETE FROM Bobina "
                 + "WHERE  idBobina = ?;";
@@ -189,6 +220,12 @@ public class BobinaDAO {
         }
     }
 
+    /**
+     * Atualiza a Quantidade atual e o Status (Ativo ou inativo).
+     * 
+     * @param caboBobina Cabo
+     * @return <b>true</b> Se obtiver sucesso <b>false</b> caso contrário. 
+     */
     public static boolean atualizar(Cabo caboBobina) {
         String sql = "UPDATE Bobina "
                 + "SET QtdAtual = ?, Ativo = ? "

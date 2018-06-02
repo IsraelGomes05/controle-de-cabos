@@ -14,7 +14,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
 
 /**
- * Classe utilitária para criptogradar senhas.
+ * Classe utilitária para exibir relatórios.
  * @author Israel Gomes
  * @version 1.0
  * @since 1.0
