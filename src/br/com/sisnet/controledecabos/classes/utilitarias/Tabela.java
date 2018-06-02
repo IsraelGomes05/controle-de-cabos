@@ -1,22 +1,24 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+/** 
+ * @created  17/03/2018
+ * @lastModified 17/03/2018 
  */
 package br.com.sisnet.controledecabos.classes.utilitarias;
 
 import javax.swing.table.DefaultTableModel;
 
 /**
- * @author Israel Gomes Da Silva
- * @contact israelgomes05@gmail.com
- * @created 17/03/2018
- * @lastModified 17/03/2018
+ * Classe utilitária para manipular tabelas.
+ * @author Israel Gomes
  * @version 1.0
- *
- * @Function Limpar as linhas de uma tabela Qualquer...
+ * @since 1.0
  */
 public class Tabela {
 
+    /**
+     * Limpa todas as linhas de uma tabela.
+     * 
+     * @param tabela DefaultTableModel
+     */
     public static void limpa(DefaultTableModel tabela) {
         for (; tabela.getRowCount() != 0;) {
             if (tabela.getRowCount() != 0) {

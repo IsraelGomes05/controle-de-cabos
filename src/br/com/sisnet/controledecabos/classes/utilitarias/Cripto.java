@@ -1,6 +1,6 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+/** 
+ * @created  15/04/2018
+ * @lastModified 15/04/2018 
  */
 package br.com.sisnet.controledecabos.classes.utilitarias;
 
@@ -10,16 +10,19 @@ import java.security.NoSuchAlgorithmException;
 import javax.swing.JOptionPane;
 
 /**
- * @author Israel Gomes Da Silva
- * @contact israelgomes05@gmail.com
- * @created 15/04/2018
- * @lastModified 15/04/2018
+ * Classe utilitária para criptogradar senhas.
+ * @author Israel Gomes
  * @version 1.0
- *
- * @Function Criptografar senhas para salvar no banco de dados.
+ * @since 1.0
  */
 public class Cripto {
 
+    /**
+     * Converte a String passada como parâmetro par um código Hash.
+     * 
+     * @param original String - texto para conversão.
+     * @return String - código Hash.
+     */
     public static String criptografar(String original) {
         byte messageDigest[];
         String senha = null;

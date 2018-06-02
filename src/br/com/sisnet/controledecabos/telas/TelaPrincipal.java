@@ -1791,7 +1791,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
         String diretorio = "C:/Controle de Cabos/Relatorios/bobinas cadastradas.jasper";
         Relatorio relatorio = new Relatorio();
-        relatorio.imprimirRelatorio(jcbAtivoRelatorios.isSelected() ? "s" : "n", diretorio);
+        relatorio.exibirRelatorio(jcbAtivoRelatorios.isSelected() ? "s" : "n", diretorio);
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnPontasRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPontasRelatoriosActionPerformed
@@ -1836,7 +1836,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         int codigo = Conversor.paraInt(txtCodigoRelatoriosPontas.getText(), "Código");
         if (codigo != 0) {
             Relatorio relatorio = new Relatorio();
-            relatorio.imprimirRelatorio(codigo, diretorio);
+            relatorio.exibirRelatorio(codigo, diretorio);
         }
     }//GEN-LAST:event_btnImprimirRelatoriosPontasActionPerformed
 
@@ -1886,7 +1886,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 diretorio = "C:/Controle de Cabos/Relatorios/GeralQueNaoPossuemBobinas.jasper";
             }
             Relatorio relatorio = new Relatorio();
-            relatorio.imprimirRelatorio("", diretorio);
+            relatorio.exibirRelatorio("", diretorio);
         }
     }//GEN-LAST:event_btnImprimirRelatoriosCabosActionPerformed
 
@@ -1912,13 +1912,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
 
         Relatorio relatorio = new Relatorio();
-        relatorio.imprimirRelatorio(parametros, diretorio);
+        relatorio.exibirRelatorio(parametros, diretorio);
     }//GEN-LAST:event_btnImprimirRelatoriosSaidasActionPerformed
 
     private void btnImprimirGeralpontasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirGeralpontasActionPerformed
         String diretorio = "C:/Controle de Cabos/Relatorios/PontasGeral.jasper";
         Relatorio relatorio = new Relatorio();
-        relatorio.imprimirRelatorio(0,diretorio);
+        relatorio.exibirRelatorio(0,diretorio);
     }//GEN-LAST:event_btnImprimirGeralpontasActionPerformed
 
     public void preecherTabelaCaboRelatorio(List<Cabo> listCabo) {

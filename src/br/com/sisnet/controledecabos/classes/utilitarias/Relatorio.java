@@ -1,6 +1,6 @@
- /**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+ /** 
+ * @created  15/04/2018
+ * @lastModified 21/04/2018 
  */
 package br.com.sisnet.controledecabos.classes.utilitarias;
 
@@ -14,16 +14,20 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
 
 /**
- * @author Israel Gomes Da Silva
- * @created  15/04/2018
- * @lastModified 21/04/2018 
- * @version 3.0
- *
- * @Function Imprimi relatórios utilizando jasperViwer.
+ * Classe utilitária para criptogradar senhas.
+ * @author Israel Gomes
+ * @version 1.0
+ * @since 1.0
  */
 public class Relatorio {
     
-    public void imprimirRelatorio(String paramentro, String diretorio) {
+    /**
+     * exibe um relatório externo.
+     * 
+     * @param parametro String - parametro para filtrar a consulta.
+     * @param diretorio String - local onde o relatorio está.
+     */
+    public void exibirRelatorio(String parametro, String diretorio) {
         int confirma = JOptionPane.showConfirmDialog(null, "   Confirma a impressão"
                 + " deste relatório?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
@@ -31,7 +35,7 @@ public class Relatorio {
             try (Connection conexao = ConnectionFactory.getConexao()) {
 
                 HashMap filtro = new HashMap();
-                filtro.put("status", paramentro);
+                filtro.put("status", parametro);
 
                 JasperPrint print = JasperFillManager.fillReport(diretorio, filtro, conexao);
 
@@ -47,7 +51,13 @@ public class Relatorio {
         }
     }
 
-    public void imprimirRelatorio(int paramentro, String diretorio) {
+    /**
+     * exibe um relatório externo.
+     * 
+     * @param parametro int - parametro para filtrar a consulta.
+     * @param diretorio String - local onde o relatorio está.
+     */
+    public void exibirRelatorio(int parametro, String diretorio) {
         int confirma = JOptionPane.showConfirmDialog(null, "   Confirma a impressão"
                 + " deste relatório?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
@@ -55,7 +65,7 @@ public class Relatorio {
             try (Connection conexao = ConnectionFactory.getConexao()) {
 
                 HashMap filtro = new HashMap();
-                filtro.put("codigo", paramentro);
+                filtro.put("codigo", parametro);
 
                 JasperPrint print = JasperFillManager.fillReport(diretorio, filtro, conexao);
 
@@ -71,14 +81,20 @@ public class Relatorio {
         }
     }
     
-    public void imprimirRelatorio(HashMap paramentros, String diretorio) {
+    /**
+     * exibe um relatório externo.
+     * 
+     * @param parametros HashMap - parametros para filtrar a consulta.
+     * @param diretorio String - local onde o relatorio está.
+     */
+    public void exibirRelatorio(HashMap parametros, String diretorio) {
         int confirma = JOptionPane.showConfirmDialog(null, "   Confirma a impressão"
                 + " deste relatório?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
 
             try (Connection conexao = ConnectionFactory.getConexao()) {
 
-                JasperPrint print = JasperFillManager.fillReport(diretorio, paramentros, conexao);
+                JasperPrint print = JasperFillManager.fillReport(diretorio, parametros, conexao);
 
                 JasperViewer jv = new JasperViewer(print, false);
                 jv.setVisible(true);
