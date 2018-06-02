@@ -7,7 +7,7 @@ package br.com.sisnet.controledecabos.classes.utilitarias;
 import java.util.List;
 
 /**
- * Classe utilitária para calculo.
+ * Classe responsável por definir o BEAN Vendedor.
  * @author Israel Gomes
  * @version 2.0
  * @since 1.0
@@ -31,7 +31,6 @@ public class Calculo {
                 break;
             }
         }
-
         return numValido;
     }
 }
