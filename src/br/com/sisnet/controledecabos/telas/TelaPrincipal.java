@@ -1,6 +1,6 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+/** 
+ * @created  01/03/2018
+ * @lastModified 28/05/2018 
  */
 package br.com.sisnet.controledecabos.telas;
 
@@ -31,12 +31,10 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * @author Israel Gomes Da Silva
- * @created 01/03/2018
- * @lastModified 28/05/2018
+ * Classe que define a tela a tela principal e relatórios.
+ * @author Israel Gomes
  * @version 5.2
- *
- * @Function...
+ * @since 1.0
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 

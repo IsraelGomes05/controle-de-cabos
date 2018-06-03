@@ -1,6 +1,6 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+/** 
+ * @created  25/12/2017
+ * @lastModified 06/04/2018 
  */
 package br.com.sisnet.controledecabos.conexaobd;
 
@@ -12,11 +12,10 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /**
- * @author Israel Gomes Da Silva
- * @contact israelgomes05@gmail.com
- * @created 25/12/2017
- * @lastModified 06/04/2018
- * @version 3.0
+ * Classe responsável por abrir e fechar conexões com o banco de dados.
+ * @author Israel Gomes
+ * @version 2.8
+ * @since 1.0
  */
 public class ConnectionFactory {
 

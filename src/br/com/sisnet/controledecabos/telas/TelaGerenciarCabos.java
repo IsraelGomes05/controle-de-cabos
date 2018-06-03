@@ -1,6 +1,6 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+/** 
+ * @created  05/03/2018
+ * @lastModified 28/03/2018 
  */
 package br.com.sisnet.controledecabos.telas;
 
@@ -24,18 +24,26 @@ import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * @author Israel Gomes Da Silva
- * @contact israelgomes05@gmail.com
- * @created 05/03/2018
- * @lastModified 28/03/2018
- * @version 4.8.1
- *
- * @Function...
+ * Classe que define a tela de gerenciar cabo.
+ * @author Israel Gomes
+ * @version 2.0
+ * @since 1.0
  */
 public class TelaGerenciarCabos extends javax.swing.JDialog {
 
     DefaultTableModel tabelaBusca;
 
+    /**
+     * 
+     * @param parent java.awt.Frame - Tela a qual está será associada.<br>
+     * @param modal boolean - <b>true</b> a tela parent(que chama esta tela) não
+     *        pode ser acessada, enquanto esta tela estiver aberta,<br> <b>false</b> poderá ser acessada.<br>
+     * @param externo boolean - <b>true</b> caso os dados para cadastro da ponta venham pelo contrutor,
+     *        e assim só será possível preencher o local da ponta, <b>false</b> tela será exibida normalmente.<br>
+     * @param quantidade double - Quantidade em metros para cadastrar a ponta <b>necessário apenas quando
+     *        externo for true</b>.<br>
+     * @param codigoCabo int - código do cabo 
+     */
     public TelaGerenciarCabos(
             java.awt.Frame parent,
             boolean modal,
@@ -75,7 +83,6 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             btnCabos.setEnabled(false);
             btnBobinas.setEnabled(false);
         }
-
         /*Bobinas*/
         txtQuantidadeBobinas.setEditable(false);
         jcbAtivo.setEnabled(false);
@@ -1163,6 +1170,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                         txtQuantidadeBobinas.setText("");
                         Tabela.limpa(tabelaBusca);
                         txtDescricaoBobinas.setText(caboBobina.get(0).getDescricao());
+                        
                         for (int i = 0; i < caboBobina.size(); i++) {
                             Object[] cabo = {caboBobina.get(i).getCodigoCabo(),
                                 caboBobina.get(i).getIdBobina(),

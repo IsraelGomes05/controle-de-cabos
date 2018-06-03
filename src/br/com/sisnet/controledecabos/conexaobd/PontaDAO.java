@@ -1,6 +1,6 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
+/** 
+ * @created  05/03/2018
+ * @lastModified 28/03/2018 
  */
 package br.com.sisnet.controledecabos.conexaobd;
 
@@ -14,13 +14,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
- * @author Israel Gomes Da Silva
- * @contact israelgomes05@gmail.com
- * @created 10/03/2018
- * @lastModified 06/04/2018
+ * Classe responsável por fazer o CRUD na tabela de ponta.
+ * @author Israel Gomes
  * @version 2.0
- *
- * @Function...
+ * @since 1.0
  */
 public class PontaDAO {
 

@@ -1,5 +1,8 @@
+/** 
+ * @created  10/03/2018
+ * @lastModified 28/03/2018 
+ */
 package br.com.sisnet.controledecabos.telas;
-
 import br.com.sisnet.controledecabos.classes.Login;
 import br.com.sisnet.controledecabos.classes.utilitarias.Cripto;
 import br.com.sisnet.controledecabos.conexaobd.LoginDAO;
@@ -7,11 +10,16 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 
+/**
+ * Classe responsável realizar o login do usuário.
+ * @author Israel Gomes
+ * @version 1.0
+ * @since 1.0
+ */
 public class TelaLogin extends javax.swing.JDialog {
 
+    int tentativa = 3;
     
-    Integer tentativa = 3;
-
     public TelaLogin() {
 
     }
@@ -193,16 +201,19 @@ public class TelaLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     public boolean checkLogin(String senha, String usuario) {
-
-        String senhaBd;
-        List<Login> loginList;
-        loginList = LoginDAO.busca(usuario);
-        if (loginList.isEmpty()) {
+        if (senha.equals("") || usuario.equals("")) {
             return false;
         } else {
-            TelaPrincipal.usuarioAlterarDados = loginList.get(0).getAlterarDados().equals("s");
-            senhaBd = loginList.get(0).getSenha();
-            return senhaBd.equals(senha);
+            String senhaBd;
+            List<Login> loginList;
+            loginList = LoginDAO.busca(usuario);
+            if (loginList.isEmpty()) {
+                return false;
+            } else {
+                TelaPrincipal.usuarioAlterarDados = loginList.get(0).getAlterarDados().equals("s");
+                senhaBd = loginList.get(0).getSenha();
+                return senhaBd.equals(senha);
+            }
         }
     }
 
@@ -212,12 +223,14 @@ public class TelaLogin extends javax.swing.JDialog {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String senha = new String(txtSenha.getPassword());
-        if (checkLogin(Cripto.criptografar(senha), txtUsuario.getText())) {
+        String usuario = txtUsuario.getText();
+        
+        if (checkLogin(Cripto.criptografar(senha), usuario)) {
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "          Dados Incorretos", "Login", JOptionPane.WARNING_MESSAGE);
             tentativa--;
-            lblTentativas.setText(tentativa.toString() + " Tentativas restantes! ");
+            lblTentativas.setText(tentativa + " Tentativas restantes! ");
             lblTentativas.setVisible(true);
             if (tentativa == 0) {
                 JOptionPane.showMessageDialog(null, "        Dados Incorretos\n      "
