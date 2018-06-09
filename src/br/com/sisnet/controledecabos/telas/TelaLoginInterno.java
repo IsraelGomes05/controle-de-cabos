@@ -60,7 +60,7 @@ public class TelaLoginInterno extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel1.setText("O Usuário atual não tem permissão para acessar");
+        jLabel1.setText("O Usuário atual não tem permissão para acessar !");
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));

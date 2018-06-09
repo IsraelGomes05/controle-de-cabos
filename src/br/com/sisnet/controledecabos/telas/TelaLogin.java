@@ -1,6 +1,6 @@
 /** 
  * @created  10/03/2018
- * @lastModified 28/03/2018 
+ * @lastModified 09/05/2018 
  */
 package br.com.sisnet.controledecabos.telas;
 import br.com.sisnet.controledecabos.classes.Login;
@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
 /**
  * Classe responsável realizar o login do usuário.
  * @author Israel Gomes
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 public class TelaLogin extends javax.swing.JDialog {
 
-    int tentativa = 3;
+    int tentativa = 4;
     
     public TelaLogin() {
 
@@ -207,10 +207,10 @@ public class TelaLogin extends javax.swing.JDialog {
             String senhaBd;
             List<Login> loginList;
             loginList = LoginDAO.busca(usuario);
-            if (loginList.isEmpty()) {
+            if (loginList != null && loginList.isEmpty()) {
                 return false;
             } else {
-                TelaPrincipal.usuarioAlterarDados = loginList.get(0).getAlterarDados().equals("s");
+                TelaPrincipal.usuario = loginList.get(0);
                 senhaBd = loginList.get(0).getSenha();
                 return senhaBd.equals(senha);
             }
@@ -228,13 +228,13 @@ public class TelaLogin extends javax.swing.JDialog {
         if (checkLogin(Cripto.criptografar(senha), usuario)) {
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "          Dados Incorretos", "Login", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "          Dados Incorretos!", "Login", JOptionPane.WARNING_MESSAGE);
             tentativa--;
-            lblTentativas.setText(tentativa + " Tentativas restantes! ");
+            lblTentativas.setText(tentativa + " Tentativa" + (tentativa > 1? "s":"") +" restante"+ (tentativa > 1? "s!":"!"));
             lblTentativas.setVisible(true);
             if (tentativa == 0) {
-                JOptionPane.showMessageDialog(null, "        Dados Incorretos\n      "
-                        + "Tentativas Ecedidas", "Falha no Login", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "        Dados Incorretos!\n      "
+                        + "Tentativas excedidas", "Falha no Login", JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
             }
         }

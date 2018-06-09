@@ -42,7 +42,7 @@ public class LoginDAO {
     }
 
     public static List<Login> busca(String usuario) {
-        String sql = "SELECT Senha,AlterarDados FROM Login "
+        String sql = "SELECT user,Senha,AlterarDados FROM Login "
                 +"WHERE user = ?;";
         
         ResultSet resultSet = null;
@@ -54,7 +54,7 @@ public class LoginDAO {
             resultSet = ps.executeQuery();
             
             while (resultSet.next()) {
-                loginList.add(new Login(
+                loginList.add(new Login(resultSet.getString("user"),
                 resultSet.getString("Senha"),
                 resultSet.getString("AlterarDados")));
             }

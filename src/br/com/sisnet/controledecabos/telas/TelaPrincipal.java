@@ -1,10 +1,11 @@
 /** 
  * @created  01/03/2018
- * @lastModified 28/05/2018 
+ * @lastModified 09/06/2018 
  */
 package br.com.sisnet.controledecabos.telas;
 
 import br.com.sisnet.controledecabos.classes.Cabo;
+import br.com.sisnet.controledecabos.classes.Login;
 import br.com.sisnet.controledecabos.classes.PontaCabo;
 import br.com.sisnet.controledecabos.classes.Saida;
 import br.com.sisnet.controledecabos.classes.Vendedor;
@@ -38,7 +39,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
-    static boolean subtrairBobina, usuarioAlterarDados;
+    static boolean subtrairBobina; 
+    static Login usuario;
     DefaultTableModel tabelaCabos;
     DefaultTableModel tabelaRelatorioPontas;
     DefaultTableModel tabelaRelatorioSaidas;
@@ -89,6 +91,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             txtDataAtual.setText(dataHoje);
 
             this.alterarIcone();
+            this.setTitle("Controle de Cabos v2.5.7  Usuário: " + usuario.getUsuario());
         } catch (Exception th) {
             JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada",
                     "Falha", JOptionPane.ERROR_MESSAGE);
@@ -195,7 +198,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmInformacoes = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Controle de Cabos v2.5.7");
         setMinimumSize(new java.awt.Dimension(1231, 615));
 
         jPanel2.setLayout(new java.awt.CardLayout());
@@ -652,7 +654,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NUM.PONTA", "CÓDIGO", "DESCRIÇÃO", "QUANTIDADE", "LOCAL"
+                "NUM.PONTA", "CÓD. CABO", "DESCRIÇÃO", "QUANTIDADE", "LOCAL"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -743,9 +745,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 395, Short.MAX_VALUE)
                 .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnPontasRelatoriosLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(1, 1, 1))
+                    .addComponent(jLabel13)
                     .addComponent(txtTotalPontasRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnImprimirGeralpontas)
@@ -789,7 +789,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CÓD.SAíDA", "DATA", "CÓDIGO", "DESCRIÇÃO", "QUANTIDADE", "VENDEDOR", "BOBINA"
+                "CÓD.SAíDA", "DATA", "CÓD. CABO", "DESCRIÇÃO", "QTD", "VENDEDOR", "BOBINA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -800,6 +800,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtbTabelaRelatorioSaidas.setColumnSelectionAllowed(true);
         jtbTabelaRelatorioSaidas.setSelectionBackground(new java.awt.Color(170, 215, 135));
         jtbTabelaRelatorioSaidas.setSelectionForeground(new java.awt.Color(51, 51, 51));
         jtbTabelaRelatorioSaidas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -813,16 +814,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jtbTabelaRelatorioSaidas.getColumnModel().getColumn(0).setMaxWidth(70);
             jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setMinWidth(70);
             jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setMaxWidth(100);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setMinWidth(100);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setMaxWidth(150);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setMinWidth(80);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setMaxWidth(90);
             jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setMinWidth(350);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setMaxWidth(550);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setMinWidth(90);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setMaxWidth(150);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setMaxWidth(650);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setMinWidth(80);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setMaxWidth(80);
             jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setMinWidth(90);
             jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setMaxWidth(180);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setMinWidth(70);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setMaxWidth(170);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setMinWidth(60);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setMaxWidth(70);
         }
 
         btnDeletarRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
@@ -919,35 +920,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
-                    .addGroup(jpnSaidasDataLayout.createSequentialGroup()
-                        .addComponent(jcbVendedorRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBuscarRelarorioSaidas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
-                        .addComponent(btnImprimirRelatoriosSaidas)))
+                    .addComponent(jcbVendedorRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscarRelarorioSaidas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                .addComponent(btnImprimirRelatoriosSaidas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDeletarRelatorioSaidas)
                 .addContainerGap())
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1011, Short.MAX_VALUE)
         );
         jpnSaidasDataLayout.setVerticalGroup(
             jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnSaidasDataLayout.createSequentialGroup()
                 .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnSaidasDataLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(14, 14, 14)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnSaidasDataLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(4, 4, 4)
                         .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jcbVendedorRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnBuscarRelarorioSaidas)
                             .addComponent(btnImprimirRelatoriosSaidas)
-                            .addComponent(btnDeletarRelatorioSaidas)))
-                    .addGroup(jpnSaidasDataLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnDeletarRelatorioSaidas))
+                        .addGap(30, 30, 30)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
@@ -1262,7 +1263,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 485, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1344,7 +1345,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
         );
 
         getAccessibleContext().setAccessibleParent(jPanel2);
@@ -1418,13 +1419,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 + "        <br/>"
                 + "        Contatos para Obter Ajuda:<br/>"
                 + "        <b>E-mail :</b> israelgomes05@gmail.com<br/>"
-                + "        <b>Tel :</b> (65) 98122-5343"
+                + "        <b>Tel :</b> +55 (65) 98122-5343"
                 + "</body> "
                 + "</html>", "Informações", -1);
     }//GEN-LAST:event_jmInformacoesMouseClicked
 
     private void jmUsuariosBarraMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmUsuariosBarraMenuActionPerformed
-        if (!TelaPrincipal.usuarioAlterarDados) {
+        if (!TelaPrincipal.usuario.getAlterarDados().equals("s-")) {
             TelaLoginInterno verificacao = new TelaLoginInterno(this, true);
             verificacao.setVisible(true);
             if (!verificacao.isDadosCorretos()) {
@@ -1566,8 +1567,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             if (qtdpedida > estoqueTotal) {
                 if (JOptionPane.showConfirmDialog(null, "Quantidade Solicitada "
-                        + "Maior que o Estoque: " + estoqueTotal + " m disp\n"
-                        + "Adicionar mesmo Assim?",
+                        + "maior que o estoque: " + estoqueTotal + " m disp\n"
+                        + "Adicionar mesmo assim?",
                         "Atenção", JOptionPane.YES_NO_OPTION) != 0) {
                     return;
                 }
@@ -1645,8 +1646,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
                     if (qtdSolicitada > qtdBobina) {
                         JOptionPane.showMessageDialog(null, "Quantidade Solicitada "
-                                + "Maior que a Qtd da Bobina: " + qtdBobina + " m disp\n"
-                                + "Será salvo com Saída, mas não afetará a bobina!",
+                                + "maior que a Qtd da bobina: " + qtdBobina + " m disp\n"
+                                + "será registrado como saída, mas não afetará a bobina!",
                                 "Atenção", JOptionPane.WARNING_MESSAGE);
                     } else {
                         this.VerificaPonta(true);
@@ -1668,16 +1669,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 this.VerificaPonta(true);
                 Saida saida = new Saida(codigoCabo, vendedor.get(0).getIdVendedor(), qtdSolicitada, dataHoje);
                 if (SaidaDAO.salvar(saida)) {
-                    JOptionPane.showMessageDialog(null, "   Saída salva com sucesso",
+                    JOptionPane.showMessageDialog(null, "   Saída registrada com sucesso!",
                             "concluído", JOptionPane.INFORMATION_MESSAGE);
                 }
                 tabelaCabos.removeRow(jtbTabelaCabos.getSelectedRow());
             } else {
-                JOptionPane.showMessageDialog(null, "   Nenhum Item Selecionado",
+                JOptionPane.showMessageDialog(null, "   Nenhum item selecionado",
                         "Falha", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "   Nenhum Item Selecionado \n",
+            JOptionPane.showMessageDialog(null, "   Nenhum item selecionado \n",
                     "Falha", JOptionPane.INFORMATION_MESSAGE);
         }
 
@@ -1748,7 +1749,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         if (jtbTabelaRelatorioSaidas.getSelectedRow() != -1) {
             int escolha = JOptionPane.showConfirmDialog(null, "    Este procedimento excluirá o registro de saída\n"
-                    + "Deseja salvar os dados como uma ponta de Cabo?",
+                    + "Deseja registrar os dados como uma ponta de Cabo?",
                     "Deletar Saída", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             int numSaida = Integer.parseInt(tabelaRelatorioSaidas.getValueAt(
@@ -1969,7 +1970,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 telaPonta.setVisible(true);
             }
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "     Nenhum Item Selecionado \n",
+            JOptionPane.showMessageDialog(null, "     Nenhum item selecionado \n",
                     "Falha", JOptionPane.INFORMATION_MESSAGE);
         }
     }
@@ -2062,7 +2063,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         listBobina.get(i).getQtdOriginal(),
                         listBobina.get(i).getQtdOriginal() - listBobina.get(i).getQtdAtual(),
                         listBobina.get(i).getQtdAtual(), qtdEstoque,
-                        listBobina.get(i).getAtivo().equals("s") ? "Ativo" : "inativo"
+                        listBobina.get(i).getAtivo().equals("s") ? "Ativo" : "Inativo"
                     };
                     tabelaRelatorioBobinas.addRow(bobinaTabela);
                 }

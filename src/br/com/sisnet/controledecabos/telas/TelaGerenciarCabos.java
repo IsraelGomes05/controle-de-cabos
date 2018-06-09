@@ -754,7 +754,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     }
     
     private void btnCabosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCabosActionPerformed
-        if (!TelaPrincipal.usuarioAlterarDados) {
+        if (!TelaPrincipal.usuario.getAlterarDados().equals("s")) {
             TelaLoginInterno verificacao = new TelaLoginInterno(null, true);
             verificacao.setVisible(true);
             if (!verificacao.isDadosCorretos()) {
@@ -778,7 +778,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     }//GEN-LAST:event_btnPontasActionPerformed
 
     private void btnBobinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBobinasActionPerformed
-        if (!TelaPrincipal.usuarioAlterarDados) {
+        if (!TelaPrincipal.usuario.getAlterarDados().equals("s")) {
             TelaLoginInterno verificacao = new TelaLoginInterno(null, true);
             verificacao.setVisible(true);
             if (!verificacao.isDadosCorretos()) {
