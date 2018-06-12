@@ -369,7 +369,7 @@ public class TelaCadastros extends javax.swing.JDialog {
         });
     }
     
-    
+
     private void jbnUsuariosCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnUsuariosCadastrosActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Usuarios");

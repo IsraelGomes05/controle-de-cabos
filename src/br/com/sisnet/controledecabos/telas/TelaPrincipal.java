@@ -32,7 +32,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Classe que define a tela a tela principal e relatórios.
+ * Classe que define as telas: principal e relatórios.
  * @author Israel Gomes
  * @version 5.2
  * @since 1.0
@@ -1425,7 +1425,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmInformacoesMouseClicked
 
     private void jmUsuariosBarraMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmUsuariosBarraMenuActionPerformed
-        if (!TelaPrincipal.usuario.getAlterarDados().equals("s-")) {
+        if (!TelaPrincipal.usuario.getAlterarDados().equals("s")) {
             TelaLoginInterno verificacao = new TelaLoginInterno(this, true);
             verificacao.setVisible(true);
             if (!verificacao.isDadosCorretos()) {
