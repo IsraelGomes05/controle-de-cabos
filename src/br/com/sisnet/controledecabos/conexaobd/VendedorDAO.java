@@ -1,6 +1,6 @@
 /** 
  * @created  10/03/2018
- * @lastModified 28/03/2018 
+ * @lastModified 17/06/2018 
  */
 package br.com.sisnet.controledecabos.conexaobd;
 
@@ -64,7 +64,7 @@ public class VendedorDAO {
         } finally {
             ConnectionFactory.close(resultSet);
         }
-        return null;
+        return vendedorList;
     }
 
     public static List<Vendedor> buscaTudo() {
@@ -89,7 +89,7 @@ public class VendedorDAO {
         } finally {
             ConnectionFactory.close(resultSet);
         }
-        return null;
+        return vendedorList;
     }
 
     public static boolean excluir(String vendedor) {

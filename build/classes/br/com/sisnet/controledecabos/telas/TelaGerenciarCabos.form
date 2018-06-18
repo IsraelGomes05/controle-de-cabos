@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
-  <NonVisualComponents>
-    <Container class="javax.swing.JPanel" name="jPanel3">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="title" type="java.lang.String" value="Gerenciar Cabos"/>
@@ -46,11 +29,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="btnPontas" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnCabos" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnBobinas" min="-2" pref="108" max="-2" attributes="0"/>
+                      <Component id="btnPontas" min="-2" pref="79" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnCabos" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnBobinas" min="-2" pref="79" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel2" max="32767" attributes="0"/>
               </Group>
@@ -61,19 +45,14 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="btnPontas" min="-2" pref="57" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnBobinas" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="btnCabos" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="btnCabos" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="btnPontas" min="-2" pref="96" max="-2" attributes="0"/>
+                  <Component id="btnBobinas" pref="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" pref="284" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -83,303 +62,6 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jpnPontas">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="Pontas"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="632" max="32767" attributes="0"/>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Component id="jpnUsuarios1" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="291" max="32767" attributes="0"/>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Component id="jpnUsuarios1" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="jpnUsuarios1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jcbSubtrairBobinaPonta" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                  <Component id="txtCodigoPonta" min="-2" pref="120" max="-2" attributes="0"/>
-                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="btnGerarPontas" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="txtNumeroPontas" min="-2" pref="47" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="txtLocalPonta" min="-2" pref="123" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtDescricaooPontas" min="-2" pref="320" max="-2" attributes="0"/>
-                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnDeletarPonta" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btnAtualizarPonta" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtQuantidadePonta" min="-2" pref="115" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="btnCadastrarPonta" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace pref="15" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtNumeroPontas" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDescricaooPontas" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="btnGerarPontas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCodigoPonta" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="txtLocalPonta" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="txtQuantidadePonta" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jcbSubtrairBobinaPonta" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnCadastrarPonta" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAtualizarPonta" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnDeletarPonta" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel4">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtNumeroPontas">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNumeroPontasKeyPressed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnCadastrarPonta">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/disk.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Cadastrar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarPontaActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnAtualizarPonta">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/refresh-29.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Atualizar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarPontaActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnDeletarPonta">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/delete.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Deletar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarPontaActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtDescricaooPontas">
-                  <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigoPonta">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoPontaActionPerformed"/>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoPontaKeyPressed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtLocalPonta">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLocalPontaKeyPressed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Local"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JCheckBox" name="jcbSubtrairBobinaPonta">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Subtrair da bobina"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtQuantidadePonta">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtQuantidadePontaKeyPressed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel12">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Quantidade"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel13">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel17">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Metros"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnGerarPontas">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="13" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Gerar"/>
-                    <Property name="toolTipText" type="java.lang.String" value="Gera um n&#xfa;mero dispon&#xed;vel para cadastro"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerarPontasActionPerformed"/>
-                  </Events>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="jpnCabos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -395,50 +77,52 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
-                      <Component id="btnDeletarCabo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnAlterarCabo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnCadastrarCabo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtCodigoCabos" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
-                          <Component id="txtBobinaAtualCabos" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtDescricaoCabos" min="-2" pref="365" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="txtQuantidadeCabos" min="-2" pref="104" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDeletarCabo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="btnAlterarCabo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="btnCadastrarCabo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtCodigoCabos" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Component id="txtBobinaAtualCabos" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtDescricaoCabos" min="-2" pref="365" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtQuantidadeCabos" min="-2" pref="104" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <EmptySpace pref="73" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtCodigoCabos" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="txtDescricaoCabos" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="txtCodigoCabos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtDescricaoCabos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -447,17 +131,17 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtBobinaAtualCabos" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="txtBobinaAtualCabos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtQuantidadeCabos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnCadastrarCabo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAlterarCabo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnDeletarCabo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -469,9 +153,20 @@
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/disk.png"/>
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"/>
+                </Property>
+                <Property name="verticalAlignment" type="int" value="1"/>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarCaboActionPerformed"/>
@@ -483,9 +178,19 @@
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/refresh-29.png"/>
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-l&#xe1;pis-32 azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Alterar"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-l&#xe1;pis-32 amarelo.png"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarCaboActionPerformed"/>
@@ -497,9 +202,19 @@
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/delete.png"/>
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Deletar"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarCaboActionPerformed"/>
@@ -510,6 +225,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoCabosKeyPressed"/>
@@ -519,6 +237,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
                 </Property>
               </Properties>
               <Events>
@@ -531,6 +252,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtQuantidadeCabos">
@@ -538,6 +262,9 @@
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
+                </Property>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
                 </Property>
               </Properties>
             </Component>
@@ -628,19 +355,19 @@
                                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                                       <Component id="lblBobinaCadastrada" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="txtDescricaoBobinas" max="32767" attributes="0"/>
+                                  <Component id="txtDescricaoBobinas" pref="278" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnSelecionarBobinas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnGerarBobinas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnSelecionarBobinas" min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="btnGerarBobinas" min="-2" pref="93" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnDeletarBobinas" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnCadastrarBobina" min="-2" pref="113" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="btnAtualizarBobinas" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="btnCadastrarBobina" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -650,7 +377,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -661,23 +388,26 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtCodigoCaboBobinas" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="txtNumBobinaBobinas" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jcbAtivo" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="txtQuantidadeBobinas" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="txtDescricaoBobinas" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="txtCodigoCaboBobinas" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtNumBobinaBobinas" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jcbAtivo" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="txtQuantidadeBobinas" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtDescricaoBobinas" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="148" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnSelecionarBobinas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDeletarBobinas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAtualizarBobinas" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnCadastrarBobina" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnGerarBobinas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="191" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnDeletarBobinas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCadastrarBobina" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAtualizarBobinas" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="btnGerarBobinas" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSelecionarBobinas" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -696,6 +426,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoCaboBobinasKeyPressed"/>
@@ -707,12 +440,18 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtQuantidadeBobinas">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
+                </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
                 </Property>
               </Properties>
             </Component>
@@ -730,9 +469,19 @@
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/refresh-29.png"/>
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-l&#xe1;pis-32 azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Atualizar"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-l&#xe1;pis-32 amarelo.png"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarBobinasActionPerformed"/>
@@ -752,9 +501,19 @@
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/delete.png"/>
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Deletar"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarBobinasActionPerformed"/>
@@ -764,6 +523,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
+                </Property>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[14, 30]"/>
                 </Property>
               </Properties>
               <Events>
@@ -883,9 +645,19 @@
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/disk.png"/>
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarBobinaActionPerformed"/>
@@ -897,9 +669,22 @@
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/accept.png"/>
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Selecionar"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[88, 70]"/>
+                </Property>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSelecionarBobinasActionPerformed"/>
@@ -921,13 +706,357 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="13" style="0"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-confirma&#xe7;&#xe3;o-e-atualiza&#xe7;&#xe3;o-32 azul.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Gerar Num"/>
                 <Property name="toolTipText" type="java.lang.String" value="Gera um n&#xfa;mero dispon&#xed;vel para cadastro"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="rolloverEnabled" type="boolean" value="true"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-confirma&#xe7;&#xe3;o-e-atualiza&#xe7;&#xe3;o-32 verde.png"/>
+                </Property>
+                <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerarBobinasActionPerformed"/>
               </Events>
             </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jpnPontas">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="Pontas"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jpnUsuarios1" alignment="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jpnUsuarios1" alignment="1" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jpnUsuarios1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jcbSubtrairBobinaPonta" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtCodigoPonta" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="txtLocalPonta" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="txtQuantidadePonta" min="-2" pref="115" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Component id="txtDescricaooPontas" min="-2" pref="320" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="btnDeletarPonta" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btnAtualizarPonta" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btnCadastrarPonta" min="-2" pref="86" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="txtNumeroPontas" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnGerarPontas" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="79" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace pref="85" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNumeroPontas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDescricaooPontas" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnGerarPontas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtCodigoPonta" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtLocalPonta" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtQuantidadePonta" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jcbSubtrairBobinaPonta" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                  <Component id="btnAtualizarPonta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnDeletarPonta" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnCadastrarPonta" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="N&#xfa;mero"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtNumeroPontas">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 30]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNumeroPontasKeyPressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCadastrarPonta">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cadastrar"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarPontaActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnAtualizarPonta">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-l&#xe1;pis-32 azul.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Alterar"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-l&#xe1;pis-32 amarelo.png"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtualizarPontaActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnDeletarPonta">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Deletar"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeletarPontaActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtDescricaooPontas">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 30]"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtCodigoPonta">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 30]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoPontaActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoPontaKeyPressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtLocalPonta">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 30]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLocalPontaKeyPressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel9">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Local"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcbSubtrairBobinaPonta">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Subtrair da bobina"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtQuantidadePonta">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[14, 30]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtQuantidadePontaKeyPressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel12">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Quantidade"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel13">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel17">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Metros"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnGerarPontas">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Gerar"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Gera um n&#xfa;mero dispon&#xed;vel para cadastro"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerarPontasActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
@@ -937,7 +1066,20 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="13" style="0"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 azul.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Bobinas"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor em Forma de M&#xe3;o"/>
+        </Property>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="rolloverEnabled" type="boolean" value="true"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 cinza.png"/>
+        </Property>
+        <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBobinasActionPerformed"/>
@@ -948,10 +1090,23 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="13" style="0"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-el&#xe9;trico-64 azul.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cabos"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor em Forma de M&#xe3;o"/>
+        </Property>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[662, 417]"/>
         </Property>
+        <Property name="rolloverEnabled" type="boolean" value="true"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-el&#xe9;trico-64 cinza.png"/>
+        </Property>
+        <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCabosActionPerformed"/>
@@ -962,7 +1117,21 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="13" style="0"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 azul.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Pontas"/>
+        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor em Forma de M&#xe3;o"/>
+        </Property>
+        <Property name="horizontalTextPosition" type="int" value="0"/>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="rolloverEnabled" type="boolean" value="true"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 cinza.png"/>
+        </Property>
+        <Property name="verticalTextPosition" type="int" value="3"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPontasActionPerformed"/>

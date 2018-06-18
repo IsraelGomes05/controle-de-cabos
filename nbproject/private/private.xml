@@ -5,6 +5,11 @@
         <group>
             <file>file:/C:/Users/israe/Documents/GitHub/Controle-de-Cabos/src/br/com/sisnet/controledecabos/telas/TelaPrincipal.java</file>
             <file>file:/C:/Users/israe/Documents/GitHub/Controle-de-Cabos/src/br/com/sisnet/controledecabos/telas/TelaLogin.java</file>
+            <file>file:/C:/Users/israe/Documents/GitHub/Controle-de-Cabos/src/br/com/sisnet/controledecabos/controler/UsuarioControler.java</file>
+            <file>file:/C:/Users/israe/Documents/GitHub/Controle-de-Cabos/src/br/com/sisnet/controledecabos/conexaobd/LoginDAO.java</file>
+            <file>file:/C:/Users/israe/Documents/GitHub/Controle-de-Cabos/src/br/com/sisnet/controledecabos/telas/ViewUtil.java</file>
+            <file>file:/C:/Users/israe/Documents/GitHub/Controle-de-Cabos/src/br/com/sisnet/controledecabos/classes/Login.java</file>
+            <file>file:/C:/Users/israe/Documents/GitHub/Controle-de-Cabos/src/br/com/sisnet/controledecabos/telas/TelaCadastros.java</file>
         </group>
     </open-files>
 </project-private>

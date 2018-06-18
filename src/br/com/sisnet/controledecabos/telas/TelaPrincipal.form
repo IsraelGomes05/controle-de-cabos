@@ -7,7 +7,7 @@
         <Menu class="javax.swing.JMenu" name="jmAjustes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/cog.png"/>
+              <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-configura&#xe7;&#xf5;es-20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ajustes"/>
           </Properties>
@@ -28,7 +28,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icone_cabo.png"/>
+              <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-el&#xe9;trico-20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cabos"/>
           </Properties>
@@ -49,7 +49,7 @@
         <Menu class="javax.swing.JMenu" name="jmInformacoes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/information.png"/>
+              <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-informa&#xe7;&#xf5;es-20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es"/>
           </Properties>
@@ -96,7 +96,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel2" alignment="0" pref="600" max="32767" attributes="0"/>
+          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -120,35 +120,68 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel4" max="32767" attributes="0"/>
-                          <Component id="jPanel3" max="32767" attributes="0"/>
+                          <Component id="jPanel4" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jPanel9" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jPanel4" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel3" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel9" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
+            <Container class="javax.swing.JPanel" name="jPanel9">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="49" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel18">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel18"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
             <Container class="javax.swing.JPanel" name="jPanel3">
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace pref="469" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -156,7 +189,7 @@
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="469" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -167,7 +200,7 @@
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                          <EmptySpace pref="81" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -200,16 +233,16 @@
                           <Component id="btnRelatoriosAreaDeTrab" min="-2" pref="120" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnCabosAreaDeTrab" min="-2" pref="120" max="-2" attributes="0"/>
-                          <EmptySpace pref="772" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="750" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtDataAtual" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="txtDataAtual" min="-2" pref="96" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnAlterar" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -225,16 +258,13 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="39" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnRelatoriosAreaDeTrab" pref="0" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="btnCabosAreaDeTrab" min="-2" pref="76" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btnCabosAreaDeTrab" min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -311,19 +341,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane1" max="32767" attributes="0"/>
                           <Component id="jPanel5" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnLimparCabos" min="-2" pref="97" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnVerificarPontasCabos" min="-2" pref="167" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnExcluirCabos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnSalvarSaidaCabos" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel12" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -334,19 +360,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanel5" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="409" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="419" max="-2" attributes="0"/>
+                      <EmptySpace pref="13" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnSalvarSaidaCabos" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnLimparCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="btnVerificarPontasCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="btnExcluirCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jPanel12" max="32767" attributes="0"/>
+                          <Component id="jPanel10" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -367,92 +389,70 @@
                           <Component id="btnRelatoriosCabos" min="-2" pref="117" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="btnCabosCabos" min="-2" pref="117" max="-2" attributes="0"/>
+                          <EmptySpace pref="12" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace pref="40" max="32767" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="70" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="txtCodigoCabos" min="-2" pref="99" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="txtCodigoCabos" min="-2" pref="99" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="228" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="txtDescricaoCabos" pref="286" max="32767" attributes="0"/>
+                              <Component id="txtDescricaoCabos" alignment="0" min="-2" pref="458" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtQtdCabos" min="-2" pref="82" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtQtdCabos" min="-2" pref="82" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="21" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtBubinaCabos" min="-2" pref="74" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jcbVendedoresCabos" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcbVendedoresCabos" min="-2" pref="147" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnAdicionarCabos" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnAdicionarCabos" min="-2" pref="58" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="btnRelatoriosCabos" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnCabosCabos" alignment="1" min="-2" pref="74" max="-2" attributes="0"/>
+                              <Component id="btnAdicionarCabos" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="btnRelatoriosCabos" min="-2" pref="75" max="-2" attributes="0"/>
-                                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="btnCabosCabos" alignment="1" min="-2" pref="74" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                                  <Component id="txtDescricaoCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                                  <Component id="txtCodigoCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="txtQtdCabos" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="txtBubinaCabos" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="jcbVendedoresCabos" alignment="1" max="32767" attributes="0"/>
-                                          </Group>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jcbVendedoresCabos" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="txtBubinaCabos" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="txtQtdCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="txtDescricaoCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="txtCodigoCabos" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="btnAdicionarCabos" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -548,11 +548,19 @@
                       <Font name="Arial" size="13" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-40.png"/>
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matem&#xe1;tica-50 verde.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Adicionar"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
                     <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matem&#xe1;tica-50 azul.png"/>
+                    </Property>
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
@@ -676,13 +684,14 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="15" minWidth="10" prefWidth="10" resizable="true">
+                        <Column maxWidth="80" minWidth="20" prefWidth="10" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
                       </TableColumnModel>
                     </Property>
+                    <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
@@ -702,62 +711,159 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btnSalvarSaidaCabos">
+            <Container class="javax.swing.JPanel" name="jPanel10">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="13" style="0"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/disk.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Salvar"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarSaidaCabosActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnExcluirCabos">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="13" style="0"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/delete.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Excluir  Item"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirCabosActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnLimparCabos">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="13" style="0"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/Edit-clear.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Limpar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparCabosActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnVerificarPontasCabos">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="13" style="0"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/help.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Verificar Ponta"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerificarPontasCabosActionPerformed"/>
-              </Events>
-            </Component>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnLimparCabos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnVerificarPontasCabos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+                          <Component id="btnExcluirCabos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnSalvarSaidaCabos" min="-2" pref="65" max="-2" attributes="0"/>
+                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                  <Component id="btnExcluirCabos" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="btnSalvarSaidaCabos" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="btnLimparCabos" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnVerificarPontasCabos" min="-2" pref="66" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="btnLimparCabos">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 azul.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Limpar"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 red.png"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparCabosActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnVerificarPontasCabos">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interroga&#xe7;&#xe3;o-32 azul.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Verificar Ponta"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interroga&#xe7;&#xe3;o-32 azul claro.png"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerificarPontasCabosActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnExcluirCabos">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matem&#xe1;tica-32 azul.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Excluir  Item"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matem&#xe1;tica-32 red.png"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirCabosActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnSalvarSaidaCabos">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Dialog" size="13" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Salvar"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Cursor em Forma de M&#xe3;o"/>
+                    </Property>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
+                    <Property name="rolloverEnabled" type="boolean" value="true"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"/>
+                    </Property>
+                    <Property name="verticalTextPosition" type="int" value="3"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarSaidaCabosActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel12">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jpnRelatorios">
@@ -779,7 +885,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jPanel1" max="32767" attributes="0"/>
-                          <Component id="jPanel6" max="32767" attributes="0"/>
+                          <Component id="jPanel6" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jPanel11" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -788,10 +895,12 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jPanel6" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -819,12 +928,12 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jbnCabosRelatorios" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
                               <Component id="jbnRelatorios" min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <EmptySpace pref="31" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -867,23 +976,23 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnSaidasRelatorios" max="32767" attributes="0"/>
                               <Component id="btnBobinasRelatorios" max="32767" attributes="0"/>
                               <Component id="btnPontasRelatorios" alignment="1" max="32767" attributes="0"/>
                               <Component id="btnCabosRelatorios" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="jPanel7" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel7" alignment="0" pref="485" max="32767" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jPanel7" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="btnSaidasRelatorios" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="btnBobinasRelatorios" min="-2" pref="59" max="-2" attributes="0"/>
@@ -891,7 +1000,7 @@
                           <Component id="btnPontasRelatorios" min="-2" pref="59" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="btnCabosRelatorios" min="-2" pref="59" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                          <EmptySpace pref="52" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -959,7 +1068,7 @@
                                       </Group>
                                       <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="395" max="32767" attributes="0"/>
+                                  <EmptySpace pref="444" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtTotalPontasRelatoriosPontas" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
@@ -987,7 +1096,8 @@
                                       <Component id="btnImprimirGeralpontas" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane4" min="-2" pref="374" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane4" min="-2" pref="318" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1171,13 +1281,13 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnBuscarRelarorioSaidas" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="347" max="32767" attributes="0"/>
+                                  <EmptySpace pref="396" max="32767" attributes="0"/>
                                   <Component id="btnImprimirRelatoriosSaidas" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="btnDeletarRelatorioSaidas" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane2" alignment="0" pref="1011" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" pref="1060" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -1202,7 +1312,7 @@
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="jScrollPane2" pref="369" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" pref="293" max="32767" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1508,7 +1618,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane3" pref="1011" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="1060" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -1530,8 +1640,8 @@
                                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane3" min="-2" pref="370" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane3" min="-2" pref="310" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1770,7 +1880,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane5" pref="1011" max="32767" attributes="0"/>
+                              <Component id="jScrollPane5" pref="1060" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1818,7 +1928,8 @@
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane5" min="-2" pref="375" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane5" min="-2" pref="316" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1990,6 +2101,49 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCabosRelatoriosActionPerformed"/>
                   </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel11">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="lblData" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lblData" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel12">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-usu&#xe1;rio-de-g&#xea;nero-neutro-32.png"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Uso&#xe1;rio"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblData">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Data"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>

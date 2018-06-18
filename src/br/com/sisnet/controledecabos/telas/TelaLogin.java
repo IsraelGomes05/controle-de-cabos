@@ -16,13 +16,12 @@ import java.awt.event.KeyEvent;
  */
 public class TelaLogin extends javax.swing.JDialog {
 
-    public TelaLogin() {
-
-    }
+    ViewUtil viewUtil;
 
     public TelaLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        viewUtil = new ViewUtil();
     }
 
     @SuppressWarnings("unchecked")
@@ -39,11 +38,11 @@ public class TelaLogin extends javax.swing.JDialog {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         btnentrar = new javax.swing.JLabel();
-        btnsair = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        btnsair = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -86,7 +85,6 @@ public class TelaLogin extends javax.swing.JDialog {
         txtSenha.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setText("senha1");
-        txtSenha.setToolTipText("");
         txtSenha.setBorder(null);
         txtSenha.setEchoChar('\u2219');
         txtSenha.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -118,6 +116,7 @@ public class TelaLogin extends javax.swing.JDialog {
         btnentrar.setForeground(new java.awt.Color(255, 255, 255));
         btnentrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-para-a-direita-com-quadrado-32.png"))); // NOI18N
         btnentrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnentrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnentrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnentrarMouseClicked(evt);
@@ -130,80 +129,56 @@ public class TelaLogin extends javax.swing.JDialog {
             }
         });
 
-        btnsair.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        btnsair.setForeground(new java.awt.Color(255, 255, 255));
-        btnsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-para-a-esquerda-32 red.png"))); // NOI18N
-        btnsair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnsair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnsairMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnsairMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnsairMouseExited(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblSenha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTentativas)
-                                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnsair)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnentrar)))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblSenha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnentrar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTentativas))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(lblUsuario)
-                        .addGap(2, 2, 2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGap(103, 103, 103)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsuario))
+                .addGap(8, 8, 8)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSenha)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnentrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblSenha)
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblTentativas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnentrar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnsair, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(47, 47, 47))
+                .addGap(84, 84, 84))
         );
+
+        lblTentativas.setVisible(false);
 
         jPanel2.setBackground(new java.awt.Color(15, 69, 80));
 
@@ -217,6 +192,22 @@ public class TelaLogin extends javax.swing.JDialog {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("v2.5.7");
 
+        btnsair.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        btnsair.setForeground(new java.awt.Color(255, 255, 255));
+        btnsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-fechar-janela-32 red.png"))); // NOI18N
+        btnsair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnsair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnsairMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnsairMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnsairMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -224,31 +215,35 @@ public class TelaLogin extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel4)))
-                .addContainerGap(58, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(142, Short.MAX_VALUE)
-                    .addComponent(jLabel6)
-                    .addGap(134, 134, 134)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel3))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(jLabel4)))
+                        .addGap(0, 57, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnsair)))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addContainerGap()
+                .addComponent(btnsair)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(253, Short.MAX_VALUE)
-                    .addComponent(jLabel6)
-                    .addGap(60, 60, 60)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -275,9 +270,9 @@ public class TelaLogin extends javax.swing.JDialog {
         String usuario = txtUsuario.getText();
 
         if (!LoginControler.logar(this, senha, usuario, lblTentativas)) {
-            lblSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-senha-32 red.png")));
-            lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32 red.png")));
-        } 
+            viewUtil.alterarIcone(lblSenha, "icons8-senha-32 red.png");
+            viewUtil.alterarIcone(lblUsuario, "icons8-usuário-de-gênero-neutro-32 red.png");
+        }
     }
 
 
@@ -294,11 +289,15 @@ public class TelaLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_txtUsuarioKeyPressed
 
     private void txtUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusGained
-        txtUsuario.setText("");
+        if (txtUsuario.getText().equals("Usuário")) {
+            txtUsuario.setText("");
+        }
     }//GEN-LAST:event_txtUsuarioFocusGained
 
     private void txtSenhaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSenhaFocusGained
-        txtSenha.setText("");
+        if (new String(txtSenha.getPassword()).equals("senha1")) {
+            txtSenha.setText("");
+        }
     }//GEN-LAST:event_txtSenhaFocusGained
 
     private void txtUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusLost
@@ -308,15 +307,17 @@ public class TelaLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_txtUsuarioFocusLost
 
     private void txtSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSenhaFocusLost
-        txtSenha.setText("senha1");
+        if (new String(txtSenha.getPassword()).isEmpty()) {
+            txtSenha.setText("senha1");
+        }
     }//GEN-LAST:event_txtSenhaFocusLost
 
     private void btnentrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnentrarMouseEntered
-        btnentrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-para-a-direita-32 yellon.png")));
+        viewUtil.alterarIcone(btnentrar, "icons8-para-a-direita-32 yellon.png");
     }//GEN-LAST:event_btnentrarMouseEntered
 
     private void btnentrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnentrarMouseExited
-        btnentrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-para-a-direita-com-quadrado-32.png")));
+        viewUtil.alterarIcone(btnentrar, "icons8-para-a-direita-com-quadrado-32.png");
     }//GEN-LAST:event_btnentrarMouseExited
 
     private void btnentrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnentrarMouseClicked
@@ -328,11 +329,13 @@ public class TelaLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_btnsairMouseClicked
 
     private void btnsairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsairMouseEntered
-        btnsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-para-a-esquerda-32 yellon.png")));
+        viewUtil.alterarIcone(btnsair, "icons8-fechar-janela-32  amarelo.png");
+
     }//GEN-LAST:event_btnsairMouseEntered
 
     private void btnsairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsairMouseExited
-        btnsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-para-a-esquerda-32 red.png")));
+        viewUtil.alterarIcone(btnsair, "icons8-fechar-janela-32 red.png");
+
     }//GEN-LAST:event_btnsairMouseExited
 
     /**

@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.AbstractAction;
+import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
@@ -21,24 +22,31 @@ import javax.swing.KeyStroke;
 /**
  * @author Israel Gomes Da Silva
  * @created 05/03/2018
- * @lastModified 19/05/2018
+ * @lastModified 17/06/2018
  * @version 4.1.0
  *
  * @Function...
  */
 public class TelaCadastros extends javax.swing.JDialog {
 
+    ViewUtil viewUtil;
+    DefaultListModel listaVendedoresModel;
+
     public TelaCadastros(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        btnAlterarUsuarios.setEnabled(false);
-        btnCadastrarUsuarios.setEnabled(false);
+        btnAlterarUsuario.setEnabled(false);
+        btnSalvarUsuario.setEnabled(false);
         btnDeletarUsuarios.setEnabled(false);
         jcbAlterarDados.setEnabled(false);
         btnCadastrarVendedor.setEnabled(false);
         btnDeletarVendedor.setEnabled(false);
-        
+
+        viewUtil = new ViewUtil();
         setAcessibilidade();
+        listaVendedoresModel = new DefaultListModel();
+        jListVendedores.setModel(listaVendedoresModel);
+        preencherLista();
     }
 
     @SuppressWarnings("unchecked")
@@ -46,6 +54,8 @@ public class TelaCadastros extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel3 = new javax.swing.JPanel();
+        btnAlterarUsuarios1 = new javax.swing.JButton();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jpnUsuarios = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -54,19 +64,21 @@ public class TelaCadastros extends javax.swing.JDialog {
         txtSenha = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         txtConfirmarSenha = new javax.swing.JPasswordField();
-        btnCadastrarUsuarios = new javax.swing.JButton();
-        btnAlterarUsuarios = new javax.swing.JButton();
+        btnAlterarUsuario = new javax.swing.JButton();
         btnDeletarUsuarios = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jcbAlterarDados = new javax.swing.JCheckBox();
+        btnSalvarUsuario = new javax.swing.JButton();
         jpnVendedores = new javax.swing.JPanel();
         jpnUsuarios1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txtNomeVendedor = new javax.swing.JTextField();
         btnCadastrarVendedor = new javax.swing.JButton();
         btnDeletarVendedor = new javax.swing.JButton();
-        jbnUsuariosCadastros = new javax.swing.JButton();
-        jbnVendedoresCadastros = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListVendedores = new javax.swing.JList<>();
+        btnUsuario = new javax.swing.JButton();
+        btnVendedor = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -78,6 +90,21 @@ public class TelaCadastros extends javax.swing.JDialog {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        btnAlterarUsuarios1.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnAlterarUsuarios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
+        btnAlterarUsuarios1.setText("Alterar");
+        btnAlterarUsuarios1.setContentAreaFilled(false);
+        btnAlterarUsuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAlterarUsuarios1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAlterarUsuarios1.setRolloverEnabled(true);
+        btnAlterarUsuarios1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 amarelo.png"))); // NOI18N
+        btnAlterarUsuarios1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAlterarUsuarios1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarUsuarios1ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciar Usuarios/Vendedores");
@@ -110,27 +137,30 @@ public class TelaCadastros extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jLabel3.setText("Confirmar Senha");
 
-        btnCadastrarUsuarios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCadastrarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/disk.png"))); // NOI18N
-        btnCadastrarUsuarios.setText("Cadastrar");
-        btnCadastrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        btnAlterarUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnAlterarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
+        btnAlterarUsuario.setText("Alterar");
+        btnAlterarUsuario.setToolTipText("");
+        btnAlterarUsuario.setContentAreaFilled(false);
+        btnAlterarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAlterarUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAlterarUsuario.setRolloverEnabled(true);
+        btnAlterarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 amarelo.png"))); // NOI18N
+        btnAlterarUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAlterarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarUsuariosActionPerformed(evt);
-            }
-        });
-
-        btnAlterarUsuarios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAlterarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/refresh-29.png"))); // NOI18N
-        btnAlterarUsuarios.setText("Alterar");
-        btnAlterarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarUsuariosActionPerformed(evt);
+                btnAlterarUsuarioActionPerformed(evt);
             }
         });
 
         btnDeletarUsuarios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/delete.png"))); // NOI18N
+        btnDeletarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
         btnDeletarUsuarios.setText("Deletar");
+        btnDeletarUsuarios.setContentAreaFilled(false);
+        btnDeletarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeletarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDeletarUsuarios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+        btnDeletarUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDeletarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletarUsuariosActionPerformed(evt);
@@ -163,27 +193,34 @@ public class TelaCadastros extends javax.swing.JDialog {
                 .addGap(42, 42, 42))
         );
 
+        btnSalvarUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnSalvarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+        btnSalvarUsuario.setText("Cadastrar");
+        btnSalvarUsuario.setContentAreaFilled(false);
+        btnSalvarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvarUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSalvarUsuario.setRolloverEnabled(true);
+        btnSalvarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnSalvarUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSalvarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarUsuarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpnUsuariosLayout = new javax.swing.GroupLayout(jpnUsuarios);
         jpnUsuarios.setLayout(jpnUsuariosLayout);
         jpnUsuariosLayout.setHorizontalGroup(
             jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuariosLayout.createSequentialGroup()
-                .addGap(293, 293, 293)
-                .addComponent(btnDeletarUsuarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAlterarUsuarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCadastrarUsuarios)
-                .addGap(21, 21, 21))
-            .addGroup(jpnUsuariosLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpnUsuariosLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuariosLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpnUsuariosLayout.createSequentialGroup()
+                    .addGroup(jpnUsuariosLayout.createSequentialGroup()
                         .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel1))
@@ -191,9 +228,16 @@ public class TelaCadastros extends javax.swing.JDialog {
                         .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtConfirmarSenha, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(28, 28, 28)
+                .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jpnUsuariosLayout.createSequentialGroup()
+                        .addComponent(btnDeletarUsuarios)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnAlterarUsuario)
+                        .addGap(0, 0, 0)
+                        .addComponent(btnSalvarUsuario))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(56, 56, 56))
         );
         jpnUsuariosLayout.setVerticalGroup(
             jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,22 +247,28 @@ public class TelaCadastros extends javax.swing.JDialog {
                     .addGroup(jpnUsuariosLayout.createSequentialGroup()
                         .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22)
-                        .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpnUsuariosLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel2))
+                            .addGroup(jpnUsuariosLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpnUsuariosLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel3))
+                            .addGroup(jpnUsuariosLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(txtConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrarUsuarios)
-                    .addComponent(btnAlterarUsuarios)
-                    .addComponent(btnDeletarUsuarios))
-                .addGap(17, 17, 17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalvarUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAlterarUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnDeletarUsuarios, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
 
         jPanel2.add(jpnUsuarios, "Usuarios");
@@ -236,8 +286,13 @@ public class TelaCadastros extends javax.swing.JDialog {
         });
 
         btnCadastrarVendedor.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCadastrarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/disk.png"))); // NOI18N
+        btnCadastrarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
         btnCadastrarVendedor.setText("Cadastrar");
+        btnCadastrarVendedor.setContentAreaFilled(false);
+        btnCadastrarVendedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarVendedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrarVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnCadastrarVendedor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnCadastrarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarVendedorActionPerformed(evt);
@@ -245,44 +300,61 @@ public class TelaCadastros extends javax.swing.JDialog {
         });
 
         btnDeletarVendedor.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/delete.png"))); // NOI18N
+        btnDeletarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
         btnDeletarVendedor.setText("Deletar");
+        btnDeletarVendedor.setContentAreaFilled(false);
+        btnDeletarVendedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeletarVendedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDeletarVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+        btnDeletarVendedor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDeletarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletarVendedorActionPerformed(evt);
             }
         });
 
+        jListVendedores.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jListVendedores.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListVendedores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jListVendedoresValueChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jListVendedores);
+
         javax.swing.GroupLayout jpnUsuarios1Layout = new javax.swing.GroupLayout(jpnUsuarios1);
         jpnUsuarios1.setLayout(jpnUsuarios1Layout);
         jpnUsuarios1Layout.setHorizontalGroup(
             jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuarios1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
                         .addComponent(btnDeletarVendedor)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCadastrarVendedor)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuarios1Layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(btnCadastrarVendedor))
+                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNomeVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(152, 152, 152)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNomeVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jpnUsuarios1Layout.setVerticalGroup(
             jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNomeVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(109, 109, 109)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrarVendedor)
-                    .addComponent(btnDeletarVendedor))
+                .addGap(17, 17, 17)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNomeVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(64, 64, 64)
+                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCadastrarVendedor)
+                            .addComponent(btnDeletarVendedor))))
                 .addGap(17, 17, 17))
         );
 
@@ -292,36 +364,53 @@ public class TelaCadastros extends javax.swing.JDialog {
             jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 623, Short.MAX_VALUE)
             .addGroup(jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpnVendedoresLayout.createSequentialGroup()
-                    .addGap(0, 8, Short.MAX_VALUE)
-                    .addComponent(jpnUsuarios1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 8, Short.MAX_VALUE)))
+                .addComponent(jpnUsuarios1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnVendedoresLayout.setVerticalGroup(
             jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 284, Short.MAX_VALUE)
             .addGroup(jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jpnVendedoresLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jpnUsuarios1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jPanel2.add(jpnVendedores, "Vendedores");
 
-        jbnUsuariosCadastros.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jbnUsuariosCadastros.setText("Usuários");
-        jbnUsuariosCadastros.addActionListener(new java.awt.event.ActionListener() {
+        btnUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 azul.png"))); // NOI18N
+        btnUsuario.setText("Usuários");
+        buttonGroup1.add(btnUsuario);
+        btnUsuario.setContentAreaFilled(false);
+        btnUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnUsuario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 selecionado.png"))); // NOI18N
+        btnUsuario.setRolloverEnabled(true);
+        btnUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 cinza.png"))); // NOI18N
+        btnUsuario.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 azul.png"))); // NOI18N
+        btnUsuario.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 selecionado.png"))); // NOI18N
+        btnUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbnUsuariosCadastrosActionPerformed(evt);
+                btnUsuarioActionPerformed(evt);
             }
         });
 
-        jbnVendedoresCadastros.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jbnVendedoresCadastros.setText("Vendedores");
-        jbnVendedoresCadastros.addActionListener(new java.awt.event.ActionListener() {
+        btnVendedor.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 azul.png"))); // NOI18N
+        btnVendedor.setText("Vendedores");
+        buttonGroup1.add(btnVendedor);
+        btnVendedor.setContentAreaFilled(false);
+        btnVendedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVendedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVendedor.setRolloverEnabled(true);
+        btnVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 cinza.png"))); // NOI18N
+        btnVendedor.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 azul.png"))); // NOI18N
+        btnVendedor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 selecionado.png"))); // NOI18N
+        btnVendedor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbnVendedoresCadastrosActionPerformed(evt);
+                btnVendedorActionPerformed(evt);
             }
         });
 
@@ -330,25 +419,25 @@ public class TelaCadastros extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jbnUsuariosCadastros, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbnVendedoresCadastros))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnVendedor)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbnUsuariosCadastros, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                    .addComponent(jbnVendedoresCadastros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(btnUsuario)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnVendedor)
+                        .addGap(0, 0, 0)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -368,17 +457,6 @@ public class TelaCadastros extends javax.swing.JDialog {
             }
         });
     }
-    
-
-    private void jbnUsuariosCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnUsuariosCadastrosActionPerformed
-        CardLayout card2 = (CardLayout) jPanel2.getLayout();
-        card2.show(jPanel2, "Usuarios");
-    }//GEN-LAST:event_jbnUsuariosCadastrosActionPerformed
-
-    private void jbnVendedoresCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnVendedoresCadastrosActionPerformed
-        CardLayout card2 = (CardLayout) jPanel2.getLayout();
-        card2.show(jPanel2, "Vendedores");
-    }//GEN-LAST:event_jbnVendedoresCadastrosActionPerformed
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -388,19 +466,19 @@ public class TelaCadastros extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(null, "Digite um nome de Usuário!",
                         "Falha", JOptionPane.WARNING_MESSAGE);
                 jcbAlterarDados.setSelected(false);
-                btnCadastrarUsuarios.setEnabled(false);
+                btnSalvarUsuario.setEnabled(false);
                 return;
             }
             if (loginList.isEmpty()) {
                 txtSenha.requestFocus();
                 jcbAlterarDados.setSelected(false);
                 jcbAlterarDados.setEnabled(true);
-                btnAlterarUsuarios.setEnabled(false);
+                btnAlterarUsuario.setEnabled(false);
                 btnDeletarUsuarios.setEnabled(false);
-                btnCadastrarUsuarios.setEnabled(true);
+                btnSalvarUsuario.setEnabled(true);
             } else {
                 jcbAlterarDados.setEnabled(true);
-                btnAlterarUsuarios.setEnabled(true);
+                btnAlterarUsuario.setEnabled(true);
                 btnDeletarUsuarios.setEnabled(true);
                 if (loginList.get(0).getAlterarDados().equals("s")) {
                     jcbAlterarDados.setSelected(true);
@@ -411,49 +489,26 @@ public class TelaCadastros extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtUsuarioKeyPressed
 
-    private void btnCadastrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarUsuariosActionPerformed
-        String selecionado = "n";
-        String senha = new String(txtSenha.getPassword());
-        String senhaConfirma = new String(txtConfirmarSenha.getPassword());
-        if (senha.equals("") || senhaConfirma.equals("")) {
-            JOptionPane.showMessageDialog(null, "Digite uma Senha válida",
-                    "Falha", JOptionPane.WARNING_MESSAGE);
-        } else {
-            if (senha.equals(senhaConfirma)) {
-                if (jcbAlterarDados.isSelected()) {
-                    selecionado = "s";
-                } 
-                Login login = new Login(txtUsuario.getText(), Cripto.criptografar(senha), selecionado);
-                if (LoginDAO.salvar(login)) {
-                    JOptionPane.showMessageDialog(null, "Usuário Salvo com Sucesso!",
-                        "concluido", JOptionPane.WARNING_MESSAGE);
-                }
-                
-                jcbAlterarDados.setSelected(false);
-                btnCadastrarUsuarios.setEnabled(false);
-                txtUsuario.setText("");
-                txtSenha.setText("");
-                txtConfirmarSenha.setText("");
-            } else {
-                JOptionPane.showMessageDialog(null, "As Senhas São Diferentes!",
-                        "Falha", JOptionPane.WARNING_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_btnCadastrarUsuariosActionPerformed
-
     private void btnDeletarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarUsuariosActionPerformed
-        if (LoginDAO.excluir(txtUsuario.getText())) {
+        String usuario = txtUsuario.getText();
+
+        if (!isUsuarioCadastrado(usuario)) {
+            JOptionPane.showMessageDialog(null, "Usuário Não está cadastrado!",
+                    "Falha", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (LoginDAO.excluir(usuario)) {
             JOptionPane.showMessageDialog(null, "Usuário excluido com Sucesso!",
-                        "concluido", JOptionPane.WARNING_MESSAGE);
+                    "concluido", JOptionPane.WARNING_MESSAGE);
         }
         txtUsuario.setText("");
     }//GEN-LAST:event_btnDeletarUsuariosActionPerformed
 
-    private void btnAlterarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarUsuariosActionPerformed
+    private void btnAlterarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarUsuarioActionPerformed
         String selecionado = "n";
         String senha = Cripto.criptografar(new String(txtSenha.getPassword()));
         String senhaConfirma = Cripto.criptografar(new String(txtConfirmarSenha.getPassword()));
-        
+
         if (senha.equals("") || senhaConfirma.equals("")) {
             JOptionPane.showMessageDialog(null, "Digite uma Senha válida",
                     "Falha", JOptionPane.WARNING_MESSAGE);
@@ -461,25 +516,22 @@ public class TelaCadastros extends javax.swing.JDialog {
             if (senha.equals(senhaConfirma)) {
                 if (jcbAlterarDados.isSelected()) {
                     selecionado = "s";
-                } 
+                }
                 Login login = new Login(txtUsuario.getText(), senha, selecionado);
                 if (LoginDAO.atualizar(login)) {
-                     JOptionPane.showMessageDialog(null, "Usuário atualizado com Sucesso!",
-                        "concluido", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Usuário atualizado com Sucesso!",
+                            "concluido", JOptionPane.WARNING_MESSAGE);
                 }
-                jcbAlterarDados.setSelected(false);
-                btnCadastrarUsuarios.setEnabled(false);
                 txtUsuario.setText("");
                 txtSenha.setText("");
                 txtConfirmarSenha.setText("");
-                btnAlterarUsuarios.setEnabled(false);
-                btnDeletarUsuarios.setEnabled(false);
+                jcbAlterarDados.setSelected(false);
             } else {
                 JOptionPane.showMessageDialog(null, "As Senhas São Diferentes!",
                         "Falha", JOptionPane.WARNING_MESSAGE);
             }
         }
-    }//GEN-LAST:event_btnAlterarUsuariosActionPerformed
+    }//GEN-LAST:event_btnAlterarUsuarioActionPerformed
 
     private void txtNomeVendedorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeVendedorKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -507,24 +559,6 @@ public class TelaCadastros extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtNomeVendedorKeyPressed
 
-    private void btnCadastrarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarVendedorActionPerformed
-        if (txtNomeVendedor.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Digite um nome para Cadastrar",
-                    "Falha", JOptionPane.WARNING_MESSAGE);
-            btnDeletarVendedor.setEnabled(false);
-            btnCadastrarVendedor.setEnabled(false);
-            return;
-        }
-        
-        if (VendedorDAO.salvar(new Vendedor(txtNomeVendedor.getText().toUpperCase()))) {
-            JOptionPane.showMessageDialog(null, "Vendedor Salvo com sucesso!",
-                        "Concluído", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-        btnCadastrarVendedor.setEnabled(false);
-        txtNomeVendedor.setText("");
-    }//GEN-LAST:event_btnCadastrarVendedorActionPerformed
-
     private void btnDeletarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarVendedorActionPerformed
         if (txtNomeVendedor.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Digite um nome para deletar",
@@ -535,9 +569,11 @@ public class TelaCadastros extends javax.swing.JDialog {
         }
         if (VendedorDAO.excluir(txtNomeVendedor.getText())) {
             JOptionPane.showMessageDialog(null, "Vendedor Excluido com sucesso!",
-                        "Concluído", JOptionPane.INFORMATION_MESSAGE);
+                    "Concluído", JOptionPane.INFORMATION_MESSAGE);
+            preencherLista();
         }
-        
+
+        btnCadastrarVendedor.setEnabled(false);
         txtNomeVendedor.setText("");
         btnDeletarVendedor.setEnabled(false);
     }//GEN-LAST:event_btnDeletarVendedorActionPerformed
@@ -548,59 +584,173 @@ public class TelaCadastros extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtSenhaKeyPressed
 
+    private void btnCadastrarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarVendedorActionPerformed
+        if (txtNomeVendedor.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Digite um nome para Cadastrar",
+                    "Falha", JOptionPane.WARNING_MESSAGE);
+            btnDeletarVendedor.setEnabled(false);
+            btnCadastrarVendedor.setEnabled(false);
+            return;
+        }
+
+        if (VendedorDAO.salvar(new Vendedor(txtNomeVendedor.getText().toUpperCase()))) {
+            JOptionPane.showMessageDialog(null, "Vendedor Salvo com sucesso!",
+                    "Concluído", JOptionPane.INFORMATION_MESSAGE);
+            preencherLista();
+        }
+
+        btnCadastrarVendedor.setEnabled(false);
+        txtNomeVendedor.setText("");
+    }//GEN-LAST:event_btnCadastrarVendedorActionPerformed
+
+    private void btnAlterarUsuarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarUsuarios1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterarUsuarios1ActionPerformed
+
+    private void btnSalvarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarUsuarioActionPerformed
+        this.salvarUsuario();
+    }//GEN-LAST:event_btnSalvarUsuarioActionPerformed
+
+    private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
+        CardLayout card2 = (CardLayout) jPanel2.getLayout();
+        card2.show(jPanel2, "Usuarios");
+        viewUtil.alterarIcone(btnUsuario, "icons8-gerente-64 selecionado.png");
+        viewUtil.alterarIcone(btnVendedor, "icons8-funcionário-homem-64 azul.png");
+    }//GEN-LAST:event_btnUsuarioActionPerformed
+
+    private void btnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendedorActionPerformed
+        CardLayout card2 = (CardLayout) jPanel2.getLayout();
+        card2.show(jPanel2, "Vendedores");
+        viewUtil.alterarIcone(btnUsuario, "icons8-gerente-64 azul.png");
+        viewUtil.alterarIcone(btnVendedor, "icons8-funcionário-homem-64 selecionado.png");
+    }//GEN-LAST:event_btnVendedorActionPerformed
+
+    private void jListVendedoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListVendedoresValueChanged
+        txtNomeVendedor.setText((String) listaVendedoresModel.get(jListVendedores.getSelectedIndex()));
+    }//GEN-LAST:event_jListVendedoresValueChanged
+
+    private void preencherLista() {
+        listaVendedoresModel.removeAllElements();
+        List<Vendedor> listaVendedores = VendedorDAO.buscaTudo();
+        for (Vendedor vendedor : listaVendedores) {
+            listaVendedoresModel.addElement(vendedor.getNome());
+        }
+
+    }
+
+    private void salvarUsuario() {
+        String senha, confirmarSenha, usuario, alterarDados;
+
+        usuario = txtUsuario.getText();
+        senha = new String(txtSenha.getPassword());
+        confirmarSenha = new String(txtConfirmarSenha.getPassword());
+        alterarDados = jcbAlterarDados.isSelected() ? "s" : "n";
+
+        if (usuario.isEmpty() || senha.isEmpty() || confirmarSenha.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos!",
+                    "Falha", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        cadastrarUsuario(new Login(usuario, senha, alterarDados), confirmarSenha);
+
+    }
+
+    private boolean isUsuarioCadastrado(String usuario) {
+        List<Login> loginList;
+        loginList = LoginDAO.busca(usuario);
+        return !loginList.isEmpty();
+    }
+
+    private void cadastrarUsuario(Login usuario, String confirmarSenha) {
+
+        if (isSenhasIguais(usuario.getSenha(), confirmarSenha)) {
+
+            if (!isUsuarioCadastrado(usuario.getUsuario())) {
+
+                usuario.setSenha(Cripto.criptografar(usuario.getSenha()));
+                if (LoginDAO.salvar(usuario)) {
+                    JOptionPane.showMessageDialog(null, "Usuário Salvo com Sucesso!",
+                            "concluido", JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário já cadastrado!",
+                        "concluido", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    }
+
+    private boolean isSenhasIguais(String senha, String confirmaSenha) {
+        if (senha.equals(confirmaSenha)) {
+            return true;
+        }
+        JOptionPane.showMessageDialog(null, "As Senhas São Diferentes!",
+                "Falha", JOptionPane.WARNING_MESSAGE);
+        return false;
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+
+            /* Set the Nimbus look and feel */
+            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+             */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
                 }
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(TelaCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro!!", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro!!", JOptionPane.ERROR_MESSAGE);
-        }
-        //</editor-fold>
-        //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
 
-        //</editor-fold>
+            //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            TelaCadastros dialog = new TelaCadastros(new javax.swing.JFrame(), true);
-            dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                @Override
-                public void windowClosing(java.awt.event.WindowEvent e) {
-                    System.exit(0);
-                }
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> {
+                TelaCadastros dialog = new TelaCadastros(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             });
-            dialog.setVisible(true);
-        });
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Falha não tratada detectada!!!",
+                    "Falha", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAlterarUsuarios;
-    private javax.swing.JButton btnCadastrarUsuarios;
+    private javax.swing.JButton btnAlterarUsuario;
+    private javax.swing.JButton btnAlterarUsuarios1;
     private javax.swing.JButton btnCadastrarVendedor;
     private javax.swing.JButton btnDeletarUsuarios;
     private javax.swing.JButton btnDeletarVendedor;
+    private javax.swing.JButton btnSalvarUsuario;
+    private javax.swing.JButton btnUsuario;
+    private javax.swing.JButton btnVendedor;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JList<String> jListVendedores;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton jbnUsuariosCadastros;
-    private javax.swing.JButton jbnVendedoresCadastros;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JCheckBox jcbAlterarDados;
     private javax.swing.JPanel jpnUsuarios;
     private javax.swing.JPanel jpnUsuarios1;

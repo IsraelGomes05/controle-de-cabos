@@ -65,7 +65,7 @@ public class LoginDAO {
         } finally {
             ConnectionFactory.close(resultSet);
         }
-        return null;
+        return loginList;
     }
 
     public static boolean excluir(String usuario) {

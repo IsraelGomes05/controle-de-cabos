@@ -89,9 +89,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             Calendar data = Calendar.getInstance();
             dataHoje = formato.format(data.getTime());
             txtDataAtual.setText(dataHoje);
-
+            
+            jLabel12.setText("<html><b>Usuário:</b><html> " + usuario.getUsuario());
+            lblData.setText(dataHoje);
             this.alterarIcone();
-            this.setTitle("Controle de Cabos v2.5.7  Usuário: " + usuario.getUsuario());
         } catch (Exception th) {
             JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada",
                     "Falha", JOptionPane.ERROR_MESSAGE);
@@ -104,6 +105,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -130,10 +133,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbTabelaCabos = new javax.swing.JTable();
-        btnSalvarSaidaCabos = new javax.swing.JButton();
-        btnExcluirCabos = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
         btnLimparCabos = new javax.swing.JButton();
         btnVerificarPontasCabos = new javax.swing.JButton();
+        btnExcluirCabos = new javax.swing.JButton();
+        btnSalvarSaidaCabos = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
         jpnRelatorios = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jbnRelatorios = new javax.swing.JButton();
@@ -190,6 +195,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jRadioButton2 = new javax.swing.JRadioButton();
         btnPontasRelatorios = new javax.swing.JButton();
         btnCabosRelatorios = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        lblData = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAjustes = new javax.swing.JMenu();
         jmUsuariosBarraMenu = new javax.swing.JMenuItem();
@@ -204,6 +212,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel18.setText("jLabel18");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(jLabel18)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jLabel1.setText("Software de Controle de Cabos v2.5.7");
 
@@ -214,13 +241,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(469, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jLabel1)))
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,7 +256,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(68, 68, 68)
                 .addComponent(jLabel1)
-                .addGap(213, 213, 213))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         btnRelatoriosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/Botao_relatorios.png"))); // NOI18N
@@ -274,14 +301,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(btnRelatoriosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCabosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 772, Short.MAX_VALUE)
+                .addGap(750, 750, 750)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(txtDataAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDataAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAlterar)))
-                .addGap(0, 0, 0))
+                        .addComponent(btnAlterar))
+                    .addComponent(jLabel4))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,16 +320,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(txtDataAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnRelatoriosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCabosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addComponent(btnCabosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
         );
 
+        jDesktopPane1.setLayer(jPanel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jPanel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -311,10 +337,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(4, 4, 4)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,8 +350,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.add(jDesktopPane1, "card2");
@@ -371,10 +400,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("Bobina");
 
         btnAdicionarCabos.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        btnAdicionarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-40.png"))); // NOI18N
-        btnAdicionarCabos.setText("Adicionar");
+        btnAdicionarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matemática-50 verde.png"))); // NOI18N
+        btnAdicionarCabos.setBorderPainted(false);
+        btnAdicionarCabos.setContentAreaFilled(false);
+        btnAdicionarCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdicionarCabos.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         btnAdicionarCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAdicionarCabos.setRolloverEnabled(true);
+        btnAdicionarCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matemática-50 azul.png"))); // NOI18N
         btnAdicionarCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnAdicionarCabos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -417,70 +450,57 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(btnRelatoriosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnCabosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                    .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(0, 228, Short.MAX_VALUE))
-                    .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtQtdCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                    .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(txtQtdCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtBubinaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jcbVendedoresCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addComponent(btnAdicionarCabos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAdicionarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(45, 45, 45)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addComponent(btnRelatoriosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1))
+                    .addComponent(btnCabosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdicionarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(btnRelatoriosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1))
-                            .addComponent(btnCabosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jLabel9))
-                                        .addGap(17, 17, 17))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtQtdCabos, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtBubinaCabos, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jcbVendedoresCabos, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(btnAdicionarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jcbVendedoresCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtBubinaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtQtdCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(3, 3, 3)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jtbTabelaCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
@@ -500,6 +520,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtbTabelaCabos.setColumnSelectionAllowed(true);
         jtbTabelaCabos.setGridColor(new java.awt.Color(255, 255, 255));
         jtbTabelaCabos.setName(""); // NOI18N
         jtbTabelaCabos.setSelectionBackground(new java.awt.Color(170, 215, 135));
@@ -526,32 +547,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jtbTabelaCabos.getColumnModel().getColumn(6).setMinWidth(90);
             jtbTabelaCabos.getColumnModel().getColumn(6).setPreferredWidth(90);
             jtbTabelaCabos.getColumnModel().getColumn(6).setMaxWidth(120);
-            jtbTabelaCabos.getColumnModel().getColumn(7).setMinWidth(10);
+            jtbTabelaCabos.getColumnModel().getColumn(7).setMinWidth(20);
             jtbTabelaCabos.getColumnModel().getColumn(7).setPreferredWidth(10);
-            jtbTabelaCabos.getColumnModel().getColumn(7).setMaxWidth(15);
+            jtbTabelaCabos.getColumnModel().getColumn(7).setMaxWidth(80);
         }
 
-        btnSalvarSaidaCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnSalvarSaidaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/disk.png"))); // NOI18N
-        btnSalvarSaidaCabos.setText("Salvar");
-        btnSalvarSaidaCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarSaidaCabosActionPerformed(evt);
-            }
-        });
-
-        btnExcluirCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnExcluirCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/delete.png"))); // NOI18N
-        btnExcluirCabos.setText("Excluir  Item");
-        btnExcluirCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirCabosActionPerformed(evt);
-            }
-        });
+        jPanel10.setBackground(new java.awt.Color(153, 153, 153));
 
         btnLimparCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnLimparCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/Edit-clear.png"))); // NOI18N
+        btnLimparCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 azul.png"))); // NOI18N
         btnLimparCabos.setText("Limpar");
+        btnLimparCabos.setContentAreaFilled(false);
+        btnLimparCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimparCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLimparCabos.setRolloverEnabled(true);
+        btnLimparCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 red.png"))); // NOI18N
+        btnLimparCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnLimparCabos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparCabosActionPerformed(evt);
@@ -559,13 +570,87 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btnVerificarPontasCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnVerificarPontasCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/help.png"))); // NOI18N
+        btnVerificarPontasCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul.png"))); // NOI18N
         btnVerificarPontasCabos.setText("Verificar Ponta");
+        btnVerificarPontasCabos.setContentAreaFilled(false);
+        btnVerificarPontasCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVerificarPontasCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnVerificarPontasCabos.setRolloverEnabled(true);
+        btnVerificarPontasCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul claro.png"))); // NOI18N
+        btnVerificarPontasCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnVerificarPontasCabos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerificarPontasCabosActionPerformed(evt);
             }
         });
+
+        btnExcluirCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnExcluirCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 azul.png"))); // NOI18N
+        btnExcluirCabos.setText("Excluir  Item");
+        btnExcluirCabos.setContentAreaFilled(false);
+        btnExcluirCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnExcluirCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExcluirCabos.setRolloverEnabled(true);
+        btnExcluirCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 red.png"))); // NOI18N
+        btnExcluirCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnExcluirCabos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirCabosActionPerformed(evt);
+            }
+        });
+
+        btnSalvarSaidaCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnSalvarSaidaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+        btnSalvarSaidaCabos.setText("Salvar");
+        btnSalvarSaidaCabos.setContentAreaFilled(false);
+        btnSalvarSaidaCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalvarSaidaCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnSalvarSaidaCabos.setRolloverEnabled(true);
+        btnSalvarSaidaCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnSalvarSaidaCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnSalvarSaidaCabos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarSaidaCabosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnLimparCabos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVerificarPontasCabos)
+                .addGap(238, 238, 238)
+                .addComponent(btnExcluirCabos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalvarSaidaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnExcluirCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSalvarSaidaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnLimparCabos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVerificarPontasCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jpnCabosLayout = new javax.swing.GroupLayout(jpnCabos);
         jpnCabos.setLayout(jpnCabosLayout);
@@ -577,30 +662,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnCabosLayout.createSequentialGroup()
-                        .addComponent(btnLimparCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVerificarPontasCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExcluirCabos)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalvarSaidaCabos)))
+                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jpnCabosLayout.setVerticalGroup(
             jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnCabosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSalvarSaidaCabos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnLimparCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnVerificarPontasCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnExcluirCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel2.add(jpnCabos, "jpnCabos");
@@ -632,11 +710,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -759,7 +837,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnImprimirRelatoriosPontas))
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 395, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 444, Short.MAX_VALUE)
                 .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
                     .addComponent(txtTotalPontasRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -782,7 +860,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnImprimirRelatoriosPontas)
                     .addComponent(btnImprimirGeralpontas))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
         );
 
         jPanel7.add(jpnPontasRelatorios, "Pontas");
@@ -940,12 +1019,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel17))
                 .addGap(18, 18, 18)
                 .addComponent(btnBuscarRelarorioSaidas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 396, Short.MAX_VALUE)
                 .addComponent(btnImprimirRelatoriosSaidas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDeletarRelatorioSaidas)
                 .addContainerGap())
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1011, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE)
         );
         jpnSaidasDataLayout.setVerticalGroup(
             jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -965,7 +1044,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addComponent(btnImprimirRelatoriosSaidas)
                             .addComponent(btnDeletarRelatorioSaidas))
                         .addGap(30, 30, 30)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -1099,7 +1178,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnImprimir)))
                 .addContainerGap())
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1011, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE)
         );
         jpnBobinasLayout.setVerticalGroup(
             jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1118,8 +1197,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel7.add(jpnBobinas, "Bobinas");
@@ -1204,7 +1283,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jpnCabosRelatorios.setLayout(jpnCabosRelatoriosLayout);
         jpnCabosRelatoriosLayout.setHorizontalGroup(
             jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1011, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE)
             .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1242,7 +1321,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addComponent(jRadioButton1)
                             .addComponent(jRadioButton2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
 
         jPanel7.add(jpnCabosRelatorios, "Cabos");
@@ -1268,20 +1348,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBobinasRelatorios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnPontasRelatorios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCabosRelatorios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(38, 38, 38)
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 485, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(btnBobinasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1289,7 +1369,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(btnPontasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(btnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
+        jLabel12.setText("Usoário");
+
+        lblData.setText("Data");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblData)
+                .addGap(22, 22, 22))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblData)
+                    .addComponent(jLabel12))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpnRelatoriosLayout = new javax.swing.GroupLayout(jpnRelatorios);
@@ -1300,7 +1406,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jpnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpnRelatoriosLayout.setVerticalGroup(
@@ -1309,12 +1416,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel2.add(jpnRelatorios, "jpnRelatorios");
 
-        jmAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/cog.png"))); // NOI18N
+        jmAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configurações-20.png"))); // NOI18N
         jmAjustes.setText("Ajustes");
 
         jmUsuariosBarraMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
@@ -1328,7 +1437,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jmAjustes);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icone_cabo.png"))); // NOI18N
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-20.png"))); // NOI18N
         jMenu3.setText("Cabos");
 
         jmGerenciarCabos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
@@ -1342,7 +1451,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jmInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/information.png"))); // NOI18N
+        jmInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informações-20.png"))); // NOI18N
         jmInformacoes.setText("Informações");
         jmInformacoes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1361,7 +1470,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getAccessibleContext().setAccessibleParent(jPanel2);
@@ -2177,11 +2286,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2193,6 +2304,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2200,6 +2314,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -2230,6 +2345,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable jtbPontas;
     private javax.swing.JTable jtbTabelaCabos;
     private javax.swing.JTable jtbTabelaRelatorioSaidas;
+    private javax.swing.JLabel lblData;
     private javax.swing.JFormattedTextField txtBubinaCabos;
     private javax.swing.JTextField txtCodigoCabos;
     private javax.swing.JTextField txtCodigoRelatorioCabo;
