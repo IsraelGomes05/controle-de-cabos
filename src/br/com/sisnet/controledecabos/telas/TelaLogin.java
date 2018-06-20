@@ -58,16 +58,13 @@ public class TelaLogin extends javax.swing.JDialog {
         lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32 branco.png"))); // NOI18N
 
         txtUsuario.setBackground(new java.awt.Color(37, 40, 39));
-        txtUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setText("Usuário");
         txtUsuario.setBorder(null);
         txtUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtUsuarioFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtUsuarioFocusLost(evt);
             }
         });
         txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -82,7 +79,7 @@ public class TelaLogin extends javax.swing.JDialog {
         lblSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-senha-32 branco.png"))); // NOI18N
 
         txtSenha.setBackground(new java.awt.Color(37, 40, 39));
-        txtSenha.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        txtSenha.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setText("senha1");
         txtSenha.setBorder(null);
@@ -90,9 +87,6 @@ public class TelaLogin extends javax.swing.JDialog {
         txtSenha.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtSenhaFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtSenhaFocusLost(evt);
             }
         });
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -180,7 +174,7 @@ public class TelaLogin extends javax.swing.JDialog {
 
         lblTentativas.setVisible(false);
 
-        jPanel2.setBackground(new java.awt.Color(15, 69, 80));
+        jPanel2.setBackground(new java.awt.Color(44, 62, 80));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/resized_Logo Sistema.png"))); // NOI18N
 
@@ -194,7 +188,7 @@ public class TelaLogin extends javax.swing.JDialog {
 
         btnsair.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         btnsair.setForeground(new java.awt.Color(255, 255, 255));
-        btnsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-fechar-janela-32 red.png"))); // NOI18N
+        btnsair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32.png"))); // NOI18N
         btnsair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnsair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -300,18 +294,6 @@ public class TelaLogin extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtSenhaFocusGained
 
-    private void txtUsuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUsuarioFocusLost
-        if (txtUsuario.getText().isEmpty()) {
-            txtUsuario.setText("Usuário");
-        }
-    }//GEN-LAST:event_txtUsuarioFocusLost
-
-    private void txtSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSenhaFocusLost
-        if (new String(txtSenha.getPassword()).isEmpty()) {
-            txtSenha.setText("senha1");
-        }
-    }//GEN-LAST:event_txtSenhaFocusLost
-
     private void btnentrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnentrarMouseEntered
         viewUtil.alterarIcone(btnentrar, "icons8-para-a-direita-32 yellon.png");
     }//GEN-LAST:event_btnentrarMouseEntered
@@ -329,12 +311,12 @@ public class TelaLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_btnsairMouseClicked
 
     private void btnsairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsairMouseEntered
-        viewUtil.alterarIcone(btnsair, "icons8-fechar-janela-32  amarelo.png");
+        viewUtil.alterarIcone(btnsair, "icons8-excluir-32 amarelo.png");
 
     }//GEN-LAST:event_btnsairMouseEntered
 
     private void btnsairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsairMouseExited
-        viewUtil.alterarIcone(btnsair, "icons8-fechar-janela-32 red.png");
+        viewUtil.alterarIcone(btnsair, "icons8-excluir-32.png");
 
     }//GEN-LAST:event_btnsairMouseExited
 

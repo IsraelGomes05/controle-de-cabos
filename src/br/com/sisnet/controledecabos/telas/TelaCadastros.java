@@ -674,7 +674,7 @@ public class TelaCadastros extends javax.swing.JDialog {
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário já cadastrado!",
-                        "concluido", JOptionPane.WARNING_MESSAGE);
+                        "Falha", JOptionPane.WARNING_MESSAGE);
             }
         }
     }

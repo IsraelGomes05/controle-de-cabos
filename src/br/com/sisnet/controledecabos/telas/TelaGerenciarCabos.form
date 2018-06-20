@@ -398,10 +398,10 @@
                       <Component id="jScrollPane1" min="-2" pref="191" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnAtualizarBobinas" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="btnDeletarBobinas" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnCadastrarBobina" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAtualizarBobinas" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                               <Component id="btnGerarBobinas" min="-2" max="-2" attributes="0"/>
@@ -839,9 +839,9 @@
                           <Component id="jcbSubtrairBobinaPonta" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="btnAtualizarPonta" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Component id="btnDeletarPonta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAtualizarPonta" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="btnCadastrarPonta" min="-2" max="-2" attributes="0"/>
                           </Group>

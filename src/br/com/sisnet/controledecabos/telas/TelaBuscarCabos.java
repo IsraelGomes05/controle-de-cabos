@@ -65,7 +65,7 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
             }
         });
 
-        txtParametrosBusca.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        txtParametrosBusca.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtParametrosBusca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtParametrosBuscaKeyPressed(evt);
@@ -73,15 +73,17 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
         });
 
         btnBuscarBuscarCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnBuscarBuscarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/magnifier.png"))); // NOI18N
-        btnBuscarBuscarCabos.setText("Buscar");
+        btnBuscarBuscarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
+        btnBuscarBuscarCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarBuscarCabos.setRolloverEnabled(true);
+        btnBuscarBuscarCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
         btnBuscarBuscarCabos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarBuscarCabosActionPerformed(evt);
             }
         });
 
-        jtbBusca.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jtbBusca.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jtbBusca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -122,8 +124,8 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
             jtbBusca.getColumnModel().getColumn(4).setMaxWidth(90);
         }
 
-        btnInserir.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/add.png"))); // NOI18N
+        btnInserir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-login-arredondado-à-direita-32.png"))); // NOI18N
         btnInserir.setText("Inserir");
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +138,7 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
             }
         });
 
-        btnbuscarPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnbuscarPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnbuscarPontas.setText("Buscar Pontas");
         btnbuscarPontas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,29 +150,30 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtParametrosBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnBuscarBuscarCabos)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnbuscarPontas)
-                        .addGap(166, 166, 166))
+                        .addGap(0, 0, 0)
+                        .addComponent(btnBuscarBuscarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnbuscarPontas))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnInserir)
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnInserir)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtParametrosBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarBuscarCabos)
-                    .addComponent(btnbuscarPontas))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnbuscarPontas)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnBuscarBuscarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtParametrosBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
