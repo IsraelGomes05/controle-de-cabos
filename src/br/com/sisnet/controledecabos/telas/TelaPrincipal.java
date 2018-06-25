@@ -1,7 +1,3 @@
-/**
- * @created  01/03/2018
- * @lastModified 09/06/2018
- */
 package br.com.sisnet.controledecabos.telas;
 
 import br.com.sisnet.controledecabos.classes.Cabo;
@@ -31,7 +27,10 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * Classe que define as telas: principal e relatórios.
+ * Função<br>.
+ *
+ * created 01/03/2018<br>
+ * lastModified 09/06/2018
  *
  * @author Israel Gomes
  * @version 5.2
@@ -82,7 +81,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tabelaRelatorioSaidas = (DefaultTableModel) jtbTabelaRelatorioSaidas.getModel();
             tabelaRelatorioBobinas = (DefaultTableModel) jtbBobinasRelatorios.getModel();
             tabelaRelatorioCabos = (DefaultTableModel) jtbCabosRelatorios.getModel();
-
             //Obtendo os dados dos Vendedores
             this.preencherJComboBoxVendedores(jcbVendedoresCabos, "SELECIONE");
 
@@ -101,9 +99,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             txtDataFinallRelatorioSaidas.setText(dataHoje);
 
             setExtendedState(MAXIMIZED_BOTH);
-            this.alterarIcone();
+
         } catch (Exception th) {
-            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + th.getMessage(),
+            String erro = "";
+            for (Object object : th.getStackTrace()) {
+                erro += object + "\n";
+            }
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + th.getMessage() + erro,
                     "Falha", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -169,8 +171,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnImprimirGeralpontas = new javax.swing.JButton();
         jpnSaidasData = new javax.swing.JPanel();
         btnBuscarRelarorioSaidas = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jtbTabelaRelatorioSaidas = new javax.swing.JTable();
         btnDeletarRelatorioSaidas = new javax.swing.JButton();
         jcbVendedorRelatorio = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
@@ -180,6 +180,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtDataFinallRelatorioSaidas = new javax.swing.JFormattedTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtbTabelaRelatorioSaidas = new javax.swing.JTable();
         jpnBobinas = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -216,1436 +218,1453 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jmInformacoes = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Controle de Cabos v2.5.7");
-        setMinimumSize(new java.awt.Dimension(1231, 615));
+        setTitle("Controle de Cabos v3.0.0");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(
+            "/br/com/sisnet/controledecabos/telas/imagens/mini_resized_Logo Sistema.png")));
+setMinimumSize(new java.awt.Dimension(1231, 700));
 
-        jPanel2.setLayout(new java.awt.CardLayout());
+jPanel2.setLayout(new java.awt.CardLayout());
 
-        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblUsuarioTelaInicial.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblUsuarioTelaInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
-        lblUsuarioTelaInicial.setText("Usuário");
+lblUsuarioTelaInicial.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+lblUsuarioTelaInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuario-de-genero-neutro-32.png"))); // NOI18N
+lblUsuarioTelaInicial.setText("Usuário");
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblUsuarioTelaInicial)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(lblUsuarioTelaInicial)
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
+javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+jPanel9.setLayout(jPanel9Layout);
+jPanel9Layout.setHorizontalGroup(
+    jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    .addGroup(jPanel9Layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(lblUsuarioTelaInicial)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel9Layout.setVerticalGroup(
+        jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel9Layout.createSequentialGroup()
+            .addGap(17, 17, 17)
+            .addComponent(lblUsuarioTelaInicial)
+            .addContainerGap(17, Short.MAX_VALUE))
+    );
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel1.setText("Software de Controle de Cabos v2.5.7");
+    jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jLabel1.setText("Software de Controle de Cabos v3.0.0");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/logo.png"))); // NOI18N
+    jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/logo.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(114, 114, 114)
+    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+    jPanel3.setLayout(jPanel3Layout);
+    jPanel3Layout.setHorizontalGroup(
+        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel3Layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jLabel2)
-                .addGap(68, 68, 68)
-                .addComponent(jLabel1)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(17, 17, 17)
+                    .addComponent(jLabel1)))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel3Layout.setVerticalGroup(
+        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGap(114, 114, 114)
+            .addComponent(jLabel2)
+            .addGap(68, 68, 68)
+            .addComponent(jLabel1)
+            .addContainerGap(88, Short.MAX_VALUE))
+    );
 
-        jPanel4.setBackground(new java.awt.Color(44, 62, 80));
+    jPanel4.setBackground(new java.awt.Color(44, 62, 80));
 
-        btnRelatoriosAreaDeTrab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnRelatoriosAreaDeTrab.setForeground(new java.awt.Color(255, 255, 255));
-        btnRelatoriosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
-        btnRelatoriosAreaDeTrab.setText("Relatórios");
-        btnRelatoriosAreaDeTrab.setToolTipText("");
-        btnRelatoriosAreaDeTrab.setContentAreaFilled(false);
-        btnRelatoriosAreaDeTrab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRelatoriosAreaDeTrab.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnRelatoriosAreaDeTrab.setRolloverEnabled(true);
-        btnRelatoriosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
-        btnRelatoriosAreaDeTrab.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnRelatoriosAreaDeTrab.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRelatoriosAreaDeTrabActionPerformed(evt);
-            }
-        });
-
-        btnCabosAreaDeTrab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnCabosAreaDeTrab.setForeground(new java.awt.Color(255, 255, 255));
-        btnCabosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
-        btnCabosAreaDeTrab.setText("Cabos");
-        btnCabosAreaDeTrab.setContentAreaFilled(false);
-        btnCabosAreaDeTrab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCabosAreaDeTrab.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCabosAreaDeTrab.setRolloverEnabled(true);
-        btnCabosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
-        btnCabosAreaDeTrab.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnCabosAreaDeTrab.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCabosAreaDeTrabActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Data Atual");
-
-        txtDataAtual.setForeground(new java.awt.Color(153, 51, 0));
-        try {
-            txtDataAtual.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
+    btnRelatoriosAreaDeTrab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+    btnRelatoriosAreaDeTrab.setForeground(new java.awt.Color(255, 255, 255));
+    btnRelatoriosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
+    btnRelatoriosAreaDeTrab.setText("Relatórios");
+    btnRelatoriosAreaDeTrab.setToolTipText("");
+    btnRelatoriosAreaDeTrab.setContentAreaFilled(false);
+    btnRelatoriosAreaDeTrab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnRelatoriosAreaDeTrab.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnRelatoriosAreaDeTrab.setRolloverEnabled(true);
+    btnRelatoriosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
+    btnRelatoriosAreaDeTrab.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnRelatoriosAreaDeTrab.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnRelatoriosAreaDeTrabActionPerformed(evt);
         }
-        txtDataAtual.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+    });
 
-        btnAlterar.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAlterar.setText("Alterar");
-        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarActionPerformed(evt);
-            }
-        });
+    btnCabosAreaDeTrab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+    btnCabosAreaDeTrab.setForeground(new java.awt.Color(255, 255, 255));
+    btnCabosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
+    btnCabosAreaDeTrab.setText("Cabos");
+    btnCabosAreaDeTrab.setContentAreaFilled(false);
+    btnCabosAreaDeTrab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnCabosAreaDeTrab.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnCabosAreaDeTrab.setRolloverEnabled(true);
+    btnCabosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
+    btnCabosAreaDeTrab.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnCabosAreaDeTrab.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnCabosAreaDeTrabActionPerformed(evt);
+        }
+    });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRelatoriosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCabosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 829, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(txtDataAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAlterar))
-                    .addComponent(jLabel4))
-                .addGap(0, 0, 0))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDataAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCabosAreaDeTrab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRelatoriosAreaDeTrab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+    jLabel4.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel4.setText("Data Atual");
 
-        jDesktopPane1.setLayer(jPanel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jPanel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    txtDataAtual.setForeground(new java.awt.Color(153, 51, 0));
+    try {
+        txtDataAtual.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+    } catch (java.text.ParseException ex) {
+        ex.printStackTrace();
+    }
+    txtDataAtual.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(3, 3, 3)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+    btnAlterar.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnAlterar.setText("Alterar");
+    btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnAlterarActionPerformed(evt);
+        }
+    });
 
-        jPanel2.add(jDesktopPane1, "card2");
+    javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+    jPanel4.setLayout(jPanel4Layout);
+    jPanel4Layout.setHorizontalGroup(
+        jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel4Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(btnRelatoriosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(btnCabosAreaDeTrab, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 829, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addComponent(txtDataAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnAlterar))
+                .addComponent(jLabel4))
+            .addGap(0, 0, 0))
+    );
+    jPanel4Layout.setVerticalGroup(
+        jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGap(40, 40, 40)
+            .addComponent(jLabel4)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(txtDataAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGroup(jPanel4Layout.createSequentialGroup()
+            .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(btnCabosAreaDeTrab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRelatoriosAreaDeTrab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap(21, Short.MAX_VALUE))
+    );
 
-        jpnCabos.setBackground(new java.awt.Color(255, 255, 255));
+    jDesktopPane1.setLayer(jPanel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    jDesktopPane1.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+    jDesktopPane1.setLayer(jPanel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jPanel5.setBackground(new java.awt.Color(44, 62, 80));
+    javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+    jDesktopPane1.setLayout(jDesktopPane1Layout);
+    jDesktopPane1Layout.setHorizontalGroup(
+        jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jDesktopPane1Layout.createSequentialGroup()
+            .addGap(4, 4, 4)
+            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    jDesktopPane1Layout.setVerticalGroup(
+        jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(3, 3, 3)
+            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
 
-        btnRelatoriosCabos.setBackground(new java.awt.Color(204, 204, 204));
-        btnRelatoriosCabos.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        btnRelatoriosCabos.setForeground(new java.awt.Color(255, 255, 255));
-        btnRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
-        btnRelatoriosCabos.setText("Relatórios");
-        btnRelatoriosCabos.setContentAreaFilled(false);
-        btnRelatoriosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRelatoriosCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnRelatoriosCabos.setRolloverEnabled(true);
-        btnRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
-        btnRelatoriosCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnRelatoriosCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRelatoriosCabosActionPerformed(evt);
-            }
-        });
+    jPanel2.add(jDesktopPane1, "card2");
 
-        btnCabosCabos.setBackground(new java.awt.Color(204, 204, 204));
-        btnCabosCabos.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        btnCabosCabos.setForeground(new java.awt.Color(255, 255, 255));
-        btnCabosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
-        btnCabosCabos.setText("Cabos");
-        btnCabosCabos.setContentAreaFilled(false);
-        btnCabosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCabosCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCabosCabos.setRolloverEnabled(true);
-        btnCabosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
-        btnCabosCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    jpnCabos.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtDescricaoCabos.setEditable(false);
-        txtDescricaoCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        txtDescricaoCabos.setForeground(new java.awt.Color(51, 51, 51));
+    jPanel5.setBackground(new java.awt.Color(44, 62, 80));
 
-        txtCodigoCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        txtCodigoCabos.setForeground(new java.awt.Color(51, 51, 51));
-        txtCodigoCabos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCodigoCabosKeyPressed(evt);
-            }
-        });
+    btnRelatoriosCabos.setBackground(new java.awt.Color(204, 204, 204));
+    btnRelatoriosCabos.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+    btnRelatoriosCabos.setForeground(new java.awt.Color(255, 255, 255));
+    btnRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
+    btnRelatoriosCabos.setText("Relatórios");
+    btnRelatoriosCabos.setContentAreaFilled(false);
+    btnRelatoriosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnRelatoriosCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnRelatoriosCabos.setRolloverEnabled(true);
+    btnRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
+    btnRelatoriosCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnRelatoriosCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnRelatoriosCabosActionPerformed(evt);
+        }
+    });
 
-        jcbVendedoresCabos.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jcbVendedoresCabos.setForeground(new java.awt.Color(51, 51, 51));
-        jcbVendedoresCabos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
-        jcbVendedoresCabos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jcbVendedoresCabosKeyPressed(evt);
-            }
-        });
+    btnCabosCabos.setBackground(new java.awt.Color(204, 204, 204));
+    btnCabosCabos.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+    btnCabosCabos.setForeground(new java.awt.Color(255, 255, 255));
+    btnCabosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
+    btnCabosCabos.setText("Cabos");
+    btnCabosCabos.setContentAreaFilled(false);
+    btnCabosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnCabosCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnCabosCabos.setRolloverEnabled(true);
+    btnCabosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
+    btnCabosCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Código");
+    txtDescricaoCabos.setEditable(false);
+    txtDescricaoCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    txtDescricaoCabos.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Bobina");
+    txtCodigoCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    txtCodigoCabos.setForeground(new java.awt.Color(51, 51, 51));
+    txtCodigoCabos.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtCodigoCabosKeyPressed(evt);
+        }
+    });
 
-        btnAdicionarCabos.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        btnAdicionarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
-        btnAdicionarCabos.setBorderPainted(false);
-        btnAdicionarCabos.setContentAreaFilled(false);
-        btnAdicionarCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAdicionarCabos.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        btnAdicionarCabos.setRolloverEnabled(true);
-        btnAdicionarCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matemática-50 verde.png"))); // NOI18N
-        btnAdicionarCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdicionarCabosActionPerformed(evt);
-            }
-        });
+    jcbVendedoresCabos.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+    jcbVendedoresCabos.setForeground(new java.awt.Color(51, 51, 51));
+    jcbVendedoresCabos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
+    jcbVendedoresCabos.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            jcbVendedoresCabosKeyPressed(evt);
+        }
+    });
 
-        txtBubinaCabos.setEditable(false);
-        txtBubinaCabos.setForeground(new java.awt.Color(51, 51, 51));
-        txtBubinaCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        txtBubinaCabos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBubinaCabosKeyPressed(evt);
-            }
-        });
+    jLabel3.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+    jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel3.setText("Código");
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Qtd");
+    jLabel6.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+    jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel6.setText("Bobina");
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Vendedor(a)");
+    btnAdicionarCabos.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+    btnAdicionarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+    btnAdicionarCabos.setBorderPainted(false);
+    btnAdicionarCabos.setContentAreaFilled(false);
+    btnAdicionarCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnAdicionarCabos.setFocusCycleRoot(true);
+    btnAdicionarCabos.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+    btnAdicionarCabos.setRolloverEnabled(true);
+    btnAdicionarCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matemática-50 verde.png"))); // NOI18N
+    btnAdicionarCabos.addFocusListener(new java.awt.event.FocusAdapter() {
+        public void focusGained(java.awt.event.FocusEvent evt) {
+            btnAdicionarCabosFocusGained(evt);
+        }
+        public void focusLost(java.awt.event.FocusEvent evt) {
+            btnAdicionarCabosFocusLost(evt);
+        }
+    });
+    btnAdicionarCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnAdicionarCabosActionPerformed(evt);
+        }
+    });
+    btnAdicionarCabos.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyTyped(java.awt.event.KeyEvent evt) {
+            btnAdicionarCabosKeyTyped(evt);
+        }
+    });
 
-        txtQtdCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        txtQtdCabos.setForeground(new java.awt.Color(51, 51, 51));
-        txtQtdCabos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtQtdCabosKeyPressed(evt);
-            }
-        });
+    txtBubinaCabos.setEditable(false);
+    txtBubinaCabos.setForeground(new java.awt.Color(51, 51, 51));
+    txtBubinaCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    txtBubinaCabos.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtBubinaCabosKeyPressed(evt);
+        }
+    });
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Descrição");
+    jLabel7.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+    jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel7.setText("Qtd");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRelatoriosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnCabosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(txtQtdCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtBubinaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(60, 60, 60))
-                    .addComponent(jcbVendedoresCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addComponent(btnAdicionarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCabosCabos)
-                            .addComponent(btnRelatoriosCabos)))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+    jLabel8.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+    jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel8.setText("Vendedor(a)");
+
+    txtQtdCabos.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+    txtQtdCabos.setForeground(new java.awt.Color(51, 51, 51));
+    txtQtdCabos.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtQtdCabosKeyPressed(evt);
+        }
+    });
+
+    jLabel9.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+    jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel9.setText("Descrição");
+
+    javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+    jPanel5.setLayout(jPanel5Layout);
+    jPanel5Layout.setHorizontalGroup(
+        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel5Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(btnRelatoriosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(btnCabosCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel9))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel7)
+                .addComponent(txtQtdCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtBubinaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel6))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel8)
+                .addComponent(jcbVendedoresCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 0, 0)
+            .addComponent(btnAdicionarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+    jPanel5Layout.setVerticalGroup(
+        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnCabosCabos)
+                        .addComponent(btnRelatoriosCabos)))
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(33, 33, 33)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel8))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jcbVendedoresCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtBubinaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtQtdCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(btnAdicionarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+                            .addComponent(jcbVendedoresCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtBubinaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtQtdCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDescricaoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCodigoCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnAdicionarCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addContainerGap(18, Short.MAX_VALUE))
+    );
 
-        jtbTabelaCabos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jtbTabelaCabos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+    jtbTabelaCabos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+    jtbTabelaCabos.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
 
-            },
-            new String [] {
-                "CÓDIGO", "DESCRIÇÃO", "QUANTIDADE", "VENDEDOR(A)", "BOBINA ATUAL", "QTD BOBINA ", "QTD ESTOQUE", ""
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtbTabelaCabos.setColumnSelectionAllowed(true);
-        jtbTabelaCabos.setGridColor(new java.awt.Color(255, 255, 255));
-        jtbTabelaCabos.setName(""); // NOI18N
-        jtbTabelaCabos.setSelectionBackground(new java.awt.Color(170, 215, 135));
-        jtbTabelaCabos.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jtbTabelaCabos.setShowHorizontalLines(false);
-        jtbTabelaCabos.getTableHeader().setReorderingAllowed(false);
-        jtbTabelaCabos.setUpdateSelectionOnSort(false);
-        jScrollPane1.setViewportView(jtbTabelaCabos);
-        jtbTabelaCabos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jtbTabelaCabos.getColumnModel().getColumnCount() > 0) {
-            jtbTabelaCabos.getColumnModel().getColumn(0).setMinWidth(100);
-            jtbTabelaCabos.getColumnModel().getColumn(0).setMaxWidth(110);
-            jtbTabelaCabos.getColumnModel().getColumn(1).setMinWidth(400);
-            jtbTabelaCabos.getColumnModel().getColumn(1).setMaxWidth(600);
-            jtbTabelaCabos.getColumnModel().getColumn(2).setMinWidth(80);
-            jtbTabelaCabos.getColumnModel().getColumn(2).setPreferredWidth(80);
-            jtbTabelaCabos.getColumnModel().getColumn(2).setMaxWidth(110);
-            jtbTabelaCabos.getColumnModel().getColumn(3).setMinWidth(125);
-            jtbTabelaCabos.getColumnModel().getColumn(3).setMaxWidth(150);
-            jtbTabelaCabos.getColumnModel().getColumn(4).setMinWidth(120);
-            jtbTabelaCabos.getColumnModel().getColumn(4).setMaxWidth(130);
-            jtbTabelaCabos.getColumnModel().getColumn(5).setMinWidth(110);
-            jtbTabelaCabos.getColumnModel().getColumn(5).setMaxWidth(150);
-            jtbTabelaCabos.getColumnModel().getColumn(6).setMinWidth(90);
-            jtbTabelaCabos.getColumnModel().getColumn(6).setPreferredWidth(90);
-            jtbTabelaCabos.getColumnModel().getColumn(6).setMaxWidth(120);
-            jtbTabelaCabos.getColumnModel().getColumn(7).setMinWidth(20);
-            jtbTabelaCabos.getColumnModel().getColumn(7).setPreferredWidth(10);
-            jtbTabelaCabos.getColumnModel().getColumn(7).setMaxWidth(80);
+        },
+        new String [] {
+            "CÓDIGO", "DESCRIÇÃO", "QUANTIDADE", "VENDEDOR(A)", "BOBINA ATUAL", "QTD BOBINA ", "QTD ESTOQUE", ""
         }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, true, false, false, false, false, false
+        };
 
-        btnLimparCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnLimparCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 azul.png"))); // NOI18N
-        btnLimparCabos.setText("Limpar");
-        btnLimparCabos.setContentAreaFilled(false);
-        btnLimparCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLimparCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnLimparCabos.setRolloverEnabled(true);
-        btnLimparCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 red.png"))); // NOI18N
-        btnLimparCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnLimparCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimparCabosActionPerformed(evt);
-            }
-        });
-
-        btnVerificarPontasCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnVerificarPontasCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul.png"))); // NOI18N
-        btnVerificarPontasCabos.setText("Verificar Ponta");
-        btnVerificarPontasCabos.setContentAreaFilled(false);
-        btnVerificarPontasCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVerificarPontasCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnVerificarPontasCabos.setRolloverEnabled(true);
-        btnVerificarPontasCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul claro.png"))); // NOI18N
-        btnVerificarPontasCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnVerificarPontasCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerificarPontasCabosActionPerformed(evt);
-            }
-        });
-
-        btnExcluirCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnExcluirCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 azul.png"))); // NOI18N
-        btnExcluirCabos.setText("Excluir  Item");
-        btnExcluirCabos.setContentAreaFilled(false);
-        btnExcluirCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnExcluirCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnExcluirCabos.setRolloverEnabled(true);
-        btnExcluirCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 red.png"))); // NOI18N
-        btnExcluirCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnExcluirCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirCabosActionPerformed(evt);
-            }
-        });
-
-        btnSalvarSaidaCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnSalvarSaidaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
-        btnSalvarSaidaCabos.setText("Salvar");
-        btnSalvarSaidaCabos.setContentAreaFilled(false);
-        btnSalvarSaidaCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalvarSaidaCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnSalvarSaidaCabos.setRolloverEnabled(true);
-        btnSalvarSaidaCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
-        btnSalvarSaidaCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnSalvarSaidaCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarSaidaCabosActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnLimparCabos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVerificarPontasCabos)
-                .addGap(238, 238, 238)
-                .addComponent(btnExcluirCabos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalvarSaidaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnExcluirCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSalvarSaidaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnLimparCabos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnVerificarPontasCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        lblUsuarioTelaCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblUsuarioTelaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
-        lblUsuarioTelaCabos.setText("Usuário");
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblUsuarioTelaCabos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(lblUsuarioTelaCabos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jpnCabosLayout = new javax.swing.GroupLayout(jpnCabos);
-        jpnCabos.setLayout(jpnCabosLayout);
-        jpnCabosLayout.setHorizontalGroup(
-            jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnCabosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnCabosLayout.createSequentialGroup()
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(3, 3, 3)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jpnCabosLayout.setVerticalGroup(
-            jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnCabosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                .addGap(3, 3, 3)
-                .addGroup(jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
-        jPanel2.add(jpnCabos, "jpnCabos");
-
-        jpnRelatorios.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel6.setBackground(new java.awt.Color(44, 62, 80));
-
-        jbnRelatorios.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jbnRelatorios.setForeground(new java.awt.Color(255, 255, 255));
-        jbnRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
-        jbnRelatorios.setText("Relatórios");
-        jbnRelatorios.setContentAreaFilled(false);
-        jbnRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jbnRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jbnRelatorios.setRolloverEnabled(true);
-        jbnRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
-        jbnRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        jbnCabosRelatorios.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jbnCabosRelatorios.setForeground(new java.awt.Color(255, 255, 255));
-        jbnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
-        jbnCabosRelatorios.setText("Cabos");
-        jbnCabosRelatorios.setContentAreaFilled(false);
-        jbnCabosRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jbnCabosRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jbnCabosRelatorios.setRolloverEnabled(true);
-        jbnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
-        jbnCabosRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jbnCabosRelatorios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbnCabosRelatoriosActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jbnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jbnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
-
-        btnSaidasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnSaidasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direções-64 azul.png"))); // NOI18N
-        btnSaidasRelatorios.setText("Saidas");
-        btnSaidasRelatorios.setContentAreaFilled(false);
-        btnSaidasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSaidasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnSaidasRelatorios.setRolloverEnabled(true);
-        btnSaidasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direções-64 cinza.png"))); // NOI18N
-        btnSaidasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnSaidasRelatorios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaidasRelatoriosActionPerformed(evt);
-            }
-        });
-
-        btnBobinasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnBobinasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 azul.png"))); // NOI18N
-        btnBobinasRelatorios.setText("Bobinas");
-        btnBobinasRelatorios.setContentAreaFilled(false);
-        btnBobinasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBobinasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnBobinasRelatorios.setRolloverEnabled(true);
-        btnBobinasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 cinza.png"))); // NOI18N
-        btnBobinasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnBobinasRelatorios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBobinasRelatoriosActionPerformed(evt);
-            }
-        });
-
-        jPanel7.setLayout(new java.awt.CardLayout());
-
-        jpnPontasRelatorios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jpnPontasRelatorios.setName("jpnPontasRelatorios"); // NOI18N
-
-        jtbPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jtbPontas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "NUM.PONTA", "CÓD. CABO", "DESCRIÇÃO", "QUANTIDADE", "LOCAL"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtbPontas.setSelectionBackground(new java.awt.Color(170, 215, 135));
-        jtbPontas.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        jtbPontas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jtbPontas.setShowHorizontalLines(false);
-        jtbPontas.getTableHeader().setReorderingAllowed(false);
-        jtbPontas.setUpdateSelectionOnSort(false);
-        jScrollPane4.setViewportView(jtbPontas);
-        if (jtbPontas.getColumnModel().getColumnCount() > 0) {
-            jtbPontas.getColumnModel().getColumn(0).setResizable(false);
-            jtbPontas.getColumnModel().getColumn(0).setPreferredWidth(10);
-            jtbPontas.getColumnModel().getColumn(1).setResizable(false);
-            jtbPontas.getColumnModel().getColumn(1).setPreferredWidth(30);
-            jtbPontas.getColumnModel().getColumn(2).setResizable(false);
-            jtbPontas.getColumnModel().getColumn(2).setPreferredWidth(500);
-            jtbPontas.getColumnModel().getColumn(3).setResizable(false);
-            jtbPontas.getColumnModel().getColumn(3).setPreferredWidth(15);
-            jtbPontas.getColumnModel().getColumn(4).setResizable(false);
-            jtbPontas.getColumnModel().getColumn(4).setPreferredWidth(40);
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
         }
+    });
+    jtbTabelaCabos.setCellSelectionEnabled(false);
+    jtbTabelaCabos.setGridColor(new java.awt.Color(255, 255, 255));
+    jtbTabelaCabos.setName(""); // NOI18N
+    jtbTabelaCabos.setRowSelectionAllowed(true);
+    jtbTabelaCabos.setSelectionBackground(new java.awt.Color(37, 211, 124));
+    jtbTabelaCabos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+    jtbTabelaCabos.setShowHorizontalLines(false);
+    jtbTabelaCabos.getTableHeader().setReorderingAllowed(false);
+    jtbTabelaCabos.setUpdateSelectionOnSort(false);
+    jScrollPane1.setViewportView(jtbTabelaCabos);
+    jtbTabelaCabos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    if (jtbTabelaCabos.getColumnModel().getColumnCount() > 0) {
+        jtbTabelaCabos.getColumnModel().getColumn(0).setMinWidth(100);
+        jtbTabelaCabos.getColumnModel().getColumn(0).setMaxWidth(110);
+        jtbTabelaCabos.getColumnModel().getColumn(1).setMinWidth(400);
+        jtbTabelaCabos.getColumnModel().getColumn(1).setMaxWidth(600);
+        jtbTabelaCabos.getColumnModel().getColumn(2).setMinWidth(80);
+        jtbTabelaCabos.getColumnModel().getColumn(2).setPreferredWidth(80);
+        jtbTabelaCabos.getColumnModel().getColumn(2).setMaxWidth(110);
+        jtbTabelaCabos.getColumnModel().getColumn(3).setMinWidth(125);
+        jtbTabelaCabos.getColumnModel().getColumn(3).setMaxWidth(150);
+        jtbTabelaCabos.getColumnModel().getColumn(4).setMinWidth(120);
+        jtbTabelaCabos.getColumnModel().getColumn(4).setMaxWidth(130);
+        jtbTabelaCabos.getColumnModel().getColumn(5).setMinWidth(110);
+        jtbTabelaCabos.getColumnModel().getColumn(5).setMaxWidth(150);
+        jtbTabelaCabos.getColumnModel().getColumn(6).setMinWidth(90);
+        jtbTabelaCabos.getColumnModel().getColumn(6).setPreferredWidth(90);
+        jtbTabelaCabos.getColumnModel().getColumn(6).setMaxWidth(120);
+        jtbTabelaCabos.getColumnModel().getColumn(7).setMinWidth(20);
+        jtbTabelaCabos.getColumnModel().getColumn(7).setPreferredWidth(10);
+        jtbTabelaCabos.getColumnModel().getColumn(7).setMaxWidth(80);
+    }
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel11.setText("Código ");
-
-        btnBuscarRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnBuscarRelatoriosPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
-        btnBuscarRelatoriosPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscarRelatoriosPontas.setRolloverEnabled(true);
-        btnBuscarRelatoriosPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
-        btnBuscarRelatoriosPontas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarRelatoriosPontasActionPerformed(evt);
-            }
-        });
-
-        txtCodigoRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        txtCodigoRelatoriosPontas.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCodigoRelatoriosPontasKeyPressed(evt);
-            }
-        });
-
-        txtTotalPontasRelatoriosPontas.setEditable(false);
-        txtTotalPontasRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-
-        btnImprimirRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnImprimirRelatoriosPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
-        btnImprimirRelatoriosPontas.setText("Imprimir");
-        btnImprimirRelatoriosPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnImprimirRelatoriosPontas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnImprimirRelatoriosPontas.setRolloverEnabled(true);
-        btnImprimirRelatoriosPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
-        btnImprimirRelatoriosPontas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirRelatoriosPontasActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel13.setText("Total em Pontas");
-
-        btnImprimirGeralpontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnImprimirGeralpontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
-        btnImprimirGeralpontas.setText("Imprimir Relatório Geral");
-        btnImprimirGeralpontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnImprimirGeralpontas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnImprimirGeralpontas.setRolloverEnabled(true);
-        btnImprimirGeralpontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
-        btnImprimirGeralpontas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirGeralpontasActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jpnPontasRelatoriosLayout = new javax.swing.GroupLayout(jpnPontasRelatorios);
-        jpnPontasRelatorios.setLayout(jpnPontasRelatoriosLayout);
-        jpnPontasRelatoriosLayout.setHorizontalGroup(
-            jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
-            .addGroup(jpnPontasRelatoriosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnPontasRelatoriosLayout.createSequentialGroup()
-                        .addComponent(txtCodigoRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(btnBuscarRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTotalPontasRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel13)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnImprimirRelatoriosPontas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnImprimirGeralpontas))
-        );
-        jpnPontasRelatoriosLayout.setVerticalGroup(
-            jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnImprimirGeralpontas)
-                        .addComponent(btnImprimirRelatoriosPontas))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCodigoRelatoriosPontas)
-                            .addComponent(btnBuscarRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTotalPontasRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
-        );
-
-        jPanel7.add(jpnPontasRelatorios, "Pontas");
-
-        jpnSaidasData.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-
-        btnBuscarRelarorioSaidas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnBuscarRelarorioSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
-        btnBuscarRelarorioSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscarRelarorioSaidas.setRolloverEnabled(true);
-        btnBuscarRelarorioSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
-        btnBuscarRelarorioSaidas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarRelarorioSaidasActionPerformed(evt);
-            }
-        });
-
-        jtbTabelaRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jtbTabelaRelatorioSaidas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "CÓD.SAíDA", "DATA", "CÓD. CABO", "DESCRIÇÃO", "QTD", "VENDEDOR", "BOBINA"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtbTabelaRelatorioSaidas.setColumnSelectionAllowed(true);
-        jtbTabelaRelatorioSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jtbTabelaRelatorioSaidas.setMaximumSize(new java.awt.Dimension(880, 0));
-        jtbTabelaRelatorioSaidas.setMinimumSize(new java.awt.Dimension(899, 0));
-        jtbTabelaRelatorioSaidas.setOpaque(false);
-        jtbTabelaRelatorioSaidas.setPreferredSize(new java.awt.Dimension(980, 0));
-        jtbTabelaRelatorioSaidas.setRequestFocusEnabled(false);
-        jtbTabelaRelatorioSaidas.setSelectionBackground(new java.awt.Color(170, 215, 135));
-        jtbTabelaRelatorioSaidas.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        jtbTabelaRelatorioSaidas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jtbTabelaRelatorioSaidas.setShowHorizontalLines(false);
-        jtbTabelaRelatorioSaidas.getTableHeader().setReorderingAllowed(false);
-        jtbTabelaRelatorioSaidas.setUpdateSelectionOnSort(false);
-        jScrollPane2.setViewportView(jtbTabelaRelatorioSaidas);
-        jtbTabelaRelatorioSaidas.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jtbTabelaRelatorioSaidas.getColumnModel().getColumnCount() > 0) {
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(0).setMinWidth(40);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(0).setMaxWidth(70);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setMinWidth(70);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setMaxWidth(100);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setMinWidth(80);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setMaxWidth(90);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setMinWidth(350);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setMaxWidth(900);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setMinWidth(80);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setMaxWidth(80);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setMinWidth(90);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setMaxWidth(180);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setMinWidth(60);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setMaxWidth(70);
+    btnLimparCabos.setBackground(new java.awt.Color(0, 204, 255));
+    btnLimparCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnLimparCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 azul.png"))); // NOI18N
+    btnLimparCabos.setText("Limpar");
+    btnLimparCabos.setBorderPainted(false);
+    btnLimparCabos.setContentAreaFilled(false);
+    btnLimparCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnLimparCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnLimparCabos.setRolloverEnabled(true);
+    btnLimparCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 red.png"))); // NOI18N
+    btnLimparCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnLimparCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnLimparCabosActionPerformed(evt);
         }
+    });
 
-        btnDeletarRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnDeletarRelatorioSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
-        btnDeletarRelatorioSaidas.setText("Deletar");
-        btnDeletarRelatorioSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDeletarRelatorioSaidas.setRolloverEnabled(true);
-        btnDeletarRelatorioSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
-        btnDeletarRelatorioSaidas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeletarRelatorioSaidasActionPerformed(evt);
-            }
-        });
-
-        jcbVendedorRelatorio.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jcbVendedorRelatorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel17.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel17.setText("Vendedor(a)");
-
-        btnImprimirRelatoriosSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnImprimirRelatoriosSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
-        btnImprimirRelatoriosSaidas.setText("Imprimir");
-        btnImprimirRelatoriosSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnImprimirRelatoriosSaidas.setRolloverEnabled(true);
-        btnImprimirRelatoriosSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
-        btnImprimirRelatoriosSaidas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirRelatoriosSaidasActionPerformed(evt);
-            }
-        });
-
-        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 13), new java.awt.Color(51, 51, 51))); // NOI18N
-
-        try {
-            txtDataInicialRelatorioSaidas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
+    btnVerificarPontasCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnVerificarPontasCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul.png"))); // NOI18N
+    btnVerificarPontasCabos.setText("Verificar Ponta");
+    btnVerificarPontasCabos.setContentAreaFilled(false);
+    btnVerificarPontasCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnVerificarPontasCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnVerificarPontasCabos.setRolloverEnabled(true);
+    btnVerificarPontasCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul claro.png"))); // NOI18N
+    btnVerificarPontasCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnVerificarPontasCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnVerificarPontasCabosActionPerformed(evt);
         }
-        txtDataInicialRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtDataInicialRelatorioSaidas.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtDataInicialRelatorioSaidasKeyPressed(evt);
-            }
-        });
+    });
 
-        try {
-            txtDataFinallRelatorioSaidas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
+    btnExcluirCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnExcluirCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 azul.png"))); // NOI18N
+    btnExcluirCabos.setText("Excluir  Item");
+    btnExcluirCabos.setContentAreaFilled(false);
+    btnExcluirCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnExcluirCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnExcluirCabos.setRolloverEnabled(true);
+    btnExcluirCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 red.png"))); // NOI18N
+    btnExcluirCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnExcluirCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnExcluirCabosActionPerformed(evt);
         }
-        txtDataFinallRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtDataFinallRelatorioSaidas.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtDataFinallRelatorioSaidasKeyPressed(evt);
-            }
-        });
+    });
 
-        jLabel16.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel16.setText("Até");
+    btnSalvarSaidaCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnSalvarSaidaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+    btnSalvarSaidaCabos.setText("Salvar");
+    btnSalvarSaidaCabos.setContentAreaFilled(false);
+    btnSalvarSaidaCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnSalvarSaidaCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnSalvarSaidaCabos.setRolloverEnabled(true);
+    btnSalvarSaidaCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+    btnSalvarSaidaCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnSalvarSaidaCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnSalvarSaidaCabosActionPerformed(evt);
+        }
+    });
 
-        jLabel15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel15.setText("De");
+    javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+    jPanel10.setLayout(jPanel10Layout);
+    jPanel10Layout.setHorizontalGroup(
+        jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel10Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(btnLimparCabos)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(btnVerificarPontasCabos)
+            .addGap(238, 238, 238)
+            .addComponent(btnExcluirCabos)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(btnSalvarSaidaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(23, Short.MAX_VALUE))
+    );
+    jPanel10Layout.setVerticalGroup(
+        jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnExcluirCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvarSaidaCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimparCabos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnVerificarPontasCabos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+    );
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDataInicialRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDataFinallRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addContainerGap())
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDataInicialRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDataFinallRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 7, Short.MAX_VALUE))
-        );
+    lblUsuarioTelaCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    lblUsuarioTelaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
+    lblUsuarioTelaCabos.setText("Usuário");
 
-        javax.swing.GroupLayout jpnSaidasDataLayout = new javax.swing.GroupLayout(jpnSaidasData);
-        jpnSaidasData.setLayout(jpnSaidasDataLayout);
-        jpnSaidasDataLayout.setHorizontalGroup(
-            jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnSaidasDataLayout.createSequentialGroup()
-                .addContainerGap()
+    javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+    jPanel12.setLayout(jPanel12Layout);
+    jPanel12Layout.setHorizontalGroup(
+        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel12Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(lblUsuarioTelaCabos)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel12Layout.setVerticalGroup(
+        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel12Layout.createSequentialGroup()
+            .addGap(16, 16, 16)
+            .addComponent(lblUsuarioTelaCabos)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    javax.swing.GroupLayout jpnCabosLayout = new javax.swing.GroupLayout(jpnCabos);
+    jpnCabos.setLayout(jpnCabosLayout);
+    jpnCabosLayout.setHorizontalGroup(
+        jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnCabosLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane1)
+                .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnCabosLayout.createSequentialGroup()
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(3, 3, 3)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addContainerGap())
+    );
+    jpnCabosLayout.setVerticalGroup(
+        jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnCabosLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(3, 3, 3)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+            .addGap(3, 3, 3)
+            .addGroup(jpnCabosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+    );
+
+    jPanel2.add(jpnCabos, "jpnCabos");
+
+    jpnRelatorios.setBackground(new java.awt.Color(255, 255, 255));
+
+    jPanel6.setBackground(new java.awt.Color(44, 62, 80));
+
+    jbnRelatorios.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+    jbnRelatorios.setForeground(new java.awt.Color(255, 255, 255));
+    jbnRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
+    jbnRelatorios.setText("Relatórios");
+    jbnRelatorios.setContentAreaFilled(false);
+    jbnRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    jbnRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    jbnRelatorios.setRolloverEnabled(true);
+    jbnRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
+    jbnRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+    jbnCabosRelatorios.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+    jbnCabosRelatorios.setForeground(new java.awt.Color(255, 255, 255));
+    jbnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
+    jbnCabosRelatorios.setText("Cabos");
+    jbnCabosRelatorios.setContentAreaFilled(false);
+    jbnCabosRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    jbnCabosRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    jbnCabosRelatorios.setRolloverEnabled(true);
+    jbnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
+    jbnCabosRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    jbnCabosRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jbnCabosRelatoriosActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+    jPanel6.setLayout(jPanel6Layout);
+    jPanel6Layout.setHorizontalGroup(
+        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jbnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(jbnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel6Layout.setVerticalGroup(
+        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGap(16, 16, 16)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jbnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap(18, Short.MAX_VALUE))
+    );
+
+    jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+    jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+    btnSaidasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnSaidasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direções-64 azul.png"))); // NOI18N
+    btnSaidasRelatorios.setText("Saidas");
+    btnSaidasRelatorios.setContentAreaFilled(false);
+    btnSaidasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnSaidasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnSaidasRelatorios.setRolloverEnabled(true);
+    btnSaidasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direções-64 cinza.png"))); // NOI18N
+    btnSaidasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnSaidasRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnSaidasRelatoriosActionPerformed(evt);
+        }
+    });
+
+    btnBobinasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnBobinasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 azul.png"))); // NOI18N
+    btnBobinasRelatorios.setText("Bobinas");
+    btnBobinasRelatorios.setContentAreaFilled(false);
+    btnBobinasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnBobinasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnBobinasRelatorios.setRolloverEnabled(true);
+    btnBobinasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 cinza.png"))); // NOI18N
+    btnBobinasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnBobinasRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBobinasRelatoriosActionPerformed(evt);
+        }
+    });
+
+    jPanel7.setLayout(new java.awt.CardLayout());
+
+    jpnPontasRelatorios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+    jpnPontasRelatorios.setName("jpnPontasRelatorios"); // NOI18N
+
+    jtbPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jtbPontas.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "NUM.PONTA", "CÓD. CABO", "DESCRIÇÃO", "QUANTIDADE", "LOCAL"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    jtbPontas.setRowSelectionAllowed(true);
+    jtbPontas.setSelectionBackground(new java.awt.Color(37, 211, 124));
+    jtbPontas.setSelectionForeground(new java.awt.Color(51, 51, 51));
+    jtbPontas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jtbPontas.setShowHorizontalLines(false);
+    jtbPontas.getTableHeader().setReorderingAllowed(false);
+    jtbPontas.setUpdateSelectionOnSort(false);
+    jScrollPane4.setViewportView(jtbPontas);
+    if (jtbPontas.getColumnModel().getColumnCount() > 0) {
+        jtbPontas.getColumnModel().getColumn(0).setResizable(false);
+        jtbPontas.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jtbPontas.getColumnModel().getColumn(1).setResizable(false);
+        jtbPontas.getColumnModel().getColumn(1).setPreferredWidth(30);
+        jtbPontas.getColumnModel().getColumn(2).setResizable(false);
+        jtbPontas.getColumnModel().getColumn(2).setPreferredWidth(500);
+        jtbPontas.getColumnModel().getColumn(3).setResizable(false);
+        jtbPontas.getColumnModel().getColumn(3).setPreferredWidth(15);
+        jtbPontas.getColumnModel().getColumn(4).setResizable(false);
+        jtbPontas.getColumnModel().getColumn(4).setPreferredWidth(40);
+    }
+
+    jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+    jLabel11.setText("Código ");
+
+    btnBuscarRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnBuscarRelatoriosPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
+    btnBuscarRelatoriosPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnBuscarRelatoriosPontas.setRolloverEnabled(true);
+    btnBuscarRelatoriosPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
+    btnBuscarRelatoriosPontas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscarRelatoriosPontasActionPerformed(evt);
+        }
+    });
+
+    txtCodigoRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    txtCodigoRelatoriosPontas.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtCodigoRelatoriosPontasKeyPressed(evt);
+        }
+    });
+
+    txtTotalPontasRelatoriosPontas.setEditable(false);
+    txtTotalPontasRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+
+    btnImprimirRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnImprimirRelatoriosPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirRelatoriosPontas.setText("Imprimir");
+    btnImprimirRelatoriosPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnImprimirRelatoriosPontas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+    btnImprimirRelatoriosPontas.setRolloverEnabled(true);
+    btnImprimirRelatoriosPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirRelatoriosPontas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnImprimirRelatoriosPontasActionPerformed(evt);
+        }
+    });
+
+    jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+    jLabel13.setText("Total em Pontas");
+
+    btnImprimirGeralpontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnImprimirGeralpontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirGeralpontas.setText("Imprimir Relatório Geral");
+    btnImprimirGeralpontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnImprimirGeralpontas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+    btnImprimirGeralpontas.setRolloverEnabled(true);
+    btnImprimirGeralpontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirGeralpontas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnImprimirGeralpontasActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout jpnPontasRelatoriosLayout = new javax.swing.GroupLayout(jpnPontasRelatorios);
+    jpnPontasRelatorios.setLayout(jpnPontasRelatoriosLayout);
+    jpnPontasRelatoriosLayout.setHorizontalGroup(
+        jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
+        .addGroup(jpnPontasRelatoriosLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnPontasRelatoriosLayout.createSequentialGroup()
+                    .addComponent(txtCodigoRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(btnBuscarRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel11))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtTotalPontasRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
+                    .addGap(1, 1, 1)
+                    .addComponent(jLabel13)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(btnImprimirRelatoriosPontas)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(btnImprimirGeralpontas))
+    );
+    jpnPontasRelatoriosLayout.setVerticalGroup(
+        jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
+            .addGap(40, 40, 40)
+            .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnImprimirGeralpontas)
+                    .addComponent(btnImprimirRelatoriosPontas))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
+                    .addComponent(jLabel11)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jpnPontasRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtCodigoRelatoriosPontas)
+                        .addComponent(btnBuscarRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPontasRelatoriosLayout.createSequentialGroup()
+                    .addComponent(jLabel13)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtTotalPontasRelatoriosPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE))
+    );
+
+    jPanel7.add(jpnPontasRelatorios, "Pontas");
+
+    jpnSaidasData.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+
+    btnBuscarRelarorioSaidas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnBuscarRelarorioSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
+    btnBuscarRelarorioSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnBuscarRelarorioSaidas.setRolloverEnabled(true);
+    btnBuscarRelarorioSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
+    btnBuscarRelarorioSaidas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscarRelarorioSaidasActionPerformed(evt);
+        }
+    });
+
+    btnDeletarRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnDeletarRelatorioSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
+    btnDeletarRelatorioSaidas.setText("Deletar");
+    btnDeletarRelatorioSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnDeletarRelatorioSaidas.setRolloverEnabled(true);
+    btnDeletarRelatorioSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+    btnDeletarRelatorioSaidas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnDeletarRelatorioSaidasActionPerformed(evt);
+        }
+    });
+
+    jcbVendedorRelatorio.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jcbVendedorRelatorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+    jLabel17.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jLabel17.setText("Vendedor(a)");
+
+    btnImprimirRelatoriosSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnImprimirRelatoriosSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirRelatoriosSaidas.setText("Imprimir");
+    btnImprimirRelatoriosSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnImprimirRelatoriosSaidas.setRolloverEnabled(true);
+    btnImprimirRelatoriosSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirRelatoriosSaidas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnImprimirRelatoriosSaidasActionPerformed(evt);
+        }
+    });
+
+    jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 13), new java.awt.Color(51, 51, 51))); // NOI18N
+
+    try {
+        txtDataInicialRelatorioSaidas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+    } catch (java.text.ParseException ex) {
+        ex.printStackTrace();
+    }
+    txtDataInicialRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    txtDataInicialRelatorioSaidas.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtDataInicialRelatorioSaidasKeyPressed(evt);
+        }
+    });
+
+    try {
+        txtDataFinallRelatorioSaidas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+    } catch (java.text.ParseException ex) {
+        ex.printStackTrace();
+    }
+    txtDataFinallRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    txtDataFinallRelatorioSaidas.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtDataFinallRelatorioSaidasKeyPressed(evt);
+        }
+    });
+
+    jLabel16.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jLabel16.setText("Até");
+
+    jLabel15.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jLabel15.setText("De");
+
+    javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+    jPanel8.setLayout(jPanel8Layout);
+    jPanel8Layout.setHorizontalGroup(
+        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtDataInicialRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel15))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(txtDataFinallRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel16))
+            .addContainerGap())
+    );
+    jPanel8Layout.setVerticalGroup(
+        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel8Layout.createSequentialGroup()
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel15)
+                .addComponent(jLabel16))
+            .addGap(4, 4, 4)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(txtDataInicialRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDataFinallRelatorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 7, Short.MAX_VALUE))
+    );
+
+    jtbTabelaRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jtbTabelaRelatorioSaidas.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "CÓD. SAÍDA", "DATA", "CÓD. CABO", "DESCRIÇÃO", "QTD", "VENDEDOR", "BOBINA"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    jtbTabelaRelatorioSaidas.setSelectionBackground(new java.awt.Color(37, 211, 124));
+    jtbTabelaRelatorioSaidas.setSelectionForeground(new java.awt.Color(51, 51, 51));
+    jtbTabelaRelatorioSaidas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jtbTabelaRelatorioSaidas.setShowHorizontalLines(false);
+    jtbTabelaRelatorioSaidas.getTableHeader().setReorderingAllowed(false);
+    jtbTabelaRelatorioSaidas.setUpdateSelectionOnSort(false);
+    jScrollPane2.setViewportView(jtbTabelaRelatorioSaidas);
+    if (jtbTabelaRelatorioSaidas.getColumnModel().getColumnCount() > 0) {
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(0).setResizable(false);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(0).setPreferredWidth(60);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setResizable(false);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setPreferredWidth(60);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setResizable(false);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setPreferredWidth(60);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setResizable(false);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setPreferredWidth(500);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setResizable(false);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setPreferredWidth(40);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setResizable(false);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setPreferredWidth(100);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setResizable(false);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setPreferredWidth(40);
+    }
+
+    javax.swing.GroupLayout jpnSaidasDataLayout = new javax.swing.GroupLayout(jpnSaidasData);
+    jpnSaidasData.setLayout(jpnSaidasDataLayout);
+    jpnSaidasDataLayout.setHorizontalGroup(
+        jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnSaidasDataLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnSaidasDataLayout.createSequentialGroup()
+                    .addComponent(jcbVendedorRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(1, 1, 1)
+                    .addComponent(btnBuscarRelarorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel17))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
+            .addComponent(btnImprimirRelatoriosSaidas)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(btnDeletarRelatorioSaidas)
+            .addContainerGap())
+        .addComponent(jScrollPane2)
+    );
+    jpnSaidasDataLayout.setVerticalGroup(
+        jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnSaidasDataLayout.createSequentialGroup()
+            .addGap(24, 24, 24)
+            .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnImprimirRelatoriosSaidas)
+                        .addComponent(btnDeletarRelatorioSaidas))
                     .addGroup(jpnSaidasDataLayout.createSequentialGroup()
-                        .addComponent(jcbVendedorRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(btnBuscarRelarorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnImprimirRelatoriosSaidas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnDeletarRelatorioSaidas)
-                .addContainerGap())
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
-        );
-        jpnSaidasDataLayout.setVerticalGroup(
-            jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnSaidasDataLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnImprimirRelatoriosSaidas)
-                            .addComponent(btnDeletarRelatorioSaidas))
-                        .addGroup(jpnSaidasDataLayout.createSequentialGroup()
-                            .addComponent(jLabel17)
-                            .addGap(4, 4, 4)
-                            .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnBuscarRelarorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jcbVendedorRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(15, 15, 15)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))
-        );
-
-        jPanel7.add(jpnSaidasData, "SaidasData");
-
-        jpnBobinas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel5.setText("Bobina");
-
-        txtNumBobinaRelBobina.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-
-        btnBuscarRelatoriosBobina.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnBuscarRelatoriosBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
-        btnBuscarRelatoriosBobina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscarRelatoriosBobina.setRolloverEnabled(true);
-        btnBuscarRelatoriosBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
-        btnBuscarRelatoriosBobina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarRelatoriosBobinaActionPerformed(evt);
-            }
-        });
-
-        btnExibirTudoRelatoriosBobina.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnExibirTudoRelatoriosBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
-        btnExibirTudoRelatoriosBobina.setText("Exibir Tudo");
-        btnExibirTudoRelatoriosBobina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnExibirTudoRelatoriosBobina.setRolloverEnabled(true);
-        btnExibirTudoRelatoriosBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
-        btnExibirTudoRelatoriosBobina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExibirTudoRelatoriosBobinaActionPerformed(evt);
-            }
-        });
-
-        jtbBobinasRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jtbBobinasRelatorios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "NÚM.BOBINA", "CÓDIGO", "DESCRIÇÃO", "QTD ORIGINAL", "QTD RETIRADA", "QTD ATUAL", "QTD ESTOQUE", "STATUS"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtbBobinasRelatorios.setColumnSelectionAllowed(true);
-        jtbBobinasRelatorios.setMinimumSize(new java.awt.Dimension(120, 0));
-        jtbBobinasRelatorios.setSelectionBackground(new java.awt.Color(170, 215, 135));
-        jtbBobinasRelatorios.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        jtbBobinasRelatorios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jtbBobinasRelatorios.setShowHorizontalLines(false);
-        jtbBobinasRelatorios.getTableHeader().setReorderingAllowed(false);
-        jtbBobinasRelatorios.setUpdateSelectionOnSort(false);
-        jScrollPane3.setViewportView(jtbBobinasRelatorios);
-        jtbBobinasRelatorios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (jtbBobinasRelatorios.getColumnModel().getColumnCount() > 0) {
-            jtbBobinasRelatorios.getColumnModel().getColumn(1).setResizable(false);
-            jtbBobinasRelatorios.getColumnModel().getColumn(2).setResizable(false);
-            jtbBobinasRelatorios.getColumnModel().getColumn(2).setPreferredWidth(400);
-            jtbBobinasRelatorios.getColumnModel().getColumn(4).setResizable(false);
-            jtbBobinasRelatorios.getColumnModel().getColumn(5).setResizable(false);
-            jtbBobinasRelatorios.getColumnModel().getColumn(6).setResizable(false);
-            jtbBobinasRelatorios.getColumnModel().getColumn(7).setResizable(false);
-        }
-
-        jpnOpcoesRelatorioBobinas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jcbInativoRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jcbInativoRelatorios.setText("Inativo");
-
-        jcbAtivoRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jcbAtivoRelatorios.setText("Ativo");
-
-        jcbIncluirPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jcbIncluirPontas.setText("Incluir Pontas");
-
-        javax.swing.GroupLayout jpnOpcoesRelatorioBobinasLayout = new javax.swing.GroupLayout(jpnOpcoesRelatorioBobinas);
-        jpnOpcoesRelatorioBobinas.setLayout(jpnOpcoesRelatorioBobinasLayout);
-        jpnOpcoesRelatorioBobinasLayout.setHorizontalGroup(
-            jpnOpcoesRelatorioBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnOpcoesRelatorioBobinasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jcbInativoRelatorios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jcbAtivoRelatorios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(jcbIncluirPontas)
-                .addContainerGap())
-        );
-        jpnOpcoesRelatorioBobinasLayout.setVerticalGroup(
-            jpnOpcoesRelatorioBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnOpcoesRelatorioBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jcbInativoRelatorios)
-                .addComponent(jcbAtivoRelatorios)
-                .addComponent(jcbIncluirPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        btnImprimir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
-        btnImprimir.setText("Imprimir");
-        btnImprimir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnImprimir.setRolloverEnabled(true);
-        btnImprimir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
-        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jpnBobinasLayout = new javax.swing.GroupLayout(jpnBobinas);
-        jpnBobinas.setLayout(jpnBobinasLayout);
-        jpnBobinasLayout.setHorizontalGroup(
-            jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnBobinasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnBobinasLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jpnBobinasLayout.createSequentialGroup()
-                        .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpnBobinasLayout.createSequentialGroup()
-                                .addComponent(txtNumBobinaRelBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1)
-                                .addComponent(btnBuscarRelatoriosBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jpnOpcoesRelatorioBobinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 518, Short.MAX_VALUE)
-                        .addComponent(btnExibirTudoRelatoriosBobina)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnImprimir)))
-                .addContainerGap())
-            .addGroup(jpnBobinasLayout.createSequentialGroup()
-                .addComponent(jScrollPane3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10))
-        );
-        jpnBobinasLayout.setVerticalGroup(
-            jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnBobinasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpnBobinasLayout.createSequentialGroup()
-                        .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNumBobinaRelBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jpnBobinasLayout.createSequentialGroup()
-                                .addComponent(btnBuscarRelatoriosBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2)))
+                        .addComponent(jLabel17)
                         .addGap(4, 4, 4)
-                        .addComponent(jpnOpcoesRelatorioBobinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnImprimir)
-                        .addComponent(btnExibirTudoRelatoriosBobina)))
-                .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnBobinasLayout.createSequentialGroup()
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addGap(337, 337, 337))
-                    .addGroup(jpnBobinasLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())))
-        );
+                        .addGroup(jpnSaidasDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBuscarRelarorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbVendedorRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+            .addGap(18, 18, 18)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE))
+    );
 
-        jPanel7.add(jpnBobinas, "Bobinas");
+    jPanel7.add(jpnSaidasData, "SaidasData");
 
-        jpnCabosRelatorios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+    jpnBobinas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
 
-        jtbCabosRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jtbCabosRelatorios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+    jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jLabel5.setText("Bobina");
 
-            },
-            new String [] {
-                "CÓDIGO", "DESCRIÇÃO", "BOBINA ATUAL", "QTD EM BOBINAS", "QTD EM PONTAS", "QTD TOTAL"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
+    txtNumBobinaRelBobina.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtbCabosRelatorios.setSelectionBackground(new java.awt.Color(170, 215, 135));
-        jtbCabosRelatorios.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        jtbCabosRelatorios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jtbCabosRelatorios.setShowHorizontalLines(false);
-        jtbCabosRelatorios.getTableHeader().setReorderingAllowed(false);
-        jtbCabosRelatorios.setUpdateSelectionOnSort(false);
-        jScrollPane5.setViewportView(jtbCabosRelatorios);
-        if (jtbCabosRelatorios.getColumnModel().getColumnCount() > 0) {
-            jtbCabosRelatorios.getColumnModel().getColumn(0).setResizable(false);
-            jtbCabosRelatorios.getColumnModel().getColumn(1).setResizable(false);
-            jtbCabosRelatorios.getColumnModel().getColumn(1).setPreferredWidth(350);
-            jtbCabosRelatorios.getColumnModel().getColumn(2).setResizable(false);
-            jtbCabosRelatorios.getColumnModel().getColumn(3).setResizable(false);
-            jtbCabosRelatorios.getColumnModel().getColumn(4).setResizable(false);
-            jtbCabosRelatorios.getColumnModel().getColumn(5).setResizable(false);
+    btnBuscarRelatoriosBobina.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnBuscarRelatoriosBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
+    btnBuscarRelatoriosBobina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnBuscarRelatoriosBobina.setRolloverEnabled(true);
+    btnBuscarRelatoriosBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
+    btnBuscarRelatoriosBobina.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscarRelatoriosBobinaActionPerformed(evt);
         }
+    });
 
-        txtCodigoRelatorioCabo.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        txtCodigoRelatorioCabo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCodigoRelatorioCaboKeyPressed(evt);
-            }
-        });
+    btnExibirTudoRelatoriosBobina.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnExibirTudoRelatoriosBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
+    btnExibirTudoRelatoriosBobina.setText("Exibir Tudo");
+    btnExibirTudoRelatoriosBobina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnExibirTudoRelatoriosBobina.setRolloverEnabled(true);
+    btnExibirTudoRelatoriosBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+    btnExibirTudoRelatoriosBobina.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnExibirTudoRelatoriosBobinaActionPerformed(evt);
+        }
+    });
 
-        jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel14.setText("Código");
+    jtbBobinasRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jtbBobinasRelatorios.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
 
-        btnBuscarCaboRelatorio.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnBuscarCaboRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
-        btnBuscarCaboRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscarCaboRelatorio.setRolloverEnabled(true);
-        btnBuscarCaboRelatorio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
-        btnBuscarCaboRelatorio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarCaboRelatorioActionPerformed(evt);
-            }
-        });
+        },
+        new String [] {
+            "NÚM.BOBINA", "CÓDIGO", "DESCRIÇÃO", "QTD ORIGINAL", "QTD RETIRADA", "QTD ATUAL", "QTD ESTOQUE", "STATUS"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false, false, false, false
+        };
 
-        btnBuscarTudoCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnBuscarTudoCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
-        btnBuscarTudoCabos.setText("Exibir Tudo");
-        btnBuscarTudoCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscarTudoCabos.setRolloverEnabled(true);
-        btnBuscarTudoCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
-        btnBuscarTudoCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarTudoCabosActionPerformed(evt);
-            }
-        });
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    jtbBobinasRelatorios.setCellSelectionEnabled(false);
+    jtbBobinasRelatorios.setRowSelectionAllowed(true);
+    jtbBobinasRelatorios.setSelectionBackground(new java.awt.Color(37, 211, 124));
+    jtbBobinasRelatorios.setSelectionForeground(new java.awt.Color(51, 51, 51));
+    jtbBobinasRelatorios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jtbBobinasRelatorios.setShowHorizontalLines(false);
+    jtbBobinasRelatorios.getTableHeader().setReorderingAllowed(false);
+    jtbBobinasRelatorios.setUpdateSelectionOnSort(false);
+    jScrollPane3.setViewportView(jtbBobinasRelatorios);
+    jtbBobinasRelatorios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    if (jtbBobinasRelatorios.getColumnModel().getColumnCount() > 0) {
+        jtbBobinasRelatorios.getColumnModel().getColumn(1).setResizable(false);
+        jtbBobinasRelatorios.getColumnModel().getColumn(2).setResizable(false);
+        jtbBobinasRelatorios.getColumnModel().getColumn(2).setPreferredWidth(400);
+        jtbBobinasRelatorios.getColumnModel().getColumn(4).setResizable(false);
+        jtbBobinasRelatorios.getColumnModel().getColumn(5).setResizable(false);
+        jtbBobinasRelatorios.getColumnModel().getColumn(6).setResizable(false);
+        jtbBobinasRelatorios.getColumnModel().getColumn(7).setResizable(false);
+    }
 
-        btnImprimirRelatoriosCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnImprimirRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
-        btnImprimirRelatoriosCabos.setText("Imprimir");
-        btnImprimirRelatoriosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnImprimirRelatoriosCabos.setRolloverEnabled(true);
-        btnImprimirRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
-        btnImprimirRelatoriosCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirRelatoriosCabosActionPerformed(evt);
-            }
-        });
+    jpnOpcoesRelatorioBobinas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jRadioButton1.setText("Possuem Bobinas");
+    jcbInativoRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jcbInativoRelatorios.setText("Inativo");
 
-        jRadioButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jRadioButton2.setText("Não possuem Bobinas");
+    jcbAtivoRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jcbAtivoRelatorios.setText("Ativo");
 
-        javax.swing.GroupLayout jpnCabosRelatoriosLayout = new javax.swing.GroupLayout(jpnCabosRelatorios);
-        jpnCabosRelatorios.setLayout(jpnCabosRelatoriosLayout);
-        jpnCabosRelatoriosLayout.setHorizontalGroup(
-            jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
-            .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
-                .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2))
-                    .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
-                                .addComponent(txtCodigoRelatorioCabo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(btnBuscarCaboRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnBuscarTudoCabos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnImprimirRelatoriosCabos))
-        );
-        jpnCabosRelatoriosLayout.setVerticalGroup(
-            jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnCabosRelatoriosLayout.createSequentialGroup()
-                .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnImprimirRelatoriosCabos)
-                            .addComponent(btnBuscarTudoCabos)))
-                    .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
-                        .addContainerGap(9, Short.MAX_VALUE)
+    jcbIncluirPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jcbIncluirPontas.setText("Incluir Pontas");
+
+    javax.swing.GroupLayout jpnOpcoesRelatorioBobinasLayout = new javax.swing.GroupLayout(jpnOpcoesRelatorioBobinas);
+    jpnOpcoesRelatorioBobinas.setLayout(jpnOpcoesRelatorioBobinasLayout);
+    jpnOpcoesRelatorioBobinasLayout.setHorizontalGroup(
+        jpnOpcoesRelatorioBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnOpcoesRelatorioBobinasLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jcbInativoRelatorios)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jcbAtivoRelatorios)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+            .addComponent(jcbIncluirPontas)
+            .addContainerGap())
+    );
+    jpnOpcoesRelatorioBobinasLayout.setVerticalGroup(
+        jpnOpcoesRelatorioBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnOpcoesRelatorioBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addComponent(jcbInativoRelatorios)
+            .addComponent(jcbAtivoRelatorios)
+            .addComponent(jcbIncluirPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+
+    btnImprimir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimir.setText("Imprimir");
+    btnImprimir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnImprimir.setRolloverEnabled(true);
+    btnImprimir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnImprimirActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout jpnBobinasLayout = new javax.swing.GroupLayout(jpnBobinas);
+    jpnBobinas.setLayout(jpnBobinasLayout);
+    jpnBobinasLayout.setHorizontalGroup(
+        jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnBobinasLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnBobinasLayout.createSequentialGroup()
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jpnBobinasLayout.createSequentialGroup()
+                    .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jpnBobinasLayout.createSequentialGroup()
+                            .addComponent(txtNumBobinaRelBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(1, 1, 1)
+                            .addComponent(btnBuscarRelatoriosBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jpnOpcoesRelatorioBobinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 518, Short.MAX_VALUE)
+                    .addComponent(btnExibirTudoRelatoriosBobina)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnImprimir)))
+            .addContainerGap())
+        .addGroup(jpnBobinasLayout.createSequentialGroup()
+            .addComponent(jScrollPane3)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel10))
+    );
+    jpnBobinasLayout.setVerticalGroup(
+        jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jpnBobinasLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel5)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jpnBobinasLayout.createSequentialGroup()
+                    .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnBobinasLayout.createSequentialGroup()
+                            .addComponent(btnBuscarRelatoriosBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(2, 2, 2))
+                        .addComponent(txtNumBobinaRelBobina, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(4, 4, 4)
+                    .addComponent(jpnOpcoesRelatorioBobinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnImprimir)
+                    .addComponent(btnExibirTudoRelatoriosBobina)))
+            .addGroup(jpnBobinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnBobinasLayout.createSequentialGroup()
+                    .addGap(18, 18, Short.MAX_VALUE)
+                    .addComponent(jLabel10)
+                    .addGap(337, 337, 337))
+                .addGroup(jpnBobinasLayout.createSequentialGroup()
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addContainerGap())))
+    );
+
+    jPanel7.add(jpnBobinas, "Bobinas");
+
+    jpnCabosRelatorios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    jtbCabosRelatorios.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jtbCabosRelatorios.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+
+        },
+        new String [] {
+            "CÓDIGO", "DESCRIÇÃO", "BOBINA ATUAL", "QTD EM BOBINAS", "QTD EM PONTAS", "QTD TOTAL"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    jtbCabosRelatorios.setSelectionBackground(new java.awt.Color(37, 211, 124));
+    jtbCabosRelatorios.setSelectionForeground(new java.awt.Color(51, 51, 51));
+    jtbCabosRelatorios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jtbCabosRelatorios.setShowHorizontalLines(false);
+    jtbCabosRelatorios.getTableHeader().setReorderingAllowed(false);
+    jtbCabosRelatorios.setUpdateSelectionOnSort(false);
+    jScrollPane5.setViewportView(jtbCabosRelatorios);
+    if (jtbCabosRelatorios.getColumnModel().getColumnCount() > 0) {
+        jtbCabosRelatorios.getColumnModel().getColumn(0).setResizable(false);
+        jtbCabosRelatorios.getColumnModel().getColumn(1).setResizable(false);
+        jtbCabosRelatorios.getColumnModel().getColumn(1).setPreferredWidth(350);
+        jtbCabosRelatorios.getColumnModel().getColumn(2).setResizable(false);
+        jtbCabosRelatorios.getColumnModel().getColumn(3).setResizable(false);
+        jtbCabosRelatorios.getColumnModel().getColumn(4).setResizable(false);
+        jtbCabosRelatorios.getColumnModel().getColumn(5).setResizable(false);
+    }
+
+    txtCodigoRelatorioCabo.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    txtCodigoRelatorioCabo.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtCodigoRelatorioCaboKeyPressed(evt);
+        }
+    });
+
+    jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jLabel14.setText("Código");
+
+    btnBuscarCaboRelatorio.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnBuscarCaboRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 preto.png"))); // NOI18N
+    btnBuscarCaboRelatorio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnBuscarCaboRelatorio.setRolloverEnabled(true);
+    btnBuscarCaboRelatorio.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-pesquisar-26 verde.png"))); // NOI18N
+    btnBuscarCaboRelatorio.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscarCaboRelatorioActionPerformed(evt);
+        }
+    });
+
+    btnBuscarTudoCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnBuscarTudoCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
+    btnBuscarTudoCabos.setText("Exibir Tudo");
+    btnBuscarTudoCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnBuscarTudoCabos.setRolloverEnabled(true);
+    btnBuscarTudoCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+    btnBuscarTudoCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnBuscarTudoCabosActionPerformed(evt);
+        }
+    });
+
+    btnImprimirRelatoriosCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    btnImprimirRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirRelatoriosCabos.setText("Imprimir");
+    btnImprimirRelatoriosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnImprimirRelatoriosCabos.setRolloverEnabled(true);
+    btnImprimirRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirRelatoriosCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnImprimirRelatoriosCabosActionPerformed(evt);
+        }
+    });
+
+    jRadioButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jRadioButton1.setText("Possuem Bobinas");
+
+    jRadioButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    jRadioButton2.setText("Não possuem Bobinas");
+
+    javax.swing.GroupLayout jpnCabosRelatoriosLayout = new javax.swing.GroupLayout(jpnCabosRelatorios);
+    jpnCabosRelatorios.setLayout(jpnCabosRelatoriosLayout);
+    jpnCabosRelatoriosLayout.setHorizontalGroup(
+        jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1070, Short.MAX_VALUE)
+        .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
+            .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
+                    .addGap(6, 6, 6)
+                    .addComponent(jRadioButton1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jRadioButton2))
+                .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtCodigoRelatorioCabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarCaboRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE))
-        );
+                        .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
+                            .addComponent(txtCodigoRelatorioCabo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(btnBuscarCaboRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnBuscarTudoCabos)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(btnImprimirRelatoriosCabos))
+    );
+    jpnCabosRelatoriosLayout.setVerticalGroup(
+        jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnCabosRelatoriosLayout.createSequentialGroup()
+            .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
+                    .addGap(46, 46, 46)
+                    .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnImprimirRelatoriosCabos)
+                        .addComponent(btnBuscarTudoCabos)))
+                .addGroup(jpnCabosRelatoriosLayout.createSequentialGroup()
+                    .addContainerGap(7, Short.MAX_VALUE)
+                    .addComponent(jLabel14)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtCodigoRelatorioCabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscarCaboRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                    .addGroup(jpnCabosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jRadioButton1)
+                        .addComponent(jRadioButton2))))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
+    );
 
-        jPanel7.add(jpnCabosRelatorios, "Cabos");
+    jPanel7.add(jpnCabosRelatorios, "Cabos");
 
-        btnPontasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnPontasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 azul.png"))); // NOI18N
-        btnPontasRelatorios.setText("Pontas");
-        btnPontasRelatorios.setContentAreaFilled(false);
-        btnPontasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPontasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnPontasRelatorios.setRolloverEnabled(true);
-        btnPontasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 cinza.png"))); // NOI18N
-        btnPontasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnPontasRelatorios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPontasRelatoriosActionPerformed(evt);
-            }
-        });
+    btnPontasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnPontasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 azul.png"))); // NOI18N
+    btnPontasRelatorios.setText("Pontas");
+    btnPontasRelatorios.setContentAreaFilled(false);
+    btnPontasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnPontasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnPontasRelatorios.setRolloverEnabled(true);
+    btnPontasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 cinza.png"))); // NOI18N
+    btnPontasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnPontasRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnPontasRelatoriosActionPerformed(evt);
+        }
+    });
 
-        btnCabosRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 azul.png"))); // NOI18N
-        btnCabosRelatorios.setText("Cabos");
-        btnCabosRelatorios.setContentAreaFilled(false);
-        btnCabosRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCabosRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCabosRelatorios.setRolloverEnabled(true);
-        btnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 cinza.png"))); // NOI18N
-        btnCabosRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnCabosRelatorios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCabosRelatoriosActionPerformed(evt);
-            }
-        });
+    btnCabosRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    btnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 azul.png"))); // NOI18N
+    btnCabosRelatorios.setText("Cabos");
+    btnCabosRelatorios.setContentAreaFilled(false);
+    btnCabosRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    btnCabosRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    btnCabosRelatorios.setRolloverEnabled(true);
+    btnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 cinza.png"))); // NOI18N
+    btnCabosRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+    btnCabosRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnCabosRelatoriosActionPerformed(evt);
+        }
+    });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBobinasRelatorios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPontasRelatorios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnBobinasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnPontasRelatorios)
-                .addGap(0, 0, 0)
-                .addComponent(btnCabosRelatorios)
-                .addGap(12, 12, 12))
-        );
+    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+    jPanel1.setLayout(jPanel1Layout);
+    jPanel1Layout.setHorizontalGroup(
+        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(24, 24, 24)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBobinasRelatorios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnPontasRelatorios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCabosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(42, 42, 42)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel1Layout.setVerticalGroup(
+        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+        .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(11, 11, 11)
+            .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(btnBobinasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(btnPontasRelatorios)
+            .addGap(0, 0, 0)
+            .addComponent(btnCabosRelatorios)
+            .addGap(12, 12, 12))
+    );
 
-        lblUsuarioTelaRel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblUsuarioTelaRel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
-        lblUsuarioTelaRel.setText("Usuário");
+    lblUsuarioTelaRel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    lblUsuarioTelaRel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
+    lblUsuarioTelaRel.setText("Usuário");
 
-        lblData.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lblData.setText("Data");
+    lblData.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+    lblData.setText("Data");
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+    javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+    jPanel11.setLayout(jPanel11Layout);
+    jPanel11Layout.setHorizontalGroup(
+        jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel11Layout.createSequentialGroup()
+            .addGap(7, 7, 7)
+            .addComponent(lblUsuarioTelaRel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblData)
+            .addGap(23, 23, 23))
+    );
+    jPanel11Layout.setVerticalGroup(
+        jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+            .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lblUsuarioTelaRel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblData)
-                .addGap(23, 23, 23))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsuarioTelaRel)
-                    .addComponent(lblData))
-                .addGap(17, 17, 17))
-        );
+                .addComponent(lblData))
+            .addGap(17, 17, 17))
+    );
 
-        javax.swing.GroupLayout jpnRelatoriosLayout = new javax.swing.GroupLayout(jpnRelatorios);
-        jpnRelatorios.setLayout(jpnRelatoriosLayout);
-        jpnRelatoriosLayout.setHorizontalGroup(
-            jpnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnRelatoriosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jpnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jpnRelatoriosLayout.setVerticalGroup(
-            jpnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnRelatoriosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+    javax.swing.GroupLayout jpnRelatoriosLayout = new javax.swing.GroupLayout(jpnRelatorios);
+    jpnRelatorios.setLayout(jpnRelatoriosLayout);
+    jpnRelatoriosLayout.setHorizontalGroup(
+        jpnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnRelatoriosLayout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jpnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(3, 3, 3)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    jpnRelatoriosLayout.setVerticalGroup(
+        jpnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnRelatoriosLayout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(3, 3, 3)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(3, 3, 3)
+            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
 
-        jPanel2.add(jpnRelatorios, "jpnRelatorios");
+    jPanel2.add(jpnRelatorios, "jpnRelatorios");
 
-        jmAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configurações-20.png"))); // NOI18N
-        jmAjustes.setText("Ajustes");
-        jmAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    jmAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configurações-20.png"))); // NOI18N
+    jmAjustes.setText("Ajustes");
+    jmAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    jmAjustes.setRolloverEnabled(true);
+    jmAjustes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configurações-20 verde.png"))); // NOI18N
 
-        jmUsuariosBarraMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
-        jmUsuariosBarraMenu.setText("Usuários/Vendedores");
-        jmUsuariosBarraMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmUsuariosBarraMenuActionPerformed(evt);
-            }
-        });
-        jmAjustes.add(jmUsuariosBarraMenu);
+    jmUsuariosBarraMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+    jmUsuariosBarraMenu.setText("Usuários/Vendedores");
+    jmUsuariosBarraMenu.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jmUsuariosBarraMenuActionPerformed(evt);
+        }
+    });
+    jmAjustes.add(jmUsuariosBarraMenu);
 
-        jMenuBar1.add(jmAjustes);
+    jMenuBar1.add(jmAjustes);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-20.png"))); // NOI18N
-        jMenu3.setText("Cabos");
+    jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-20.png"))); // NOI18N
+    jMenu3.setText("Cabos");
+    jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    jMenu3.setRolloverEnabled(true);
+    jMenu3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-20 verde.png"))); // NOI18N
 
-        jmGerenciarCabos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        jmGerenciarCabos.setText("Gerenciar");
-        jmGerenciarCabos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmGerenciarCabosActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jmGerenciarCabos);
+    jmGerenciarCabos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+    jmGerenciarCabos.setText("Gerenciar");
+    jmGerenciarCabos.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jmGerenciarCabosActionPerformed(evt);
+        }
+    });
+    jMenu3.add(jmGerenciarCabos);
 
-        jMenuBar1.add(jMenu3);
+    jMenuBar1.add(jMenu3);
 
-        jmInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informações-20.png"))); // NOI18N
-        jmInformacoes.setText("Informações");
-        jmInformacoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jmInformacoes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jmInformacoesMouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jmInformacoes);
+    jmInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informações-20.png"))); // NOI18N
+    jmInformacoes.setText("Informações");
+    jmInformacoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    jmInformacoes.setRolloverEnabled(true);
+    jmInformacoes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informações-20-verde.png"))); // NOI18N
+    jmInformacoes.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            jmInformacoesMouseClicked(evt);
+        }
+    });
+    jMenuBar1.add(jmInformacoes);
 
-        setJMenuBar(jMenuBar1);
+    setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    layout.setVerticalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
 
-        getAccessibleContext().setAccessibleParent(jPanel2);
+    getAccessibleContext().setAccessibleParent(jPanel2);
 
-        pack();
-        setLocationRelativeTo(null);
+    pack();
+    setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {
@@ -1654,25 +1673,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void btnRelatoriosAreaDeTrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosAreaDeTrabActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnRelatorios");
-
+        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72 selecionado.png");
     }//GEN-LAST:event_btnRelatoriosAreaDeTrabActionPerformed
 
     private void btnCabosAreaDeTrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCabosAreaDeTrabActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnCabos");
-
+        viewUtil.alterarIcone(btnCabosCabos, "icons8-elétrico-72 selecionado.png");
     }//GEN-LAST:event_btnCabosAreaDeTrabActionPerformed
 
     private void btnRelatoriosCabosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosCabosActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnRelatorios");
         txtDataInicialRelatorioSaidas.setText(dataHoje);
+        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72 selecionado.png");
+        viewUtil.alterarIcone(btnCabosCabos, "icons8-elétrico-72 menu escuro.png");
+        viewUtil.alterarIcone(jbnCabosRelatorios, "icons8-elétrico-72 menu escuro.png");
     }//GEN-LAST:event_btnRelatoriosCabosActionPerformed
 
     private void jbnCabosRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnCabosRelatoriosActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnCabos");
-
+        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72 menuClaro.png");
+        viewUtil.alterarIcone(btnCabosCabos, "icons8-elétrico-72 selecionado.png");
+        viewUtil.alterarIcone(jbnCabosRelatorios, "icons8-elétrico-72 menu escuro.png");
     }//GEN-LAST:event_jbnCabosRelatoriosActionPerformed
 
     private void jmInformacoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmInformacoesMouseClicked
@@ -1994,7 +2018,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
 
         if (saidaList.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Nenhum registro encontrado para esta Data!",
+            JOptionPane.showMessageDialog(null, "Nenhum registro encontrado para este período!",
                     "Falha", JOptionPane.WARNING_MESSAGE);
         } else {
             for (int i = 0; i < saidaList.size(); i++) {
@@ -2006,6 +2030,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     saidaList.get(i).getQuantidade(),
                     saidaList.get(i).getNomeVendedor(),
                     saidaList.get(i).getCaboPossuiBobina().equals("s") ? saidaList.get(i).getNumBobina() : " - - - -",};
+
                 tabelaRelatorioSaidas.addRow(cabo);
             }
         }
@@ -2218,6 +2243,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         relatorio.exibirRelatorio(0, diretorio);
     }//GEN-LAST:event_btnImprimirGeralpontasActionPerformed
 
+    private void btnAdicionarCabosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnAdicionarCabosKeyTyped
+        btnAdicionarCabos.doClick();
+    }//GEN-LAST:event_btnAdicionarCabosKeyTyped
+
+    private void btnAdicionarCabosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnAdicionarCabosFocusGained
+        this.viewUtil.alterarIcone(btnAdicionarCabos, "icons8-mais-2-matemática-50 verde.png");
+    }//GEN-LAST:event_btnAdicionarCabosFocusGained
+
+    private void btnAdicionarCabosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnAdicionarCabosFocusLost
+        this.viewUtil.alterarIcone(btnAdicionarCabos, "icons8-selecionado verde-32.png");
+    }//GEN-LAST:event_btnAdicionarCabosFocusLost
+
     public void preecherTabelaCaboRelatorio(List<Cabo> listCabo) {
         if (listCabo.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Cabo não encontrado!", "Falha",
@@ -2377,11 +2414,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         for (int i = 0; i < vendedorList.size(); i++) {
             jcb.addItem(vendedorList.get(i).getNome());
         }
-    }
-
-    public final void alterarIcone() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(
-                "/br/com/sisnet/controledecabos/telas/imagens/icone_cabo.png")));
     }
 
     public static void main(String args[]) {

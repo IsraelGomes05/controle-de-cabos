@@ -23,10 +23,10 @@ public class ConnectionFactory {
         try {
             Class.forName("org.sqlite.JDBC");
             String urlSqliteInstalado = "jdbc:sqlite:/C:/Controle de Cabos/ControleDeCabos_BD.db";
-            
+   
             return DriverManager.getConnection(urlSqliteInstalado);
         } catch (SQLException | ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null,"Não foi possível conectar ao Banco de dados "+ ex.getMessage(),
+            JOptionPane.showMessageDialog(null,"<html><h3>    Não foi possível conectar ao Banco de dados</h3></html> \n"+ ex.getMessage(),
                     "Falha", JOptionPane.ERROR_MESSAGE);
         }
 

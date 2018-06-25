@@ -55,7 +55,7 @@ public class TelaLogin extends javax.swing.JDialog {
 
         lblUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32 branco.png"))); // NOI18N
+        lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuario-de-genero-neutro-32-branco.png"))); // NOI18N
 
         txtUsuario.setBackground(new java.awt.Color(37, 40, 39));
         txtUsuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -79,7 +79,7 @@ public class TelaLogin extends javax.swing.JDialog {
         lblSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-senha-32 branco.png"))); // NOI18N
 
         txtSenha.setBackground(new java.awt.Color(37, 40, 39));
-        txtSenha.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        txtSenha.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setText("senha1");
         txtSenha.setBorder(null);
@@ -184,7 +184,7 @@ public class TelaLogin extends javax.swing.JDialog {
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("v2.5.7");
+        jLabel6.setText("v3.0.0");
 
         btnsair.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         btnsair.setForeground(new java.awt.Color(255, 255, 255));
@@ -208,34 +208,34 @@ public class TelaLogin extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel3))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addComponent(jLabel4)))
-                        .addGap(0, 57, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnsair)))
+                        .addGap(0, 294, Short.MAX_VALUE)
+                        .addComponent(btnsair))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(jLabel3)
+                        .addGap(108, 108, 108)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel4)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnsair)
-                .addGap(24, 24, 24)
+                .addGap(66, 66, 66)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

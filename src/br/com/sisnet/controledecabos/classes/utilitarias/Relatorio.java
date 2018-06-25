@@ -43,7 +43,7 @@ public class Relatorio {
                 jv.setVisible(true);
                 jv.setTitle("Controle de Cabos Relatórios");
                 jv.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(
-                        "/br/com/sisnet/controledecabos/telas/imagens/icone_cabo.png")));
+                        "/br/com/sisnet/controledecabos/telas/imagens/Logo Sistema.png")));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Falha ao imprimir \n"
                         + e.getMessage(), "Falha", JOptionPane.ERROR_MESSAGE);
@@ -73,7 +73,7 @@ public class Relatorio {
                 jv.setVisible(true);
                 jv.setTitle("Controle de Cabos Relatórios");
                 jv.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(
-                        "/br/com/sisnet/controledecabos/telas/imagens/icone_cabo.png")));
+                        "/br/com/sisnet/controledecabos/telas/imagens/Logo Sistema.png")));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Falha ao imprimir \n"
                         + e.getMessage(), "Falha", JOptionPane.ERROR_MESSAGE);
@@ -100,7 +100,7 @@ public class Relatorio {
                 jv.setVisible(true);
                 jv.setTitle("Controle de Cabos Relatórios");
                 jv.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(
-                        "/br/com/sisnet/controledecabos/telas/imagens/icone_cabo.png")));
+                        "/br/com/sisnet/controledecabos/telas/imagens/Logo Sistema.png")));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Falha ao imprimir \n"
                         + e.getMessage(), "Falha", JOptionPane.ERROR_MESSAGE);

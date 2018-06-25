@@ -100,7 +100,7 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jtbBusca.setSelectionBackground(new java.awt.Color(170, 215, 135));
+        jtbBusca.setSelectionBackground(new java.awt.Color(37, 211, 124));
         jtbBusca.setSelectionForeground(new java.awt.Color(51, 51, 51));
         jtbBusca.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jtbBusca.setShowHorizontalLines(false);
@@ -125,8 +125,11 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
         }
 
         btnInserir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-login-arredondado-à-direita-32.png"))); // NOI18N
+        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
         btnInserir.setText("Inserir");
+        btnInserir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInserir.setRolloverEnabled(true);
+        btnInserir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInserirActionPerformed(evt);
@@ -140,6 +143,7 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
 
         btnbuscarPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnbuscarPontas.setText("Buscar Pontas");
+        btnbuscarPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnbuscarPontas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbuscarPontasActionPerformed(evt);
@@ -311,6 +315,8 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
     private void btnInserirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnInserirKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_LEFT) {
             jtbBusca.requestFocus();
+        } else if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnInserir.doClick();
         }
     }//GEN-LAST:event_btnInserirKeyPressed
 

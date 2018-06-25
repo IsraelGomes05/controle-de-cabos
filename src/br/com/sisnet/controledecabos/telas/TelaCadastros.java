@@ -70,7 +70,7 @@ public class TelaCadastros extends javax.swing.JDialog {
         jcbAlterarDados = new javax.swing.JCheckBox();
         btnSalvarUsuario = new javax.swing.JButton();
         jpnVendedores = new javax.swing.JPanel();
-        jpnUsuarios1 = new javax.swing.JPanel();
+        jpnVendedor = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txtNomeVendedor = new javax.swing.JTextField();
         btnCadastrarVendedor = new javax.swing.JButton();
@@ -127,7 +127,9 @@ public class TelaCadastros extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jLabel2.setText("Senha");
 
+        txtSenha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtSenha.setToolTipText("Esta senha será criptografada");
+        txtSenha.setEchoChar('\u2219');
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtSenhaKeyPressed(evt);
@@ -136,6 +138,9 @@ public class TelaCadastros extends javax.swing.JDialog {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jLabel3.setText("Confirmar Senha");
+
+        txtConfirmarSenha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtConfirmarSenha.setEchoChar('\u2219');
 
         btnAlterarUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnAlterarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
@@ -273,7 +278,7 @@ public class TelaCadastros extends javax.swing.JDialog {
 
         jPanel2.add(jpnUsuarios, "Usuarios");
 
-        jpnUsuarios1.setBackground(new java.awt.Color(204, 204, 204));
+        jpnVendedor.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jLabel4.setText("Nome");
@@ -315,44 +320,44 @@ public class TelaCadastros extends javax.swing.JDialog {
 
         jListVendedores.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jListVendedores.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jListVendedores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jListVendedoresValueChanged(evt);
+        jListVendedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListVendedoresMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jListVendedores);
 
-        javax.swing.GroupLayout jpnUsuarios1Layout = new javax.swing.GroupLayout(jpnUsuarios1);
-        jpnUsuarios1.setLayout(jpnUsuarios1Layout);
-        jpnUsuarios1Layout.setHorizontalGroup(
-            jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpnVendedorLayout = new javax.swing.GroupLayout(jpnVendedor);
+        jpnVendedor.setLayout(jpnVendedorLayout);
+        jpnVendedorLayout.setHorizontalGroup(
+            jpnVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnVendedorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(109, 109, 109)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                .addGroup(jpnVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnVendedorLayout.createSequentialGroup()
                         .addComponent(btnDeletarVendedor)
                         .addGap(0, 0, 0)
                         .addComponent(btnCadastrarVendedor))
-                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                    .addGroup(jpnVendedorLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtNomeVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
-        jpnUsuarios1Layout.setVerticalGroup(
-            jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+        jpnVendedorLayout.setVerticalGroup(
+            jpnVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnVendedorLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jpnVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jpnVendedorLayout.createSequentialGroup()
+                        .addGroup(jpnVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNomeVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGap(64, 64, 64)
-                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jpnVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCadastrarVendedor)
                             .addComponent(btnDeletarVendedor))))
                 .addGap(17, 17, 17))
@@ -364,14 +369,14 @@ public class TelaCadastros extends javax.swing.JDialog {
             jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 623, Short.MAX_VALUE)
             .addGroup(jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpnUsuarios1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpnVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnVendedoresLayout.setVerticalGroup(
             jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 284, Short.MAX_VALUE)
             .addGroup(jpnVendedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jpnVendedoresLayout.createSequentialGroup()
-                    .addComponent(jpnUsuarios1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpnVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -435,9 +440,7 @@ public class TelaCadastros extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUsuario)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnVendedor)
-                        .addGap(0, 0, 0)))
+                    .addComponent(btnVendedor))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -625,9 +628,9 @@ public class TelaCadastros extends javax.swing.JDialog {
         viewUtil.alterarIcone(btnVendedor, "icons8-funcionário-homem-64 selecionado.png");
     }//GEN-LAST:event_btnVendedorActionPerformed
 
-    private void jListVendedoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListVendedoresValueChanged
+    private void jListVendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListVendedoresMouseClicked
         txtNomeVendedor.setText((String) listaVendedoresModel.get(jListVendedores.getSelectedIndex()));
-    }//GEN-LAST:event_jListVendedoresValueChanged
+    }//GEN-LAST:event_jListVendedoresMouseClicked
 
     private void preencherLista() {
         listaVendedoresModel.removeAllElements();
@@ -753,7 +756,7 @@ public class TelaCadastros extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JCheckBox jcbAlterarDados;
     private javax.swing.JPanel jpnUsuarios;
-    private javax.swing.JPanel jpnUsuarios1;
+    private javax.swing.JPanel jpnVendedor;
     private javax.swing.JPanel jpnVendedores;
     private javax.swing.JPasswordField txtConfirmarSenha;
     private javax.swing.JTextField txtNomeVendedor;

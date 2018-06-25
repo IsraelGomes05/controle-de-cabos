@@ -35,7 +35,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     ViewUtil viewUtil;
     /**
      * 
-     * @param parent java.awt.Frame - Tela a qual está será associada.<br>
+     * @param parent java.awt.Frame - Tela a qual esta será associada.<br>
      * @param modal boolean - <b>true</b> a tela parent(que chama esta tela) não
      *        pode ser acessada, enquanto esta tela estiver aberta,<br> <b>false</b> poderá ser acessada.<br>
      * @param externo boolean - <b>true</b> caso os dados para cadastro da ponta venham pelo contrutor,
@@ -52,14 +52,16 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             int codigoCabo
     ) {
         super(parent, modal);
-        initComponents();
         setAcessibilidade();
+        initComponents();
+        viewUtil = new ViewUtil();
         
         /*Cabo*/
         btnAlterarCabo.setEnabled(false);
         btnCadastrarCabo.setEnabled(false);
         btnDeletarCabo.setEnabled(false);
         txtDescricaoCabos.setEditable(false);
+        viewUtil.alterarIcone(btnCabos, "icons8-elétrico-64 selecionado.png");
         /*Pontas*/
         btnPontas.setBackground(Color.YELLOW);
         btnDeletarPonta.setEnabled(false);
@@ -72,6 +74,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
         if (externo) {
             btnGerarPontas.doClick();
+            btnPontas.doClick();
             txtCodigoPonta.setText("" + codigoCabo);
             txtQuantidadePonta.setText("" + quantidade);
             txtCodigoPontaKeyPressed(new KeyEvent(parent, WIDTH, WIDTH, SOMEBITS, KeyEvent.VK_ENTER));
@@ -90,7 +93,6 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         lblBobinaCadastrada.setVisible(false);
         btnCadastrarBobina.setEnabled(false);
         
-        viewUtil = new ViewUtil();
     }
 
     @SuppressWarnings("unchecked")
@@ -173,6 +175,11 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         btnCadastrarCabo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarCaboActionPerformed(evt);
+            }
+        });
+        btnCadastrarCabo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnCadastrarCaboKeyTyped(evt);
             }
         });
 
@@ -397,7 +404,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             }
         });
         jtbTabelaBobina.setGridColor(new java.awt.Color(255, 255, 255));
-        jtbTabelaBobina.setSelectionBackground(new java.awt.Color(170, 215, 135));
+        jtbTabelaBobina.setSelectionBackground(new java.awt.Color(37, 211, 124));
         jtbTabelaBobina.setSelectionForeground(new java.awt.Color(51, 51, 51));
         jtbTabelaBobina.setShowHorizontalLines(false);
         jtbTabelaBobina.getTableHeader().setReorderingAllowed(false);
@@ -566,6 +573,11 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         btnCadastrarPonta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarPontaActionPerformed(evt);
+            }
+        });
+        btnCadastrarPonta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnCadastrarPontaKeyTyped(evt);
             }
         });
 
@@ -783,6 +795,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         btnPontas.setText("Pontas");
         btnPontas.setContentAreaFilled(false);
         btnPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPontas.setFocusCycleRoot(true);
         btnPontas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnPontas.setName(""); // NOI18N
         btnPontas.setRolloverEnabled(true);
@@ -1568,6 +1581,18 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     private void txtCodigoPontaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoPontaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoPontaActionPerformed
+
+    private void btnCadastrarCaboKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCadastrarCaboKeyTyped
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnCadastrarCabo.doClick();
+        }
+    }//GEN-LAST:event_btnCadastrarCaboKeyTyped
+
+    private void btnCadastrarPontaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnCadastrarPontaKeyTyped
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnCadastrarPonta.doClick();
+        }
+    }//GEN-LAST:event_btnCadastrarPontaKeyTyped
 
     /**
      * @param args the command line arguments

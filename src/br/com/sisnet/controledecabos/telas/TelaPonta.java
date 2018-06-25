@@ -7,16 +7,20 @@ package br.com.sisnet.controledecabos.telas;
 import br.com.sisnet.controledecabos.classes.PontaCabo;
 import br.com.sisnet.controledecabos.classes.utilitarias.Conversor;
 import br.com.sisnet.controledecabos.conexaobd.PontaDAO;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.util.List;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import javax.swing.plaf.metal.MetalButtonUI;
+import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
 
 /**
  * @author Israel Gomes Da Silva
  * @contact israelgomes05@gmail.com
  * @created 24/03/2018
- * @lastModified 25/03/2018
+ * @lastModified 24/06/2018
  * @version 2.0
  *
  * @Function...
@@ -29,14 +33,15 @@ public class TelaPonta extends javax.swing.JDialog {
 
     public  TelaPonta(java.awt.Frame parent, boolean modal, int codigo, double qtd, boolean btnAtivo) {
         super(parent, modal);
-        this.setUndecorated(true);
-         
+        this.setAcessibilidade();
+        
         initComponents();
+        
         btnFechar.requestFocus();
-        btnFechar.setUI(new MetalButtonUI());
         btnSubtrair.setEnabled(btnAtivo);
         qtdSolicitada = qtd;
         txtQtd.setText("" + qtd);
+        
         List<PontaCabo> pontaList = PontaDAO.buscaCodigoCabo(codigo, qtd);
 
         if (!pontaList.isEmpty()) {
@@ -46,7 +51,6 @@ public class TelaPonta extends javax.swing.JDialog {
                     pontaList.get(i).getCodigoCabo(), pontaList.get(i).getQuantidade(),
                     pontaList.get(i).getLocal()};
                 tabelaPonta.addRow(ponta);
-
             }
         }
     }
@@ -69,6 +73,7 @@ public class TelaPonta extends javax.swing.JDialog {
         setTitle("PONTAS DISPONÍVEIS");
         setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         setForeground(new java.awt.Color(153, 255, 153));
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
@@ -92,6 +97,7 @@ public class TelaPonta extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
+        jtbPonta.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jtbPonta.setShowHorizontalLines(false);
         jtbPonta.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jtbPonta);
@@ -121,12 +127,21 @@ public class TelaPonta extends javax.swing.JDialog {
         jLabel2.setForeground(new java.awt.Color(153, 255, 153));
         jLabel2.setText("PONTAS DISPONÍVEIS");
 
-        btnFechar.setBackground(new java.awt.Color(51, 51, 51));
         btnFechar.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/cross.png"))); // NOI18N
+        btnFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32.png"))); // NOI18N
+        btnFechar.setContentAreaFilled(false);
+        btnFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFechar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnFechar.setRolloverEnabled(true);
+        btnFechar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 amarelo.png"))); // NOI18N
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFecharActionPerformed(evt);
+            }
+        });
+        btnFechar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnFecharKeyTyped(evt);
             }
         });
 
@@ -206,6 +221,18 @@ public class TelaPonta extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    public final void setAcessibilidade() {
+        getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(
+                KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "Cancel");
+        getRootPane().getActionMap().put("Cancel", new AbstractAction() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              setVisible(false);
+            }
+        });
+    }
+    
     private void btnSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtrairActionPerformed
         qtdSolicitada = Conversor.paraDouble(txtQtd.getText(), "Quantidade");
         
@@ -246,6 +273,10 @@ public class TelaPonta extends javax.swing.JDialog {
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
+
+    private void btnFecharKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnFecharKeyTyped
+         btnFechar.doClick();
+    }//GEN-LAST:event_btnFecharKeyTyped
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

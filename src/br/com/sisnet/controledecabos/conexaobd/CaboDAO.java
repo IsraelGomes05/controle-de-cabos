@@ -1,5 +1,5 @@
 /** 
- * @created  10/03/2018
+ * @created      10/03/2018
  * @lastModified 06/04/2018 
  */
 package br.com.sisnet.controledecabos.conexaobd;
@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
 
 /**
  * Classe responsável por realizar o CRUD na tabela cabo.
- * @author Israel Gomes
+ * @author  Israel Gomes
  * @version 2.8
- * @since 1.0
+ * @since   1.0
  */
 public class CaboDAO {
 
