@@ -41,7 +41,6 @@ public class TelaCadastros extends javax.swing.JDialog {
         jcbAlterarDados.setEnabled(false);
         btnCadastrarVendedor.setEnabled(false);
         btnDeletarVendedor.setEnabled(false);
-
         viewUtil = new ViewUtil();
         setAcessibilidade();
         listaVendedoresModel = new DefaultListModel();
@@ -53,9 +52,6 @@ public class TelaCadastros extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        btnAlterarUsuarios1 = new javax.swing.JButton();
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jpnUsuarios = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -64,11 +60,11 @@ public class TelaCadastros extends javax.swing.JDialog {
         txtSenha = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         txtConfirmarSenha = new javax.swing.JPasswordField();
-        btnAlterarUsuario = new javax.swing.JButton();
         btnDeletarUsuarios = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jcbAlterarDados = new javax.swing.JCheckBox();
         btnSalvarUsuario = new javax.swing.JButton();
+        btnAlterarUsuario = new javax.swing.JButton();
         jpnVendedores = new javax.swing.JPanel();
         jpnVendedor = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -79,32 +75,6 @@ public class TelaCadastros extends javax.swing.JDialog {
         jListVendedores = new javax.swing.JList<>();
         btnUsuario = new javax.swing.JButton();
         btnVendedor = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        btnAlterarUsuarios1.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAlterarUsuarios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
-        btnAlterarUsuarios1.setText("Alterar");
-        btnAlterarUsuarios1.setContentAreaFilled(false);
-        btnAlterarUsuarios1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAlterarUsuarios1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAlterarUsuarios1.setRolloverEnabled(true);
-        btnAlterarUsuarios1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 amarelo.png"))); // NOI18N
-        btnAlterarUsuarios1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAlterarUsuarios1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarUsuarios1ActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciar Usuarios/Vendedores");
@@ -142,29 +112,13 @@ public class TelaCadastros extends javax.swing.JDialog {
         txtConfirmarSenha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtConfirmarSenha.setEchoChar('\u2219');
 
-        btnAlterarUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAlterarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
-        btnAlterarUsuario.setText("Alterar");
-        btnAlterarUsuario.setToolTipText("");
-        btnAlterarUsuario.setContentAreaFilled(false);
-        btnAlterarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAlterarUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAlterarUsuario.setRolloverEnabled(true);
-        btnAlterarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 amarelo.png"))); // NOI18N
-        btnAlterarUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAlterarUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarUsuarioActionPerformed(evt);
-            }
-        });
-
         btnDeletarUsuarios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
+        btnDeletarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
         btnDeletarUsuarios.setText("Deletar");
         btnDeletarUsuarios.setContentAreaFilled(false);
         btnDeletarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnDeletarUsuarios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+        btnDeletarUsuarios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
         btnDeletarUsuarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDeletarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,17 +153,31 @@ public class TelaCadastros extends javax.swing.JDialog {
         );
 
         btnSalvarUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnSalvarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+        btnSalvarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
         btnSalvarUsuario.setText("Cadastrar");
         btnSalvarUsuario.setContentAreaFilled(false);
         btnSalvarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSalvarUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSalvarUsuario.setRolloverEnabled(true);
-        btnSalvarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnSalvarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
         btnSalvarUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnSalvarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarUsuarioActionPerformed(evt);
+            }
+        });
+
+        btnAlterarUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnAlterarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
+        btnAlterarUsuario.setText("Deletar");
+        btnAlterarUsuario.setContentAreaFilled(false);
+        btnAlterarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAlterarUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAlterarUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-amarelo.png"))); // NOI18N
+        btnAlterarUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAlterarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarUsuarioActionPerformed(evt);
             }
         });
 
@@ -218,14 +186,13 @@ public class TelaCadastros extends javax.swing.JDialog {
         jpnUsuariosLayout.setHorizontalGroup(
             jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuariosLayout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuariosLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpnUsuariosLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuariosLayout.createSequentialGroup()
                         .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel1))
@@ -271,8 +238,8 @@ public class TelaCadastros extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvarUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAlterarUsuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnDeletarUsuarios, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnDeletarUsuarios, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnAlterarUsuario, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
@@ -291,12 +258,12 @@ public class TelaCadastros extends javax.swing.JDialog {
         });
 
         btnCadastrarVendedor.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCadastrarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+        btnCadastrarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
         btnCadastrarVendedor.setText("Cadastrar");
         btnCadastrarVendedor.setContentAreaFilled(false);
         btnCadastrarVendedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastrarVendedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCadastrarVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnCadastrarVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
         btnCadastrarVendedor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnCadastrarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,12 +272,12 @@ public class TelaCadastros extends javax.swing.JDialog {
         });
 
         btnDeletarVendedor.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
+        btnDeletarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
         btnDeletarVendedor.setText("Deletar");
         btnDeletarVendedor.setContentAreaFilled(false);
         btnDeletarVendedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarVendedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnDeletarVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+        btnDeletarVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
         btnDeletarVendedor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDeletarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,17 +350,13 @@ public class TelaCadastros extends javax.swing.JDialog {
         jPanel2.add(jpnVendedores, "Vendedores");
 
         btnUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 azul.png"))); // NOI18N
+        btnUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64-azul.png"))); // NOI18N
         btnUsuario.setText("Usuários");
-        buttonGroup1.add(btnUsuario);
         btnUsuario.setContentAreaFilled(false);
         btnUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnUsuario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 selecionado.png"))); // NOI18N
         btnUsuario.setRolloverEnabled(true);
-        btnUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 cinza.png"))); // NOI18N
-        btnUsuario.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 azul.png"))); // NOI18N
-        btnUsuario.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64 selecionado.png"))); // NOI18N
+        btnUsuario.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-gerente-64-cinza.png"))); // NOI18N
         btnUsuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -402,16 +365,13 @@ public class TelaCadastros extends javax.swing.JDialog {
         });
 
         btnVendedor.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 azul.png"))); // NOI18N
+        btnVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionario-homem-64-azul.png"))); // NOI18N
         btnVendedor.setText("Vendedores");
-        buttonGroup1.add(btnVendedor);
         btnVendedor.setContentAreaFilled(false);
         btnVendedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVendedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnVendedor.setRolloverEnabled(true);
-        btnVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 cinza.png"))); // NOI18N
-        btnVendedor.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 azul.png"))); // NOI18N
-        btnVendedor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionário-homem-64 selecionado.png"))); // NOI18N
+        btnVendedor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-funcionario-homem-64-cinza.png"))); // NOI18N
         btnVendedor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -492,22 +452,7 @@ public class TelaCadastros extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_txtUsuarioKeyPressed
 
-    private void btnDeletarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarUsuariosActionPerformed
-        String usuario = txtUsuario.getText();
-
-        if (!isUsuarioCadastrado(usuario)) {
-            JOptionPane.showMessageDialog(null, "Usuário Não está cadastrado!",
-                    "Falha", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (LoginDAO.excluir(usuario)) {
-            JOptionPane.showMessageDialog(null, "Usuário excluido com Sucesso!",
-                    "concluido", JOptionPane.WARNING_MESSAGE);
-        }
-        txtUsuario.setText("");
-    }//GEN-LAST:event_btnDeletarUsuariosActionPerformed
-
-    private void btnAlterarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarUsuarioActionPerformed
+    public void alterarUser() {
         String selecionado = "n";
         String senha = Cripto.criptografar(new String(txtSenha.getPassword()));
         String senhaConfirma = Cripto.criptografar(new String(txtConfirmarSenha.getPassword()));
@@ -534,8 +479,8 @@ public class TelaCadastros extends javax.swing.JDialog {
                         "Falha", JOptionPane.WARNING_MESSAGE);
             }
         }
-    }//GEN-LAST:event_btnAlterarUsuarioActionPerformed
-
+    }
+    
     private void txtNomeVendedorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeVendedorKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             List<Vendedor> vendedorList;
@@ -606,10 +551,6 @@ public class TelaCadastros extends javax.swing.JDialog {
         txtNomeVendedor.setText("");
     }//GEN-LAST:event_btnCadastrarVendedorActionPerformed
 
-    private void btnAlterarUsuarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarUsuarios1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAlterarUsuarios1ActionPerformed
-
     private void btnSalvarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarUsuarioActionPerformed
         this.salvarUsuario();
     }//GEN-LAST:event_btnSalvarUsuarioActionPerformed
@@ -617,20 +558,39 @@ public class TelaCadastros extends javax.swing.JDialog {
     private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Usuarios");
-        viewUtil.alterarIcone(btnUsuario, "icons8-gerente-64 selecionado.png");
-        viewUtil.alterarIcone(btnVendedor, "icons8-funcionário-homem-64 azul.png");
+        viewUtil.alterarIcone(btnUsuario, "icons8-gerente-64-selecionado.png");
+        viewUtil.alterarIcone(btnVendedor, "icons8-funcionario-homem-64-azul.png");
     }//GEN-LAST:event_btnUsuarioActionPerformed
 
     private void btnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendedorActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Vendedores");
-        viewUtil.alterarIcone(btnUsuario, "icons8-gerente-64 azul.png");
-        viewUtil.alterarIcone(btnVendedor, "icons8-funcionário-homem-64 selecionado.png");
+        viewUtil.alterarIcone(btnUsuario, "icons8-gerente-64-azul.png");
+        viewUtil.alterarIcone(btnVendedor, "icons8-funcionario-homem-64-selecionado.png");
     }//GEN-LAST:event_btnVendedorActionPerformed
 
     private void jListVendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListVendedoresMouseClicked
         txtNomeVendedor.setText((String) listaVendedoresModel.get(jListVendedores.getSelectedIndex()));
     }//GEN-LAST:event_jListVendedoresMouseClicked
+
+    private void btnAlterarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarUsuarioActionPerformed
+        alterarUser();
+    }//GEN-LAST:event_btnAlterarUsuarioActionPerformed
+
+    private void btnDeletarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarUsuariosActionPerformed
+        String usuario = txtUsuario.getText();
+
+        if (!isUsuarioCadastrado(usuario)) {
+            JOptionPane.showMessageDialog(null, "Usuário Não está cadastrado!",
+                "Falha", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (LoginDAO.excluir(usuario)) {
+            JOptionPane.showMessageDialog(null, "Usuário excluido com Sucesso!",
+                "concluido", JOptionPane.WARNING_MESSAGE);
+        }
+        txtUsuario.setText("");
+    }//GEN-LAST:event_btnDeletarUsuariosActionPerformed
 
     private void preencherLista() {
         listaVendedoresModel.removeAllElements();
@@ -737,14 +697,12 @@ public class TelaCadastros extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarUsuario;
-    private javax.swing.JButton btnAlterarUsuarios1;
     private javax.swing.JButton btnCadastrarVendedor;
     private javax.swing.JButton btnDeletarUsuarios;
     private javax.swing.JButton btnDeletarVendedor;
     private javax.swing.JButton btnSalvarUsuario;
     private javax.swing.JButton btnUsuario;
     private javax.swing.JButton btnVendedor;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -752,7 +710,6 @@ public class TelaCadastros extends javax.swing.JDialog {
     private javax.swing.JList<String> jListVendedores;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JCheckBox jcbAlterarDados;
     private javax.swing.JPanel jpnUsuarios;

@@ -33,8 +33,11 @@ public class ViewUtil {
             label.setIcon(img);
 
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "    Não foi Possível carregar a imagem\n "
-                    + ex.getMessage(),
+            String erro = "";
+            for (Object object : ex.getStackTrace()) {
+                erro += object + "\n";
+            }
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + ex.getMessage() + erro,
                     "Falha", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -52,8 +55,11 @@ public class ViewUtil {
             botao.setIcon(img);
 
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "    Não foi Possível carregar a imagem\n "
-                    + ex.getMessage(),
+            String erro = "";
+            for (Object object : ex.getStackTrace()) {
+                erro += object + "\n";
+            }
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + ex.getMessage() + erro,
                     "Falha", JOptionPane.ERROR_MESSAGE);
         }
     }

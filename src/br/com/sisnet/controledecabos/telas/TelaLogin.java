@@ -76,7 +76,7 @@ public class TelaLogin extends javax.swing.JDialog {
         lblSenha.setBackground(new java.awt.Color(204, 204, 204));
         lblSenha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
-        lblSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-senha-32 branco.png"))); // NOI18N
+        lblSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-senha-32-branco.png"))); // NOI18N
 
         txtSenha.setBackground(new java.awt.Color(37, 40, 39));
         txtSenha.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -176,7 +176,7 @@ public class TelaLogin extends javax.swing.JDialog {
 
         jPanel2.setBackground(new java.awt.Color(44, 62, 80));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/resized_Logo Sistema.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/resized_logo-Sistema.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 153, 0));
@@ -209,7 +209,7 @@ public class TelaLogin extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 294, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnsair))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(107, 107, 107)
@@ -264,8 +264,8 @@ public class TelaLogin extends javax.swing.JDialog {
         String usuario = txtUsuario.getText();
 
         if (!LoginControler.logar(this, senha, usuario, lblTentativas)) {
-            viewUtil.alterarIcone(lblSenha, "icons8-senha-32 red.png");
-            viewUtil.alterarIcone(lblUsuario, "icons8-usuário-de-gênero-neutro-32 red.png");
+            viewUtil.alterarIcone(lblSenha, "icons8-senha-32-red.png");
+            viewUtil.alterarIcone(lblUsuario, "icons8-usuario-de-genero-neutro-32 red.png");
         }
     }
 
@@ -295,7 +295,7 @@ public class TelaLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_txtSenhaFocusGained
 
     private void btnentrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnentrarMouseEntered
-        viewUtil.alterarIcone(btnentrar, "icons8-para-a-direita-32 yellon.png");
+        viewUtil.alterarIcone(btnentrar, "icons8-para-a-direita-32-yellon.png");
     }//GEN-LAST:event_btnentrarMouseEntered
 
     private void btnentrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnentrarMouseExited
@@ -311,7 +311,7 @@ public class TelaLogin extends javax.swing.JDialog {
     }//GEN-LAST:event_btnsairMouseClicked
 
     private void btnsairMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsairMouseEntered
-        viewUtil.alterarIcone(btnsair, "icons8-excluir-32 amarelo.png");
+        viewUtil.alterarIcone(btnsair, "icons8-excluir-32-amarelo.png");
 
     }//GEN-LAST:event_btnsairMouseEntered
 

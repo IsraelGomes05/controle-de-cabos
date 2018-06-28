@@ -125,11 +125,11 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
         }
 
         btnInserir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
+        btnInserir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32-azul.png"))); // NOI18N
         btnInserir.setText("Inserir");
         btnInserir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnInserir.setRolloverEnabled(true);
-        btnInserir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+        btnInserir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-verde-32.png"))); // NOI18N
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInserirActionPerformed(evt);

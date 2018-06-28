@@ -61,7 +61,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         btnCadastrarCabo.setEnabled(false);
         btnDeletarCabo.setEnabled(false);
         txtDescricaoCabos.setEditable(false);
-        viewUtil.alterarIcone(btnCabos, "icons8-elétrico-64 selecionado.png");
+        viewUtil.alterarIcone(btnCabos, "icons8-eletrico-64-selecionado.png");
         /*Pontas*/
         btnPontas.setBackground(Color.YELLOW);
         btnDeletarPonta.setEnabled(false);
@@ -163,13 +163,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         jpnCabos.setBackground(new java.awt.Color(204, 204, 204));
 
         btnCadastrarCabo.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCadastrarCabo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+        btnCadastrarCabo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
         btnCadastrarCabo.setText("Cadastrar");
         btnCadastrarCabo.setContentAreaFilled(false);
         btnCadastrarCabo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastrarCabo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastrarCabo.setRolloverEnabled(true);
-        btnCadastrarCabo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnCadastrarCabo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
         btnCadastrarCabo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btnCadastrarCabo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnCadastrarCabo.addActionListener(new java.awt.event.ActionListener() {
@@ -184,13 +184,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnAlterarCabo.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAlterarCabo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
+        btnAlterarCabo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
         btnAlterarCabo.setText("Alterar");
         btnAlterarCabo.setContentAreaFilled(false);
         btnAlterarCabo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAlterarCabo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAlterarCabo.setRolloverEnabled(true);
-        btnAlterarCabo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 amarelo.png"))); // NOI18N
+        btnAlterarCabo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-amarelo.png"))); // NOI18N
         btnAlterarCabo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnAlterarCabo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,13 +199,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnDeletarCabo.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarCabo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
+        btnDeletarCabo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
         btnDeletarCabo.setText("Deletar");
         btnDeletarCabo.setContentAreaFilled(false);
         btnDeletarCabo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarCabo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnDeletarCabo.setRolloverEnabled(true);
-        btnDeletarCabo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+        btnDeletarCabo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
         btnDeletarCabo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDeletarCabo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -336,13 +336,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         jLabel11.setText("Quantidade");
 
         btnAtualizarBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAtualizarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
+        btnAtualizarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
         btnAtualizarBobinas.setText("Atualizar");
         btnAtualizarBobinas.setContentAreaFilled(false);
         btnAtualizarBobinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAtualizarBobinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAtualizarBobinas.setRolloverEnabled(true);
-        btnAtualizarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 amarelo.png"))); // NOI18N
+        btnAtualizarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-amarelo.png"))); // NOI18N
         btnAtualizarBobinas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnAtualizarBobinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -354,13 +354,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         jLabel14.setText("Descrição");
 
         btnDeletarBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
+        btnDeletarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
         btnDeletarBobinas.setText("Deletar");
         btnDeletarBobinas.setContentAreaFilled(false);
         btnDeletarBobinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarBobinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnDeletarBobinas.setRolloverEnabled(true);
-        btnDeletarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+        btnDeletarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
         btnDeletarBobinas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDeletarBobinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -385,7 +385,6 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         jcbAtivo.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jcbAtivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----", "Ativo", "Inativo" }));
 
-        jtbTabelaBobina.setAutoCreateRowSorter(true);
         jtbTabelaBobina.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         jtbTabelaBobina.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -408,6 +407,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         jtbTabelaBobina.setSelectionForeground(new java.awt.Color(51, 51, 51));
         jtbTabelaBobina.setShowHorizontalLines(false);
         jtbTabelaBobina.getTableHeader().setReorderingAllowed(false);
+        jtbTabelaBobina.setUpdateSelectionOnSort(false);
         jScrollPane1.setViewportView(jtbTabelaBobina);
         if (jtbTabelaBobina.getColumnModel().getColumnCount() > 0) {
             jtbTabelaBobina.getColumnModel().getColumn(0).setMinWidth(50);
@@ -423,13 +423,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         }
 
         btnCadastrarBobina.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCadastrarBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+        btnCadastrarBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
         btnCadastrarBobina.setText("Cadastrar");
         btnCadastrarBobina.setContentAreaFilled(false);
         btnCadastrarBobina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastrarBobina.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastrarBobina.setRolloverEnabled(true);
-        btnCadastrarBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnCadastrarBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
         btnCadastrarBobina.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnCadastrarBobina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -438,14 +438,14 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnSelecionarBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnSelecionarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
+        btnSelecionarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32-azul.png"))); // NOI18N
         btnSelecionarBobinas.setText("Selecionar");
         btnSelecionarBobinas.setContentAreaFilled(false);
         btnSelecionarBobinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSelecionarBobinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSelecionarBobinas.setMinimumSize(new java.awt.Dimension(88, 70));
         btnSelecionarBobinas.setRolloverEnabled(true);
-        btnSelecionarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+        btnSelecionarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-verde-32.png"))); // NOI18N
         btnSelecionarBobinas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnSelecionarBobinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -458,14 +458,14 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         lblBobinaCadastrada.setText("Bobina já cadastrada");
 
         btnGerarBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnGerarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-confirmação-e-atualização-32 azul.png"))); // NOI18N
+        btnGerarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-confirmação-e-atualizacao-32-azul.png"))); // NOI18N
         btnGerarBobinas.setText("Gerar Num");
         btnGerarBobinas.setToolTipText("Gera um número disponível para cadastro");
         btnGerarBobinas.setContentAreaFilled(false);
         btnGerarBobinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGerarBobinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGerarBobinas.setRolloverEnabled(true);
-        btnGerarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-confirmação-e-atualização-32 verde.png"))); // NOI18N
+        btnGerarBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-confirmacao-e-atualizacao-32-verde.png"))); // NOI18N
         btnGerarBobinas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnGerarBobinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -562,13 +562,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnCadastrarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCadastrarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+        btnCadastrarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
         btnCadastrarPonta.setText("Cadastrar");
         btnCadastrarPonta.setContentAreaFilled(false);
         btnCadastrarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCadastrarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastrarPonta.setRolloverEnabled(true);
-        btnCadastrarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+        btnCadastrarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
         btnCadastrarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnCadastrarPonta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -582,13 +582,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnAtualizarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAtualizarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 azul.png"))); // NOI18N
+        btnAtualizarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
         btnAtualizarPonta.setText("Alterar");
         btnAtualizarPonta.setContentAreaFilled(false);
         btnAtualizarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAtualizarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAtualizarPonta.setRolloverEnabled(true);
-        btnAtualizarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lápis-32 amarelo.png"))); // NOI18N
+        btnAtualizarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-amarelo.png"))); // NOI18N
         btnAtualizarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnAtualizarPonta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -597,13 +597,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnDeletarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
+        btnDeletarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
         btnDeletarPonta.setText("Deletar");
         btnDeletarPonta.setContentAreaFilled(false);
         btnDeletarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnDeletarPonta.setRolloverEnabled(true);
-        btnDeletarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+        btnDeletarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
         btnDeletarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDeletarPonta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -760,13 +760,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         jPanel2.add(jpnPontas, "Pontas");
 
         btnBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 azul.png"))); // NOI18N
+        btnBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64-azul.png"))); // NOI18N
         btnBobinas.setText("Bobinas");
         btnBobinas.setContentAreaFilled(false);
         btnBobinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBobinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBobinas.setRolloverEnabled(true);
-        btnBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 cinza.png"))); // NOI18N
+        btnBobinas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-6-cinza.png"))); // NOI18N
         btnBobinas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnBobinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -775,14 +775,14 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 azul.png"))); // NOI18N
+        btnCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-64-azul.png"))); // NOI18N
         btnCabos.setText("Cabos");
         btnCabos.setContentAreaFilled(false);
         btnCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCabos.setPreferredSize(new java.awt.Dimension(662, 417));
         btnCabos.setRolloverEnabled(true);
-        btnCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 cinza.png"))); // NOI18N
+        btnCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-64-cinza.png"))); // NOI18N
         btnCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnCabos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -791,7 +791,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         });
 
         btnPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 azul.png"))); // NOI18N
+        btnPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-6-azul.png"))); // NOI18N
         btnPontas.setText("Pontas");
         btnPontas.setContentAreaFilled(false);
         btnPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -799,7 +799,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         btnPontas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnPontas.setName(""); // NOI18N
         btnPontas.setRolloverEnabled(true);
-        btnPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 cinza.png"))); // NOI18N
+        btnPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64-cinza.png"))); // NOI18N
         btnPontas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnPontas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -860,9 +860,9 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                 return;
             }
         }
-        viewUtil.alterarIcone(btnCabos, "icons8-elétrico-64 selecionado.png");
-        viewUtil.alterarIcone(btnBobinas, "icons8-bobina-64 azul.png");
-        viewUtil.alterarIcone(btnPontas, "icons8-ponta-64 azul.png");
+        viewUtil.alterarIcone(btnCabos, "icons8-eletrico-64-selecionado.png");
+        viewUtil.alterarIcone(btnBobinas, "icons8-bobina-64-azul.png");
+        viewUtil.alterarIcone(btnPontas, "icons8-ponta-6-azul.png");
 
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Cabos");
@@ -870,9 +870,9 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCabosActionPerformed
 
     private void btnPontasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPontasActionPerformed
-        viewUtil.alterarIcone(btnCabos, "icons8-elétrico-64 azul.png");
-        viewUtil.alterarIcone(btnBobinas, "icons8-bobina-64 azul.png");
-        viewUtil.alterarIcone(btnPontas, "icons8-ponta-64 selecionado.png");
+        viewUtil.alterarIcone(btnCabos, "icons8-eletrico-64-azul.png");
+        viewUtil.alterarIcone(btnBobinas, "icons8-bobina-64-azul.png");
+        viewUtil.alterarIcone(btnPontas, "icons8-ponta-64-selecionado.png");
         
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Pontas");
@@ -886,9 +886,9 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                 return;
             }
         }
-        viewUtil.alterarIcone(btnCabos, "icons8-elétrico-64 azul.png");
-        viewUtil.alterarIcone(btnBobinas, "icons8-bobina-64 selecionado.png");
-        viewUtil.alterarIcone(btnPontas, "icons8-ponta-64 azul.png");
+        viewUtil.alterarIcone(btnCabos, "icons8-eletrico-64-azul.png");
+        viewUtil.alterarIcone(btnBobinas, "icons8-bobina-64-selecionado.png");
+        viewUtil.alterarIcone(btnPontas, "icons8-ponta-6-azul.png");
 
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Bobinas");
@@ -1024,7 +1024,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         List<PontaCabo> pontaCaboList;
         int numero = Conversor.paraInt(txtNumeroPontas.getText(), "Número da Ponta");
         double quantidade = Conversor.paraDouble(txtQuantidadePonta.getText(), "Quantidade");
-        if (numero == 0 || quantidade == 0) {
+        if (numero == -1 || quantidade == -1) {
             return;
         }
 
@@ -1173,7 +1173,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             return;
         }
 
-        if (numeroPonta != 0 && quantidade != 0 && codigo != 0) {
+        if (numeroPonta != -1 && quantidade != -1 && codigo != -1) {
             List<PontaCabo> pontaCaboList = PontaDAO.busca(numeroPonta);
 
             if (!pontaCaboList.isEmpty()) {
@@ -1339,7 +1339,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             return;
         }
 
-        if (idBobina != 0 && codigoCabo != 0) {
+        if (idBobina != -1 && codigoCabo != -1 && quantidade != -1) {
             Cabo cabo = new Cabo();
             cabo.setQtdAtual(quantidade);
             cabo.setIdBobina(idBobina);
@@ -1499,7 +1499,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                     "Falha", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if (idBobina != 0 && codigoCabo != 0) {
+        if (idBobina != -1 && codigoCabo != -1 && quantidade != -1) {
             List<Cabo> caboList = CaboDAO.busca(codigoCabo, "s");
             if (caboList.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Cabo não encontrado verifique o código",
@@ -1527,7 +1527,6 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                     } else {
                         JOptionPane.showMessageDialog(null, "Número de Bobina já cadastrado!",
                                 "Falha", JOptionPane.WARNING_MESSAGE);
-
                     }
                 }
             }
@@ -1536,12 +1535,12 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
     public static void salvarBobina(String status, int codigoCabo, int numBobina, double qtd) {
         Cabo cabo = new Cabo();
-
         cabo.setAtivo(status);
         cabo.setCodigoCabo(codigoCabo);
         cabo.setIdBobina(numBobina);
         cabo.setQtdAtual(qtd);
         cabo.setQtdOriginal(qtd);
+        
         if (BobinaDAO.salvar(cabo)) {
             JOptionPane.showMessageDialog(null, "   Bobina Salva com sucesso!",
                     "Concluido", JOptionPane.INFORMATION_MESSAGE);

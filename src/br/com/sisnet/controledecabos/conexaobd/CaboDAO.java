@@ -43,8 +43,8 @@ public class CaboDAO {
     }
 
     public static List<Cabo> busca(int codigo, String ativo) {
-        String sqlVerificacao = "SELECT idCabo,Descricao,PossuiBobina FROM Cabo"
-                + " WHERE idCabo = ?"
+        String sqlVerificacao = "SELECT idCabo,Descricao,PossuiBobina FROM Cabo "
+                + "WHERE idCabo = ?"
                 + "ORDER BY Descricao;";
 
         String sqlComBobina = "SELECT c.idCabo,c.Descricao,c.PossuiBobina, "
@@ -70,6 +70,7 @@ public class CaboDAO {
             }
 
             if (CaboList.isEmpty()) {
+                ConnectionFactory.close(resultSet1);
                 return CaboList;
             }
             if (CaboList.get(0).getPossuiBobina().equals("n")) {

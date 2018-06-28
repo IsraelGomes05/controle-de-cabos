@@ -220,7 +220,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Controle de Cabos v3.0.0");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource(
-            "/br/com/sisnet/controledecabos/telas/imagens/mini_resized_Logo Sistema.png")));
+            "/br/com/sisnet/controledecabos/telas/imagens/mini_resized_logo-sistema.png")));
 setMinimumSize(new java.awt.Dimension(1231, 700));
 
 jPanel2.setLayout(new java.awt.CardLayout());
@@ -280,14 +280,14 @@ jPanel9Layout.setHorizontalGroup(
 
     btnRelatoriosAreaDeTrab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
     btnRelatoriosAreaDeTrab.setForeground(new java.awt.Color(255, 255, 255));
-    btnRelatoriosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
+    btnRelatoriosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72-menu.png"))); // NOI18N
     btnRelatoriosAreaDeTrab.setText("Relatórios");
     btnRelatoriosAreaDeTrab.setToolTipText("");
     btnRelatoriosAreaDeTrab.setContentAreaFilled(false);
     btnRelatoriosAreaDeTrab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnRelatoriosAreaDeTrab.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnRelatoriosAreaDeTrab.setRolloverEnabled(true);
-    btnRelatoriosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
+    btnRelatoriosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72-menuClaro.png"))); // NOI18N
     btnRelatoriosAreaDeTrab.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnRelatoriosAreaDeTrab.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,13 +297,13 @@ jPanel9Layout.setHorizontalGroup(
 
     btnCabosAreaDeTrab.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
     btnCabosAreaDeTrab.setForeground(new java.awt.Color(255, 255, 255));
-    btnCabosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
+    btnCabosAreaDeTrab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-72-menu-escuro.png"))); // NOI18N
     btnCabosAreaDeTrab.setText("Cabos");
     btnCabosAreaDeTrab.setContentAreaFilled(false);
     btnCabosAreaDeTrab.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnCabosAreaDeTrab.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnCabosAreaDeTrab.setRolloverEnabled(true);
-    btnCabosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
+    btnCabosAreaDeTrab.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-72-menu.png"))); // NOI18N
     btnCabosAreaDeTrab.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnCabosAreaDeTrab.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -403,13 +403,13 @@ jPanel9Layout.setHorizontalGroup(
     btnRelatoriosCabos.setBackground(new java.awt.Color(204, 204, 204));
     btnRelatoriosCabos.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
     btnRelatoriosCabos.setForeground(new java.awt.Color(255, 255, 255));
-    btnRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
+    btnRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72-menu.png"))); // NOI18N
     btnRelatoriosCabos.setText("Relatórios");
     btnRelatoriosCabos.setContentAreaFilled(false);
     btnRelatoriosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnRelatoriosCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnRelatoriosCabos.setRolloverEnabled(true);
-    btnRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
+    btnRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72-menuClaro.png"))); // NOI18N
     btnRelatoriosCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnRelatoriosCabos.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -420,13 +420,13 @@ jPanel9Layout.setHorizontalGroup(
     btnCabosCabos.setBackground(new java.awt.Color(204, 204, 204));
     btnCabosCabos.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
     btnCabosCabos.setForeground(new java.awt.Color(255, 255, 255));
-    btnCabosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
+    btnCabosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-72-menu-escuro.png"))); // NOI18N
     btnCabosCabos.setText("Cabos");
     btnCabosCabos.setContentAreaFilled(false);
     btnCabosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnCabosCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnCabosCabos.setRolloverEnabled(true);
-    btnCabosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
+    btnCabosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-72-menu.png"))); // NOI18N
     btnCabosCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
     txtDescricaoCabos.setEditable(false);
@@ -459,14 +459,14 @@ jPanel9Layout.setHorizontalGroup(
     jLabel6.setText("Bobina");
 
     btnAdicionarCabos.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-    btnAdicionarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+    btnAdicionarCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-verde-32.png"))); // NOI18N
     btnAdicionarCabos.setBorderPainted(false);
     btnAdicionarCabos.setContentAreaFilled(false);
     btnAdicionarCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnAdicionarCabos.setFocusCycleRoot(true);
     btnAdicionarCabos.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
     btnAdicionarCabos.setRolloverEnabled(true);
-    btnAdicionarCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matemática-50 verde.png"))); // NOI18N
+    btnAdicionarCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-mais-2-matematica-50-verde.png"))); // NOI18N
     btnAdicionarCabos.addFocusListener(new java.awt.event.FocusAdapter() {
         public void focusGained(java.awt.event.FocusEvent evt) {
             btnAdicionarCabosFocusGained(evt);
@@ -594,10 +594,8 @@ jPanel9Layout.setHorizontalGroup(
             return canEdit [columnIndex];
         }
     });
-    jtbTabelaCabos.setCellSelectionEnabled(false);
     jtbTabelaCabos.setGridColor(new java.awt.Color(255, 255, 255));
     jtbTabelaCabos.setName(""); // NOI18N
-    jtbTabelaCabos.setRowSelectionAllowed(true);
     jtbTabelaCabos.setSelectionBackground(new java.awt.Color(37, 211, 124));
     jtbTabelaCabos.setSelectionForeground(new java.awt.Color(0, 0, 0));
     jtbTabelaCabos.setShowHorizontalLines(false);
@@ -629,14 +627,14 @@ jPanel9Layout.setHorizontalGroup(
 
     btnLimparCabos.setBackground(new java.awt.Color(0, 204, 255));
     btnLimparCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnLimparCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 azul.png"))); // NOI18N
+    btnLimparCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32-azul.png"))); // NOI18N
     btnLimparCabos.setText("Limpar");
     btnLimparCabos.setBorderPainted(false);
     btnLimparCabos.setContentAreaFilled(false);
     btnLimparCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnLimparCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnLimparCabos.setRolloverEnabled(true);
-    btnLimparCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32 red.png"))); // NOI18N
+    btnLimparCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-vassoura-32-red.png"))); // NOI18N
     btnLimparCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnLimparCabos.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -645,13 +643,13 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnVerificarPontasCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnVerificarPontasCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul.png"))); // NOI18N
+    btnVerificarPontasCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogacaoo-32-azul.png"))); // NOI18N
     btnVerificarPontasCabos.setText("Verificar Ponta");
     btnVerificarPontasCabos.setContentAreaFilled(false);
     btnVerificarPontasCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnVerificarPontasCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnVerificarPontasCabos.setRolloverEnabled(true);
-    btnVerificarPontasCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogação-32 azul claro.png"))); // NOI18N
+    btnVerificarPontasCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponto-de-interrogacao-32-azul-claro.png"))); // NOI18N
     btnVerificarPontasCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnVerificarPontasCabos.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -660,13 +658,13 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnExcluirCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnExcluirCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 azul.png"))); // NOI18N
+    btnExcluirCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matematica-32-azul.png"))); // NOI18N
     btnExcluirCabos.setText("Excluir  Item");
     btnExcluirCabos.setContentAreaFilled(false);
     btnExcluirCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnExcluirCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnExcluirCabos.setRolloverEnabled(true);
-    btnExcluirCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matemática-32 red.png"))); // NOI18N
+    btnExcluirCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-menos-2-matematica-32-red.png"))); // NOI18N
     btnExcluirCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnExcluirCabos.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -675,13 +673,13 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnSalvarSaidaCabos.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnSalvarSaidaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul.png"))); // NOI18N
+    btnSalvarSaidaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
     btnSalvarSaidaCabos.setText("Salvar");
     btnSalvarSaidaCabos.setContentAreaFilled(false);
     btnSalvarSaidaCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnSalvarSaidaCabos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnSalvarSaidaCabos.setRolloverEnabled(true);
-    btnSalvarSaidaCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul claro.png"))); // NOI18N
+    btnSalvarSaidaCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
     btnSalvarSaidaCabos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnSalvarSaidaCabos.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -717,7 +715,7 @@ jPanel9Layout.setHorizontalGroup(
     );
 
     lblUsuarioTelaCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    lblUsuarioTelaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
+    lblUsuarioTelaCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuario-de-genero-neutro-32.png"))); // NOI18N
     lblUsuarioTelaCabos.setText("Usuário");
 
     javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -773,24 +771,24 @@ jPanel9Layout.setHorizontalGroup(
 
     jbnRelatorios.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
     jbnRelatorios.setForeground(new java.awt.Color(255, 255, 255));
-    jbnRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menu.png"))); // NOI18N
+    jbnRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72-menu.png"))); // NOI18N
     jbnRelatorios.setText("Relatórios");
     jbnRelatorios.setContentAreaFilled(false);
     jbnRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     jbnRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     jbnRelatorios.setRolloverEnabled(true);
-    jbnRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72 menuClaro.png"))); // NOI18N
+    jbnRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-contabilidade-72-menuClaro.png"))); // NOI18N
     jbnRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
     jbnCabosRelatorios.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
     jbnCabosRelatorios.setForeground(new java.awt.Color(255, 255, 255));
-    jbnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu escuro.png"))); // NOI18N
+    jbnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-72-menu-escuro.png"))); // NOI18N
     jbnCabosRelatorios.setText("Cabos");
     jbnCabosRelatorios.setContentAreaFilled(false);
     jbnCabosRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     jbnCabosRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     jbnCabosRelatorios.setRolloverEnabled(true);
-    jbnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-72 menu.png"))); // NOI18N
+    jbnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-72-menu.png"))); // NOI18N
     jbnCabosRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     jbnCabosRelatorios.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -823,13 +821,13 @@ jPanel9Layout.setHorizontalGroup(
     jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
     btnSaidasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnSaidasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direções-64 azul.png"))); // NOI18N
+    btnSaidasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direcoes-64-azul.png"))); // NOI18N
     btnSaidasRelatorios.setText("Saidas");
     btnSaidasRelatorios.setContentAreaFilled(false);
     btnSaidasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnSaidasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnSaidasRelatorios.setRolloverEnabled(true);
-    btnSaidasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direções-64 cinza.png"))); // NOI18N
+    btnSaidasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-dados-em-ambas-as-direcoes-64-cinza.png"))); // NOI18N
     btnSaidasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnSaidasRelatorios.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -838,13 +836,13 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnBobinasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnBobinasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 azul.png"))); // NOI18N
+    btnBobinasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64-azul.png"))); // NOI18N
     btnBobinasRelatorios.setText("Bobinas");
     btnBobinasRelatorios.setContentAreaFilled(false);
     btnBobinasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnBobinasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnBobinasRelatorios.setRolloverEnabled(true);
-    btnBobinasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64 cinza.png"))); // NOI18N
+    btnBobinasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-6-cinza.png"))); // NOI18N
     btnBobinasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnBobinasRelatorios.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -874,7 +872,6 @@ jPanel9Layout.setHorizontalGroup(
             return canEdit [columnIndex];
         }
     });
-    jtbPontas.setRowSelectionAllowed(true);
     jtbPontas.setSelectionBackground(new java.awt.Color(37, 211, 124));
     jtbPontas.setSelectionForeground(new java.awt.Color(51, 51, 51));
     jtbPontas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -920,12 +917,13 @@ jPanel9Layout.setHorizontalGroup(
     txtTotalPontasRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
 
     btnImprimirRelatoriosPontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnImprimirRelatoriosPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirRelatoriosPontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32.png"))); // NOI18N
     btnImprimirRelatoriosPontas.setText("Imprimir");
     btnImprimirRelatoriosPontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnImprimirRelatoriosPontas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
     btnImprimirRelatoriosPontas.setRolloverEnabled(true);
-    btnImprimirRelatoriosPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirRelatoriosPontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32-cinza.png"))); // NOI18N
+    btnImprimirRelatoriosPontas.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32-cinza.png"))); // NOI18N
     btnImprimirRelatoriosPontas.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnImprimirRelatoriosPontasActionPerformed(evt);
@@ -936,12 +934,13 @@ jPanel9Layout.setHorizontalGroup(
     jLabel13.setText("Total em Pontas");
 
     btnImprimirGeralpontas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnImprimirGeralpontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirGeralpontas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32.png"))); // NOI18N
     btnImprimirGeralpontas.setText("Imprimir Relatório Geral");
     btnImprimirGeralpontas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnImprimirGeralpontas.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
     btnImprimirGeralpontas.setRolloverEnabled(true);
-    btnImprimirGeralpontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirGeralpontas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32-cinza.png"))); // NOI18N
+    btnImprimirGeralpontas.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32-cinza.png"))); // NOI18N
     btnImprimirGeralpontas.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnImprimirGeralpontasActionPerformed(evt);
@@ -1010,11 +1009,11 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnDeletarRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnDeletarRelatorioSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32 azul.png"))); // NOI18N
+    btnDeletarRelatorioSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
     btnDeletarRelatorioSaidas.setText("Deletar");
     btnDeletarRelatorioSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnDeletarRelatorioSaidas.setRolloverEnabled(true);
-    btnDeletarRelatorioSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 red.png"))); // NOI18N
+    btnDeletarRelatorioSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
     btnDeletarRelatorioSaidas.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnDeletarRelatorioSaidasActionPerformed(evt);
@@ -1028,11 +1027,11 @@ jPanel9Layout.setHorizontalGroup(
     jLabel17.setText("Vendedor(a)");
 
     btnImprimirRelatoriosSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnImprimirRelatoriosSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirRelatoriosSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32.png"))); // NOI18N
     btnImprimirRelatoriosSaidas.setText("Imprimir");
     btnImprimirRelatoriosSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnImprimirRelatoriosSaidas.setRolloverEnabled(true);
-    btnImprimirRelatoriosSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirRelatoriosSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32-cinza.png"))); // NOI18N
     btnImprimirRelatoriosSaidas.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnImprimirRelatoriosSaidasActionPerformed(evt);
@@ -1202,11 +1201,11 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnExibirTudoRelatoriosBobina.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnExibirTudoRelatoriosBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
+    btnExibirTudoRelatoriosBobina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32-azul.png"))); // NOI18N
     btnExibirTudoRelatoriosBobina.setText("Exibir Tudo");
     btnExibirTudoRelatoriosBobina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnExibirTudoRelatoriosBobina.setRolloverEnabled(true);
-    btnExibirTudoRelatoriosBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+    btnExibirTudoRelatoriosBobina.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-verde-32.png"))); // NOI18N
     btnExibirTudoRelatoriosBobina.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnExibirTudoRelatoriosBobinaActionPerformed(evt);
@@ -1230,8 +1229,7 @@ jPanel9Layout.setHorizontalGroup(
             return canEdit [columnIndex];
         }
     });
-    jtbBobinasRelatorios.setCellSelectionEnabled(false);
-    jtbBobinasRelatorios.setRowSelectionAllowed(true);
+    jtbBobinasRelatorios.setColumnSelectionAllowed(true);
     jtbBobinasRelatorios.setSelectionBackground(new java.awt.Color(37, 211, 124));
     jtbBobinasRelatorios.setSelectionForeground(new java.awt.Color(51, 51, 51));
     jtbBobinasRelatorios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -1241,9 +1239,11 @@ jPanel9Layout.setHorizontalGroup(
     jScrollPane3.setViewportView(jtbBobinasRelatorios);
     jtbBobinasRelatorios.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
     if (jtbBobinasRelatorios.getColumnModel().getColumnCount() > 0) {
+        jtbBobinasRelatorios.getColumnModel().getColumn(0).setResizable(false);
         jtbBobinasRelatorios.getColumnModel().getColumn(1).setResizable(false);
         jtbBobinasRelatorios.getColumnModel().getColumn(2).setResizable(false);
         jtbBobinasRelatorios.getColumnModel().getColumn(2).setPreferredWidth(400);
+        jtbBobinasRelatorios.getColumnModel().getColumn(3).setResizable(false);
         jtbBobinasRelatorios.getColumnModel().getColumn(4).setResizable(false);
         jtbBobinasRelatorios.getColumnModel().getColumn(5).setResizable(false);
         jtbBobinasRelatorios.getColumnModel().getColumn(6).setResizable(false);
@@ -1283,11 +1283,11 @@ jPanel9Layout.setHorizontalGroup(
     );
 
     btnImprimir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32.png"))); // NOI18N
     btnImprimir.setText("Imprimir");
     btnImprimir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnImprimir.setRolloverEnabled(true);
-    btnImprimir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32-cinza.png"))); // NOI18N
     btnImprimir.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnImprimirActionPerformed(evt);
@@ -1410,11 +1410,11 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnBuscarTudoCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnBuscarTudoCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32 azul.png"))); // NOI18N
+    btnBuscarTudoCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-32-azul.png"))); // NOI18N
     btnBuscarTudoCabos.setText("Exibir Tudo");
     btnBuscarTudoCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnBuscarTudoCabos.setRolloverEnabled(true);
-    btnBuscarTudoCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado verde-32.png"))); // NOI18N
+    btnBuscarTudoCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-selecionado-verde-32.png"))); // NOI18N
     btnBuscarTudoCabos.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnBuscarTudoCabosActionPerformed(evt);
@@ -1422,11 +1422,11 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnImprimirRelatoriosCabos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    btnImprimirRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32.png"))); // NOI18N
+    btnImprimirRelatoriosCabos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32.png"))); // NOI18N
     btnImprimirRelatoriosCabos.setText("Imprimir");
     btnImprimirRelatoriosCabos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnImprimirRelatoriosCabos.setRolloverEnabled(true);
-    btnImprimirRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressão-32 cinza.png"))); // NOI18N
+    btnImprimirRelatoriosCabos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-impressao-32-cinza.png"))); // NOI18N
     btnImprimirRelatoriosCabos.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             btnImprimirRelatoriosCabosActionPerformed(evt);
@@ -1491,13 +1491,13 @@ jPanel9Layout.setHorizontalGroup(
     jPanel7.add(jpnCabosRelatorios, "Cabos");
 
     btnPontasRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnPontasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 azul.png"))); // NOI18N
+    btnPontasRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-6-azul.png"))); // NOI18N
     btnPontasRelatorios.setText("Pontas");
     btnPontasRelatorios.setContentAreaFilled(false);
     btnPontasRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnPontasRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnPontasRelatorios.setRolloverEnabled(true);
-    btnPontasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64 cinza.png"))); // NOI18N
+    btnPontasRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-ponta-64-cinza.png"))); // NOI18N
     btnPontasRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnPontasRelatorios.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1506,13 +1506,13 @@ jPanel9Layout.setHorizontalGroup(
     });
 
     btnCabosRelatorios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-    btnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 azul.png"))); // NOI18N
+    btnCabosRelatorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-64-azul.png"))); // NOI18N
     btnCabosRelatorios.setText("Cabos");
     btnCabosRelatorios.setContentAreaFilled(false);
     btnCabosRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnCabosRelatorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     btnCabosRelatorios.setRolloverEnabled(true);
-    btnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-64 cinza.png"))); // NOI18N
+    btnCabosRelatorios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-64-cinza.png"))); // NOI18N
     btnCabosRelatorios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
     btnCabosRelatorios.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1536,7 +1536,7 @@ jPanel9Layout.setHorizontalGroup(
     );
     jPanel1Layout.setVerticalGroup(
         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(11, 11, 11)
             .addComponent(btnSaidasRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1550,7 +1550,7 @@ jPanel9Layout.setHorizontalGroup(
     );
 
     lblUsuarioTelaRel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-    lblUsuarioTelaRel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuário-de-gênero-neutro-32.png"))); // NOI18N
+    lblUsuarioTelaRel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-usuario-de-genero-neutro-32.png"))); // NOI18N
     lblUsuarioTelaRel.setText("Usuário");
 
     lblData.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -1602,11 +1602,11 @@ jPanel9Layout.setHorizontalGroup(
 
     jPanel2.add(jpnRelatorios, "jpnRelatorios");
 
-    jmAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configurações-20.png"))); // NOI18N
+    jmAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configuracoes-20.png"))); // NOI18N
     jmAjustes.setText("Ajustes");
     jmAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     jmAjustes.setRolloverEnabled(true);
-    jmAjustes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configurações-20 verde.png"))); // NOI18N
+    jmAjustes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-configuracoes-20-verde.png"))); // NOI18N
 
     jmUsuariosBarraMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
     jmUsuariosBarraMenu.setText("Usuários/Vendedores");
@@ -1619,11 +1619,11 @@ jPanel9Layout.setHorizontalGroup(
 
     jMenuBar1.add(jmAjustes);
 
-    jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-20.png"))); // NOI18N
+    jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-20.png"))); // NOI18N
     jMenu3.setText("Cabos");
     jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     jMenu3.setRolloverEnabled(true);
-    jMenu3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-elétrico-20 verde.png"))); // NOI18N
+    jMenu3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-eletrico-20-verde.png"))); // NOI18N
 
     jmGerenciarCabos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
     jmGerenciarCabos.setText("Gerenciar");
@@ -1636,11 +1636,11 @@ jPanel9Layout.setHorizontalGroup(
 
     jMenuBar1.add(jMenu3);
 
-    jmInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informações-20.png"))); // NOI18N
+    jmInformacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informacoes-20.png"))); // NOI18N
     jmInformacoes.setText("Informações");
     jmInformacoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     jmInformacoes.setRolloverEnabled(true);
-    jmInformacoes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informações-20-verde.png"))); // NOI18N
+    jmInformacoes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-informacoes-20-verde.png"))); // NOI18N
     jmInformacoes.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             jmInformacoesMouseClicked(evt);
@@ -1673,30 +1673,30 @@ jPanel9Layout.setHorizontalGroup(
     private void btnRelatoriosAreaDeTrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosAreaDeTrabActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnRelatorios");
-        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72 selecionado.png");
+        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72-selecionado.png");
     }//GEN-LAST:event_btnRelatoriosAreaDeTrabActionPerformed
 
     private void btnCabosAreaDeTrabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCabosAreaDeTrabActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnCabos");
-        viewUtil.alterarIcone(btnCabosCabos, "icons8-elétrico-72 selecionado.png");
+        viewUtil.alterarIcone(btnCabosCabos, "icons8-eletrico-72-selecionado.png");
     }//GEN-LAST:event_btnCabosAreaDeTrabActionPerformed
 
     private void btnRelatoriosCabosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatoriosCabosActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnRelatorios");
         txtDataInicialRelatorioSaidas.setText(dataHoje);
-        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72 selecionado.png");
-        viewUtil.alterarIcone(btnCabosCabos, "icons8-elétrico-72 menu escuro.png");
-        viewUtil.alterarIcone(jbnCabosRelatorios, "icons8-elétrico-72 menu escuro.png");
+        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72-selecionado.png");
+        viewUtil.alterarIcone(btnCabosCabos, "icons8-eletrico-72-menu-escuro.png");
+        viewUtil.alterarIcone(jbnCabosRelatorios, "icons8-eletrico-72-menu-escuro.png");
     }//GEN-LAST:event_btnRelatoriosCabosActionPerformed
 
     private void jbnCabosRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnCabosRelatoriosActionPerformed
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "jpnCabos");
-        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72 menuClaro.png");
-        viewUtil.alterarIcone(btnCabosCabos, "icons8-elétrico-72 selecionado.png");
-        viewUtil.alterarIcone(jbnCabosRelatorios, "icons8-elétrico-72 menu escuro.png");
+        viewUtil.alterarIcone(jbnRelatorios, "icons8-contabilidade-72-menuClaro.png");
+        viewUtil.alterarIcone(btnCabosCabos, "icons8-eletrico-72-selecionado.png");
+        viewUtil.alterarIcone(jbnCabosRelatorios, "icons8-eletrico-72-menu-escuro.png");
     }//GEN-LAST:event_jbnCabosRelatoriosActionPerformed
 
     private void jmInformacoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmInformacoesMouseClicked
@@ -1761,10 +1761,10 @@ jPanel9Layout.setHorizontalGroup(
     }//GEN-LAST:event_jmGerenciarCabosActionPerformed
 
     private void btnSaidasRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidasRelatoriosActionPerformed
-        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direções-64 selecionado.png");
-        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64 azul.png");
-        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-elétrico-64 azul.png");
-        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-64 azul.png");
+        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direcoes-64-selecionado.png");
+        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64-azul.png");
+        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-eletrico-64-azul.png");
+        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-6-azul.png");
 
         CardLayout card2 = (CardLayout) jPanel7.getLayout();
         card2.show(jPanel7, "SaidasData");
@@ -1775,10 +1775,10 @@ jPanel9Layout.setHorizontalGroup(
     }//GEN-LAST:event_btnSaidasRelatoriosActionPerformed
 
     private void btnBobinasRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBobinasRelatoriosActionPerformed
-        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direções-64 azul.png");
-        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64 selecionado.png");
-        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-elétrico-64 azul.png");
-        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-64 azul.png");
+        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direcoes-64-azul.png");
+        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64-selecionado.png");
+        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-eletrico-64-azul.png");
+        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-6-azul.png");
 
         CardLayout card2 = (CardLayout) jPanel7.getLayout();
         card2.show(jPanel7, "Bobinas");
@@ -1863,29 +1863,32 @@ jPanel9Layout.setHorizontalGroup(
 
     private void btnAdicionarCabosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarCabosActionPerformed
 
-        double qtdpedida = Conversor.paraDouble(txtQtdCabos.getText(), "Quantidade");
-        int codigoCabo = Conversor.paraInt(txtCodigoCabos.getText(), "Código Cabo");
-        int numBobinaAtual;
-        double estoqueTotal = 0;
-        if (qtdpedida == 0) {
-            return;
-        }
-
         if (txtCodigoCabos.getText().equals("") || txtDescricaoCabos.getText().equals("")
                 || txtQtdCabos.getText().equals("") || jcbVendedoresCabos.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Preencha todos os Campos",
                     "Campos Vazios", JOptionPane.WARNING_MESSAGE);
             return;
+        }
 
-        } else if (bobinaAtual != 0) {
-            numBobinaAtual = Conversor.paraInt(txtBubinaCabos.getText(), "Número da Bobina");
-            if (numBobinaAtual == 0) {
-                return;
-            }
+        double qtdSolicitada = Conversor.paraDouble(txtQtdCabos.getText(), "Quantidade");
+        int codigoCabo = Conversor.paraInt(txtCodigoCabos.getText(), "Código Cabo");
+        double estoqueTotal = 0;
+
+        List<Cabo> listaVerificacao = CaboDAO.busca(codigoCabo, "s");
+        if (listaVerificacao.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "   Cabo não encontrado, Verifique o código!",
+                    "Falha", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        if (qtdSolicitada == -1 || codigoCabo == -1) {
+            return;
+        }
+        if (bobinaAtual != 0) {
 
             estoqueTotal = getQtdEstoqueBobina(codigoCabo);
 
-            if (qtdpedida > estoqueTotal) {
+            if (qtdSolicitada > estoqueTotal) {
                 if (JOptionPane.showConfirmDialog(null, "Quantidade Solicitada "
                         + "maior que o estoque: " + estoqueTotal + " m disp\n"
                         + "Adicionar mesmo assim?",
@@ -1895,16 +1898,16 @@ jPanel9Layout.setHorizontalGroup(
             }
         }
         Object[] cabo = {txtCodigoCabos.getText(), txtDescricaoCabos.getText(),
-            qtdpedida,
+            qtdSolicitada,
             jcbVendedoresCabos.getSelectedItem().toString(),
             bobinaAtual != 0 ? "" + bobinaAtual : "- - - -",
             qtdBobinaAtual != 0 ? "" + qtdBobinaAtual : "- - - -",
             estoqueTotal != 0 ? "" + estoqueTotal : "- - - -"};
 
         tabelaCabos.addRow(cabo);
-        List<PontaCabo> pontaList = PontaDAO.buscaCodigoCabo(codigoCabo, qtdpedida);
+        List<PontaCabo> pontaList = PontaDAO.buscaCodigoCabo(codigoCabo, qtdSolicitada);
         if (!pontaList.isEmpty()) {
-            TelaPonta telaPonta = new TelaPonta(this, true, codigoCabo, qtdpedida, false);
+            TelaPonta telaPonta = new TelaPonta(this, true, codigoCabo, qtdSolicitada, false);
             telaPonta.setVisible(true);
             Object object = "<";
             jtbTabelaCabos.setValueAt(object, tabelaCabos.getRowCount() - 1, 7);
@@ -2115,10 +2118,10 @@ jPanel9Layout.setHorizontalGroup(
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnPontasRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPontasRelatoriosActionPerformed
-        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direções-64 azul.png");
-        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64 azul.png");
-        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-elétrico-64 azul.png");
-        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-64 selecionado.png");
+        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direcoes-64-azul.png");
+        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64-azul.png");
+        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-eletrico-64-azul.png");
+        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-64-selecionado.png");
 
         CardLayout card2 = (CardLayout) jPanel7.getLayout();
         card2.show(jPanel7, "Pontas");
@@ -2162,10 +2165,10 @@ jPanel9Layout.setHorizontalGroup(
     }//GEN-LAST:event_btnImprimirRelatoriosPontasActionPerformed
 
     private void btnCabosRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCabosRelatoriosActionPerformed
-        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direções-64 azul.png");
-        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64 azul.png");
-        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-elétrico-64 selecionado.png");
-        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-64 azul.png");
+        viewUtil.alterarIcone(btnSaidasRelatorios, "icons8-dados-em-ambas-as-direcoes-64-azul.png");
+        viewUtil.alterarIcone(btnBobinasRelatorios, "icons8-bobina-64-azul.png");
+        viewUtil.alterarIcone(btnCabosRelatorios, "icons8-eletrico-64-selecionado.png");
+        viewUtil.alterarIcone(btnPontasRelatorios, "icons8-ponta-6-azul.png");
 
         CardLayout card2 = (CardLayout) jPanel7.getLayout();
         card2.show(jPanel7, "Cabos");
@@ -2248,11 +2251,11 @@ jPanel9Layout.setHorizontalGroup(
     }//GEN-LAST:event_btnAdicionarCabosKeyTyped
 
     private void btnAdicionarCabosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnAdicionarCabosFocusGained
-        this.viewUtil.alterarIcone(btnAdicionarCabos, "icons8-mais-2-matemática-50 verde.png");
+        this.viewUtil.alterarIcone(btnAdicionarCabos, "icons8-mais-2-matematica-50-verde.png");
     }//GEN-LAST:event_btnAdicionarCabosFocusGained
 
     private void btnAdicionarCabosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnAdicionarCabosFocusLost
-        this.viewUtil.alterarIcone(btnAdicionarCabos, "icons8-selecionado verde-32.png");
+        this.viewUtil.alterarIcone(btnAdicionarCabos, "icons8-selecionado-verde-32.png");
     }//GEN-LAST:event_btnAdicionarCabosFocusLost
 
     public void preecherTabelaCaboRelatorio(List<Cabo> listCabo) {
@@ -2454,8 +2457,12 @@ jPanel9Layout.setHorizontalGroup(
                 dialog.setVisible(true);
             });
         } catch (Throwable th) {
-            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada: \n"
-                    + th.getMessage(), "Falha", JOptionPane.ERROR_MESSAGE);
+            String erro = "";
+            for (Object object : th.getStackTrace()) {
+                erro += object + "\n";
+            }
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + th.getMessage() + erro,
+                    "Falha", JOptionPane.ERROR_MESSAGE);
         }
     }
 

@@ -133,7 +133,7 @@ public class TelaPonta extends javax.swing.JDialog {
         btnFechar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnFechar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnFechar.setRolloverEnabled(true);
-        btnFechar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32 amarelo.png"))); // NOI18N
+        btnFechar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-amarelo.png"))); // NOI18N
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFecharActionPerformed(evt);
@@ -236,7 +236,7 @@ public class TelaPonta extends javax.swing.JDialog {
     private void btnSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtrairActionPerformed
         qtdSolicitada = Conversor.paraDouble(txtQtd.getText(), "Quantidade");
         
-        if (jtbPonta.getSelectedRow() != -1 && qtdSolicitada != 0 ) {
+        if (jtbPonta.getSelectedRow() != -1 && qtdSolicitada != -1 ) {
             int numPonta = Conversor.paraInt(
                     tabelaPonta.getValueAt(jtbPonta.getSelectedRow(), 0).toString(), "");
             double qtdPonta = Conversor.paraDouble(
@@ -247,7 +247,6 @@ public class TelaPonta extends javax.swing.JDialog {
                 TelaPrincipal.subtrairBobina = false;
                 this.dispose();
                 return;
-                
             } else if (qtdSolicitada > qtdPonta){
                 JOptionPane.showMessageDialog(null, "Quantidade da Ponta Insulficiente",
                     "Atenção", JOptionPane.WARNING_MESSAGE);
