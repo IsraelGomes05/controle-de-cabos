@@ -1010,7 +1010,7 @@ jPanel9Layout.setHorizontalGroup(
 
     btnDeletarRelatorioSaidas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
     btnDeletarRelatorioSaidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
-    btnDeletarRelatorioSaidas.setText("Deletar");
+    btnDeletarRelatorioSaidas.setText("Excluir");
     btnDeletarRelatorioSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     btnDeletarRelatorioSaidas.setRolloverEnabled(true);
     btnDeletarRelatorioSaidas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
@@ -1153,7 +1153,7 @@ jPanel9Layout.setHorizontalGroup(
                     .addGap(1, 1, 1)
                     .addComponent(btnBuscarRelarorioSaidas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(jLabel17))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
             .addComponent(btnImprimirRelatoriosSaidas)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(btnDeletarRelatorioSaidas)
@@ -1229,7 +1229,6 @@ jPanel9Layout.setHorizontalGroup(
             return canEdit [columnIndex];
         }
     });
-    jtbBobinasRelatorios.setColumnSelectionAllowed(true);
     jtbBobinasRelatorios.setSelectionBackground(new java.awt.Color(37, 211, 124));
     jtbBobinasRelatorios.setSelectionForeground(new java.awt.Color(51, 51, 51));
     jtbBobinasRelatorios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -1959,7 +1958,7 @@ jPanel9Layout.setHorizontalGroup(
                 qtdSolicitada = Conversor.paraDouble(
                         jtbTabelaCabos.getValueAt(jtbTabelaCabos.getSelectedRow(), 2).toString(), "Quantidade");
 
-                if (qtdSolicitada == 0) {
+                if (qtdSolicitada == -1) {
                     return;
                 }
 
@@ -2133,19 +2132,20 @@ jPanel9Layout.setHorizontalGroup(
             txtTotalPontasRelatoriosPontas.setText("");
             Tabela.limpa(tabelaRelatorioPontas);
 
-            if (codigoCabo != 0 && !txtCodigoRelatoriosPontas.getText().equals("")) {
+            if (codigoCabo > 0 && ! txtCodigoRelatoriosPontas.getText().equals("")) {
                 List<PontaCabo> pontaList = PontaDAO.buscaCodigoCabo(codigoCabo, 0);
 
                 if (pontaList.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "     Nenhum Registro encontrado!\n",
+                    JOptionPane.showMessageDialog(null, "     Nenhum Registro de ponta, para este código foi encontrado!\n",
                             "Falha", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    txtTotalPontasRelatoriosPontas.setText("" + this.getQtdPonta(codigoCabo));
+                    txtTotalPontasRelatoriosPontas.setText("" + this.getQtdPonta(codigoCabo) + " m");
                     this.preencherTabelaPonta(pontaList);
                 }
             }
         } catch (Exception e) {
             Cabo.buscarCabo(txtCodigoRelatoriosPontas);
+            btnBuscarRelatoriosPontas.doClick();
         }
     }//GEN-LAST:event_btnBuscarRelatoriosPontasActionPerformed
 
@@ -2158,7 +2158,7 @@ jPanel9Layout.setHorizontalGroup(
     private void btnImprimirRelatoriosPontasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirRelatoriosPontasActionPerformed
         String diretorio = "C:/Controle de Cabos/Relatorios/Pontas.jasper";
         int codigo = Conversor.paraInt(txtCodigoRelatoriosPontas.getText(), "Código");
-        if (codigo != 0) {
+        if (codigo != -1) {
             Relatorio relatorio = new Relatorio();
             relatorio.exibirRelatorio(codigo, diretorio);
         }
@@ -2177,11 +2177,12 @@ jPanel9Layout.setHorizontalGroup(
     private void btnBuscarCaboRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCaboRelatorioActionPerformed
         try {
             int codigoCabo = Integer.parseInt(txtCodigoRelatorioCabo.getText());
-            if (codigoCabo != 0) {
+            if (codigoCabo != -1) {
                 this.preecherTabelaCaboRelatorio(CaboDAO.busca(codigoCabo, "s"));
             }
         } catch (NumberFormatException e) {
             Cabo.buscarCabo(txtCodigoRelatorioCabo);
+            btnBuscarCaboRelatorio.doClick();
         }
     }//GEN-LAST:event_btnBuscarCaboRelatorioActionPerformed
 
@@ -2201,8 +2202,9 @@ jPanel9Layout.setHorizontalGroup(
 
     private void btnImprimirRelatoriosCabosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirRelatoriosCabosActionPerformed
         if (!txtCodigoRelatorioCabo.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Não é possível imprimir este relatório!\n",
+            JOptionPane.showMessageDialog(null, "Não é possível imprimir este relatório!\n\nÉ possível imprimir apenas o relatório geral\nClique no botão EXIBIR TUDO",
                     "Falha", JOptionPane.WARNING_MESSAGE);
+            txtCodigoRelatorioCabo.setText("");
         } else {
             String diretorio;
             if (jRadioButton1.isSelected()) {
@@ -2364,7 +2366,7 @@ jPanel9Layout.setHorizontalGroup(
         int codigo;
         List<Cabo> listBobina;
 
-        if (numBobina != 0) {
+        if (numBobina != -1) {
             if (BuscaTudo) {
                 listBobina = BobinaDAO.buscaTudoBobina();
             } else {

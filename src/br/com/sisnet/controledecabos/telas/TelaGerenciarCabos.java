@@ -1,6 +1,6 @@
-/** 
+/**
  * @created  05/03/2018
- * @lastModified 28/03/2018 
+ * @lastModified 28/03/2018
  */
 package br.com.sisnet.controledecabos.telas;
 
@@ -12,6 +12,7 @@ import br.com.sisnet.controledecabos.classes.utilitarias.Tabela;
 import br.com.sisnet.controledecabos.conexaobd.BobinaDAO;
 import br.com.sisnet.controledecabos.conexaobd.CaboDAO;
 import br.com.sisnet.controledecabos.conexaobd.PontaDAO;
+import br.com.sisnet.controledecabos.conexaobd.SaidaDAO;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -25,6 +26,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  * Classe que define a tela de gerenciar cabo.
+ *
  * @author Israel Gomes
  * @version 2.0
  * @since 1.0
@@ -33,16 +35,19 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
     DefaultTableModel tabelaBusca;
     ViewUtil viewUtil;
+
     /**
-     * 
+     *
      * @param parent java.awt.Frame - Tela a qual esta será associada.<br>
      * @param modal boolean - <b>true</b> a tela parent(que chama esta tela) não
-     *        pode ser acessada, enquanto esta tela estiver aberta,<br> <b>false</b> poderá ser acessada.<br>
-     * @param externo boolean - <b>true</b> caso os dados para cadastro da ponta venham pelo contrutor,
-     *        e assim só será possível preencher o local da ponta, <b>false</b> tela será exibida normalmente.<br>
-     * @param quantidade double - Quantidade em metros para cadastrar a ponta <b>necessário apenas quando
-     *        externo for true</b>.<br>
-     * @param codigoCabo int - código do cabo 
+     * pode ser acessada, enquanto esta tela estiver aberta,<br> <b>false</b>
+     * poderá ser acessada.<br>
+     * @param externo boolean - <b>true</b> caso os dados para cadastro da ponta
+     * venham pelo contrutor, e assim só será possível preencher o local da
+     * ponta, <b>false</b> tela será exibida normalmente.<br>
+     * @param quantidade double - Quantidade em metros para cadastrar a ponta
+     * <b>necessário apenas quando externo for true</b>.<br>
+     * @param codigoCabo int - código do cabo
      */
     public TelaGerenciarCabos(
             java.awt.Frame parent,
@@ -55,7 +60,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         setAcessibilidade();
         initComponents();
         viewUtil = new ViewUtil();
-        
+
         /*Cabo*/
         btnAlterarCabo.setEnabled(false);
         btnCadastrarCabo.setEnabled(false);
@@ -92,7 +97,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         tabelaBusca = (DefaultTableModel) jtbTabelaBobina.getModel();
         lblBobinaCadastrada.setVisible(false);
         btnCadastrarBobina.setEnabled(false);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -200,7 +205,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
         btnDeletarCabo.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnDeletarCabo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
-        btnDeletarCabo.setText("Deletar");
+        btnDeletarCabo.setText("Excluir");
         btnDeletarCabo.setContentAreaFilled(false);
         btnDeletarCabo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarCabo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -337,7 +342,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
         btnAtualizarBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnAtualizarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
-        btnAtualizarBobinas.setText("Atualizar");
+        btnAtualizarBobinas.setText("Alterar");
         btnAtualizarBobinas.setContentAreaFilled(false);
         btnAtualizarBobinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAtualizarBobinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -355,7 +360,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
         btnDeletarBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnDeletarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
-        btnDeletarBobinas.setText("Deletar");
+        btnDeletarBobinas.setText("Excluir");
         btnDeletarBobinas.setContentAreaFilled(false);
         btnDeletarBobinas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarBobinas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -598,7 +603,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
         btnDeletarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnDeletarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
-        btnDeletarPonta.setText("Deletar");
+        btnDeletarPonta.setText("Excluir");
         btnDeletarPonta.setContentAreaFilled(false);
         btnDeletarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -851,7 +856,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             }
         });
     }
-    
+
     private void btnCabosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCabosActionPerformed
         if (!TelaPrincipal.usuario.getAlterarDados().equals("s")) {
             TelaLoginInterno verificacao = new TelaLoginInterno(null, true);
@@ -866,14 +871,14 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Cabos");
-        
+
     }//GEN-LAST:event_btnCabosActionPerformed
 
     private void btnPontasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPontasActionPerformed
         viewUtil.alterarIcone(btnCabos, "icons8-eletrico-64-azul.png");
         viewUtil.alterarIcone(btnBobinas, "icons8-bobina-64-azul.png");
         viewUtil.alterarIcone(btnPontas, "icons8-ponta-64-selecionado.png");
-        
+
         CardLayout card2 = (CardLayout) jPanel2.getLayout();
         card2.show(jPanel2, "Pontas");
     }//GEN-LAST:event_btnPontasActionPerformed
@@ -914,7 +919,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             }
 
             int codigo = Conversor.paraInt(txtCodigoCabos.getText(), "Código");
-            if (codigo == 0) {
+            if (codigo == -1) {
                 return;
             }
 
@@ -944,6 +949,11 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     private void btnCadastrarCaboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarCaboActionPerformed
         List<Cabo> caboList;
         int codigo = Conversor.paraInt(txtCodigoCabos.getText(), "Código");
+
+        if (codigo == -1) {
+            return;
+        }
+
         caboList = CaboDAO.busca(codigo, "s");
 
         if (caboList.isEmpty()) {
@@ -986,7 +996,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             }
 
             int numero = Conversor.paraInt(txtNumeroPontas.getText(), "Número da Ponta");
-            if (numero == 0) {
+            if (numero == -1) {
                 return;
             }
 
@@ -1048,7 +1058,13 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
     private void btnAlterarCaboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarCaboActionPerformed
         int codigo = Conversor.paraInt(txtCodigoCabos.getText(), "Código");
+
+        if (codigo == -1) {
+            return;
+        }
+
         List<Cabo> caboList = CaboDAO.busca(codigo, "s");
+
         if (caboList.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Cabo não encontrado Verifique o Código",
                     "Falha", JOptionPane.WARNING_MESSAGE);
@@ -1065,6 +1081,11 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
     private void btnDeletarCaboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarCaboActionPerformed
         int codigo = Conversor.paraInt(txtCodigoCabos.getText(), "Código");
+        String msg = "";
+        if (codigo == -1) {
+            return;
+        }
+
         List<Cabo> caboList = CaboDAO.busca(codigo, "s");
         if (caboList.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Cabo não encontrado Verifique o Código",
@@ -1073,24 +1094,39 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         }
 
         Cabo cabo = caboList.get(0);
-        if (JOptionPane.showConfirmDialog(null, "Este Procedimento excluirá o cabo "
-                + "e sua respectiva bobina caso possua\n"
-                + "Também serão excluidos todos os registros de Saidas e Pontas\n"
-                + "Deseja Continuar? ", "Deletar", WIDTH, JOptionPane.QUESTION_MESSAGE) == 0) {
+        if (JOptionPane.showConfirmDialog(null, "<html> <H2 ALIGN=\"center\"><FONT FACE=\"Tahoma\" COLOR=\"red\">ATENÇÃO</FONT></H2>"
+                + "<p><font  FACE=\"Arial\" SIZE=\"5\">Este Procedimento <b>excluirá o cabo </b>"
+                + "e sua respectiva <b>bobina</b>, caso possua,<br>"
+                + "Também serão excluidos todos os registros de <b>Saidas</b> e <b>Pontas,</b><br>"
+                + "<br>Deseja Continuar?<font></p> </html>", "Excluir cabo", JOptionPane.YES_NO_OPTION, -1) == 0) {
 
             if (cabo.getPossuiBobina().equals("s")) {
                 if (BobinaDAO.excluir(cabo)) {
-                    JOptionPane.showMessageDialog(null, "   Bonina excluida com sucesso!",
-                            "Concluído", JOptionPane.INFORMATION_MESSAGE);
+                    msg += "<font COLOR=\"green\"><br>Bobina excluída com sucesso!</font><br>";
                 } else {
-                    return;
+                    msg += "<font COLOR=\"red\"><br>Falha ao excluir Bobina, contacte o desenvolvedor!</font><br>";
                 }
             }
 
-            if (CaboDAO.excluir(cabo)) {
-                JOptionPane.showMessageDialog(null, "   Cabo excluido com sucesso!",
-                        "Concluído", JOptionPane.INFORMATION_MESSAGE);
+            if (PontaDAO.excluirTudoPorCodigo(cabo.getCodigoCabo())) {
+                msg += "<font COLOR=\"green\"><br>Registros de ponta Excluídos com sucesso!</font><br>";
+            } else {
+                msg += "<font COLOR=\"red\"><br>Falha ao excluir as pontas, contacte o desenvolvedor!</font><br>";
             }
+
+            if (SaidaDAO.excluirTudoPorCodigo(cabo.getCodigoCabo())) {
+                msg += "<font COLOR=\"green\"><br>Registros de Saída Excluídos com sucesso!</font><br>";
+            } else {
+                msg += "<font COLOR=\"red\"><br>Falha ao excluir as saídas, contacte o desenvolvedor!</font><br>";
+            }
+
+            if (CaboDAO.excluir(cabo)) {
+                msg += "<font COLOR=\"green\"><br>Cabo Excluído com sucesso!</font><br>";
+            } else {
+                msg += "<font COLOR=\"red\"><br>Falha ao excluir o cabo, contacte o desenvolvedor!</font><br>";
+            }
+
+            JOptionPane.showMessageDialog(this, "<html>" + msg + "</html>");
             this.limparTelaCabo();
         }
     }//GEN-LAST:event_btnDeletarCaboActionPerformed
@@ -1109,7 +1145,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     private void btnDeletarPontaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarPontaActionPerformed
         int numeroPonta = Conversor.paraInt(txtNumeroPontas.getText(), "Número da Ponta");
 
-        if (numeroPonta != 0) {
+        if (numeroPonta != -1) {
             List<PontaCabo> pontaCaboList = PontaDAO.busca(numeroPonta);
 
             if (pontaCaboList.isEmpty()) {
@@ -1130,37 +1166,42 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     }//GEN-LAST:event_btnDeletarPontaActionPerformed
 
     private void txtCodigoPontaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoPontaKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.buscarCaboPontas();
+        }
+    }//GEN-LAST:event_txtCodigoPontaKeyPressed
 
+    public void buscarCaboPontas() {
         try {
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                List<Cabo> caboList;
-                if (txtCodigoPonta.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "  Digite um Código!",
-                            "Falha", JOptionPane.WARNING_MESSAGE);
-                    txtDescricaooPontas.setText("");
-                    return;
-                }
 
-                int codigo = Integer.parseInt(txtCodigoPonta.getText());
-                if (codigo == 0) {
-                    return;
-                }
+            List<Cabo> caboList;
+            if (txtCodigoPonta.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "  Digite um Código!",
+                        "Falha", JOptionPane.WARNING_MESSAGE);
+                txtDescricaooPontas.setText("");
+                return;
+            }
 
-                caboList = CaboDAO.busca(codigo, "s");
-                if (caboList.isEmpty()) {
-                    Cabo.buscarCabo(txtCodigoPonta);
-                } else {
-                    txtLocalPonta.requestFocus();
-                    jcbSubtrairBobinaPonta.setEnabled(true);
-                    txtCodigoPonta.setEditable(false);
-                    txtDescricaooPontas.setText(caboList.get(0).getDescricao());
-                }
+            int codigo = Integer.parseInt(txtCodigoPonta.getText());
+            if (codigo == 0) {
+                return;
+            }
+
+            caboList = CaboDAO.busca(codigo, "s");
+            if (caboList.isEmpty()) {
+                Cabo.buscarCabo(txtCodigoPonta);
+            } else {
+                txtLocalPonta.requestFocus();
+                jcbSubtrairBobinaPonta.setEnabled(true);
+                txtCodigoPonta.setEditable(false);
+                txtDescricaooPontas.setText(caboList.get(0).getDescricao());
             }
 
         } catch (NumberFormatException e) {
             Cabo.buscarCabo(txtCodigoPonta);
+            this.buscarCaboPontas();
         }
-    }//GEN-LAST:event_txtCodigoPontaKeyPressed
+    }
 
     private void btnCadastrarPontaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarPontaActionPerformed
         int numeroPonta = Conversor.paraInt(txtNumeroPontas.getText(), "Número da Ponta");
@@ -1230,65 +1271,72 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         txtLocalPonta.setText("");
         txtDescricaooPontas.setText("");
     }
-    
-    private void txtCodigoCaboBobinasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoCaboBobinasKeyPressed
 
+    private void txtCodigoCaboBobinasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoCaboBobinasKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            this.buscarCaboBobinas();
+        }
+
+    }//GEN-LAST:event_txtCodigoCaboBobinasKeyPressed
+
+    public void buscarCaboBobinas() {
         try {
 
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                lblBobinaCadastrada.setVisible(false);
-                if (txtCodigoCaboBobinas.getText().equals("")) {
+            lblBobinaCadastrada.setVisible(false);
+            if (txtCodigoCaboBobinas.getText().equals("")) {
+                Tabela.limpa(tabelaBusca);
+                JOptionPane.showMessageDialog(null, "Digite um Código "
+                        + "para pesquisar", "Falha", JOptionPane.WARNING_MESSAGE);
+                this.limparTelaBobinas();
+                return;
+            }
+
+            int codigoCabo = Integer.parseInt(txtCodigoCaboBobinas.getText());
+
+            if (codigoCabo != 0) {
+                List<Cabo> caboBobina = CaboDAO.buscaPorCodigo(codigoCabo);
+
+                if (caboBobina.isEmpty()) {
                     Tabela.limpa(tabelaBusca);
-                    JOptionPane.showMessageDialog(null, "Digite um Código "
-                            + "para pesquisar", "Falha", JOptionPane.WARNING_MESSAGE);
-                    this.limparTelaBobinas();
-                    return;
-                }
-
-                int codigoCabo = Integer.parseInt(txtCodigoCaboBobinas.getText());
-
-                if (codigoCabo != 0) {
-                    List<Cabo> caboBobina = CaboDAO.buscaPorCodigo(codigoCabo);
-
+                    caboBobina = CaboDAO.busca(codigoCabo, "s");
                     if (caboBobina.isEmpty()) {
                         Tabela.limpa(tabelaBusca);
-                        caboBobina = CaboDAO.busca(codigoCabo, "s");
-                        if (caboBobina.isEmpty()) {
-                            Tabela.limpa(tabelaBusca);
-                            this.limparTelaBobinas();
-                            Cabo.buscarCabo(txtCodigoCaboBobinas);
+                        this.limparTelaBobinas();
+                        Cabo.buscarCabo(txtCodigoCaboBobinas);
 
-                        } else {
-                            Tabela.limpa(tabelaBusca);
-                            txtDescricaoBobinas.setText(caboBobina.get(0).getDescricao());
-                            jcbAtivo.setSelectedIndex(0);
-                            txtNumBobinaBobinas.setText("");
-                            txtQuantidadeBobinas.setText("");
-                        }
                     } else {
-                        txtNumBobinaBobinas.setText("");
-                        jcbAtivo.setSelectedIndex(0);
-                        txtQuantidadeBobinas.setText("");
                         Tabela.limpa(tabelaBusca);
                         txtDescricaoBobinas.setText(caboBobina.get(0).getDescricao());
-                        
-                        for (int i = 0; i < caboBobina.size(); i++) {
-                            Object[] cabo = {caboBobina.get(i).getCodigoCabo(),
-                                caboBobina.get(i).getIdBobina(),
-                                caboBobina.get(i).getQtdOriginal(),
-                                caboBobina.get(i).getQtdAtual(),
-                                caboBobina.get(i).getAtivo().equals("s") ? "Ativo" : "Inativo",
-                                caboBobina.get(i).getDescricao()
-                            };
-                            tabelaBusca.addRow(cabo);
-                        }
+                        jcbAtivo.setSelectedIndex(0);
+                        txtNumBobinaBobinas.setText("");
+                        txtQuantidadeBobinas.setText("");
+                    }
+                } else {
+                    txtNumBobinaBobinas.setText("");
+                    jcbAtivo.setSelectedIndex(0);
+                    txtQuantidadeBobinas.setText("");
+                    Tabela.limpa(tabelaBusca);
+                    txtDescricaoBobinas.setText(caboBobina.get(0).getDescricao());
+
+                    for (int i = 0; i < caboBobina.size(); i++) {
+                        Object[] cabo = {caboBobina.get(i).getCodigoCabo(),
+                            caboBobina.get(i).getIdBobina(),
+                            caboBobina.get(i).getQtdOriginal(),
+                            caboBobina.get(i).getQtdAtual(),
+                            caboBobina.get(i).getAtivo().equals("s") ? "Ativo" : "Inativo",
+                            caboBobina.get(i).getDescricao()
+                        };
+                        tabelaBusca.addRow(cabo);
                     }
                 }
             }
+
         } catch (NumberFormatException e) {
             Cabo.buscarCabo(txtCodigoCaboBobinas);
+            this.buscarCaboBobinas();
         }
-    }//GEN-LAST:event_txtCodigoCaboBobinasKeyPressed
+    }
+
 
     private void txtNumBobinaBobinasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumBobinaBobinasKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -1302,7 +1350,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
             int numBobina = Conversor.paraInt(txtNumBobinaBobinas.getText(), "Número Bobina");
 
-            if (numBobina != 0) {
+            if (numBobina != -1) {
                 List<Cabo> caboBobina = BobinaDAO.buscaPorNumBobina(numBobina);
 
                 if (caboBobina.isEmpty()) {
@@ -1427,7 +1475,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         int idBobina = Conversor.paraInt(txtNumBobinaBobinas.getText(), "Número Bobina");
         int codigoCabo = Conversor.paraInt(txtCodigoCaboBobinas.getText(), "Código Cabo");
 
-        if (idBobina != 0 && codigoCabo != 0) {
+        if (idBobina != -1 && codigoCabo != -1) {
             Cabo caboBobina = new Cabo();
             caboBobina.setCodigoCabo(codigoCabo);
             caboBobina.setIdBobina(idBobina);
@@ -1540,7 +1588,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         cabo.setIdBobina(numBobina);
         cabo.setQtdAtual(qtd);
         cabo.setQtdOriginal(qtd);
-        
+
         if (BobinaDAO.salvar(cabo)) {
             JOptionPane.showMessageDialog(null, "   Bobina Salva com sucesso!",
                     "Concluido", JOptionPane.INFORMATION_MESSAGE);

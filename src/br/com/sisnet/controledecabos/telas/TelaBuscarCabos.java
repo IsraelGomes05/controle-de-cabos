@@ -290,7 +290,7 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
     private void btnbuscarPontasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarPontasActionPerformed
         int codigo = Conversor.paraInt(txtParametrosBusca.getText(), "Código");
 
-        if (codigo == 0) {
+        if (codigo == -1) {
             return;
         }
 

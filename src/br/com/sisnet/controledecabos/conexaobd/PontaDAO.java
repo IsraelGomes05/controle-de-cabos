@@ -180,7 +180,25 @@ public class PontaDAO {
             return true;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(),
-                    "Concluido", JOptionPane.INFORMATION_MESSAGE);
+                    "Falha", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+    }
+    
+    public static boolean excluirTudoPorCodigo(int codigoCabo) {
+        String sql = "DELETE FROM Ponta "
+                + "WHERE id_Cabo = ? ;";
+
+        try (Connection com = ConnectionFactory.getConexao();
+                PreparedStatement ps = com.prepareStatement(sql);) {
+
+            ps.setInt(1, codigoCabo);
+            ps.executeUpdate();
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage(),
+                    "Falha", JOptionPane.WARNING_MESSAGE);
             return false;
         }
     }

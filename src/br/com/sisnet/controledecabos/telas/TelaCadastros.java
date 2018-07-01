@@ -8,6 +8,7 @@ import br.com.sisnet.controledecabos.classes.Login;
 import br.com.sisnet.controledecabos.classes.Vendedor;
 import br.com.sisnet.controledecabos.classes.utilitarias.Cripto;
 import br.com.sisnet.controledecabos.conexaobd.LoginDAO;
+import br.com.sisnet.controledecabos.conexaobd.SaidaDAO;
 import br.com.sisnet.controledecabos.conexaobd.VendedorDAO;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
@@ -22,7 +23,7 @@ import javax.swing.KeyStroke;
 /**
  * @author Israel Gomes Da Silva
  * @created 05/03/2018
- * @lastModified 17/06/2018
+ * @lastModified 01/07/2018
  * @version 4.1.0
  *
  * @Function...
@@ -114,7 +115,7 @@ public class TelaCadastros extends javax.swing.JDialog {
 
         btnDeletarUsuarios.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnDeletarUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
-        btnDeletarUsuarios.setText("Deletar");
+        btnDeletarUsuarios.setText("Excluir");
         btnDeletarUsuarios.setContentAreaFilled(false);
         btnDeletarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarUsuarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -169,7 +170,7 @@ public class TelaCadastros extends javax.swing.JDialog {
 
         btnAlterarUsuario.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnAlterarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
-        btnAlterarUsuario.setText("Deletar");
+        btnAlterarUsuario.setText("Alterar");
         btnAlterarUsuario.setContentAreaFilled(false);
         btnAlterarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAlterarUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -186,7 +187,7 @@ public class TelaCadastros extends javax.swing.JDialog {
         jpnUsuariosLayout.setHorizontalGroup(
             jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuariosLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(jpnUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnUsuariosLayout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -273,7 +274,7 @@ public class TelaCadastros extends javax.swing.JDialog {
 
         btnDeletarVendedor.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnDeletarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
-        btnDeletarVendedor.setText("Deletar");
+        btnDeletarVendedor.setText("Excluir");
         btnDeletarVendedor.setContentAreaFilled(false);
         btnDeletarVendedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeletarVendedor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -480,9 +481,13 @@ public class TelaCadastros extends javax.swing.JDialog {
             }
         }
     }
-    
+
     private void txtNomeVendedorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeVendedorKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        validarVendedor(evt.getKeyCode());
+    }//GEN-LAST:event_txtNomeVendedorKeyPressed
+
+    public void validarVendedor(int teclaPressionada) {
+        if (teclaPressionada == KeyEvent.VK_ENTER) {
             List<Vendedor> vendedorList;
             vendedorList = VendedorDAO.busca(txtNomeVendedor.getText().toUpperCase());
 
@@ -505,25 +510,49 @@ public class TelaCadastros extends javax.swing.JDialog {
 
             }
         }
-    }//GEN-LAST:event_txtNomeVendedorKeyPressed
+    }
+
 
     private void btnDeletarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarVendedorActionPerformed
-        if (txtNomeVendedor.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Digite um nome para deletar",
+        String nomeVendedor = txtNomeVendedor.getText();
+
+        if (nomeVendedor.equals("")) {
+            JOptionPane.showMessageDialog(null, "Digite um nome para excluir",
                     "Falha", JOptionPane.WARNING_MESSAGE);
             btnDeletarVendedor.setEnabled(false);
             btnCadastrarVendedor.setEnabled(false);
             return;
         }
-        if (VendedorDAO.excluir(txtNomeVendedor.getText())) {
-            JOptionPane.showMessageDialog(null, "Vendedor Excluido com sucesso!",
-                    "Concluído", JOptionPane.INFORMATION_MESSAGE);
-            preencherLista();
-        }
 
-        btnCadastrarVendedor.setEnabled(false);
-        txtNomeVendedor.setText("");
-        btnDeletarVendedor.setEnabled(false);
+        if (this.isVendedorCadastrado(nomeVendedor)) {
+            String msg = "";
+            if (JOptionPane.showConfirmDialog(null, "<html> <H2 ALIGN=\"center\"><FONT FACE=\"Tahoma\" COLOR=\"red\">ATENÇÃO</FONT></H2>"
+                    + "<p><font  FACE=\"Arial\" SIZE=\"5\">Este Procedimento <b>excluirá o vendedor.</b>"
+                    + "Também serão excluidos todos<br> os registros de <b>Saidas</b><br>"
+                    + "<br>Deseja Continuar?<font></p> </html>", "Excluir Vendedor", JOptionPane.YES_NO_OPTION, -1) == 0) {
+
+                if (VendedorDAO.excluir(nomeVendedor)) {
+                    msg += "<font COLOR=\"green\"><br>Vendedor excluído com sucesso!</font><br>";
+                } else {
+                    msg += "<font COLOR=\"red\"><br>Falha ao excluir vendedor, contacte o desenvolvedor!</font><br>";
+                }
+
+                if (SaidaDAO.excluirTudoPorVendedor(nomeVendedor)) {
+                    msg += "<font COLOR=\"green\"><br>Registros de saída Excluídos com sucesso!</font><br>";
+                } else {
+                    msg += "<font COLOR=\"red\"><br>Falha ao excluir as saídas, contacte o desenvolvedor!</font><br>";
+                }
+
+                JOptionPane.showMessageDialog(this, "<html>" + msg + "</html>", "Concluído", JOptionPane.INFORMATION_MESSAGE);
+                btnCadastrarVendedor.setEnabled(false);
+                txtNomeVendedor.setText("");
+                btnDeletarVendedor.setEnabled(false);
+                preencherLista();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Este vendedor não está cadastrado!",
+                    "Falha", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnDeletarVendedorActionPerformed
 
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
@@ -533,7 +562,9 @@ public class TelaCadastros extends javax.swing.JDialog {
     }//GEN-LAST:event_txtSenhaKeyPressed
 
     private void btnCadastrarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarVendedorActionPerformed
-        if (txtNomeVendedor.getText().equals("")) {
+        String nomeVendedor = txtNomeVendedor.getText();
+
+        if (nomeVendedor.equals("")) {
             JOptionPane.showMessageDialog(null, "Digite um nome para Cadastrar",
                     "Falha", JOptionPane.WARNING_MESSAGE);
             btnDeletarVendedor.setEnabled(false);
@@ -541,14 +572,20 @@ public class TelaCadastros extends javax.swing.JDialog {
             return;
         }
 
-        if (VendedorDAO.salvar(new Vendedor(txtNomeVendedor.getText().toUpperCase()))) {
-            JOptionPane.showMessageDialog(null, "Vendedor Salvo com sucesso!",
-                    "Concluído", JOptionPane.INFORMATION_MESSAGE);
-            preencherLista();
-        }
+        if (!this.isVendedorCadastrado(nomeVendedor)) {
 
-        btnCadastrarVendedor.setEnabled(false);
-        txtNomeVendedor.setText("");
+            if (VendedorDAO.salvar(new Vendedor(nomeVendedor.toUpperCase()))) {
+                JOptionPane.showMessageDialog(null, "Vendedor Salvo com sucesso!",
+                        "Concluído", JOptionPane.INFORMATION_MESSAGE);
+                preencherLista();
+            }
+
+            btnCadastrarVendedor.setEnabled(false);
+            txtNomeVendedor.setText("");
+        } else {
+            JOptionPane.showMessageDialog(null, "Este vendedor já está cadastrado!",
+                    "Falha", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnCadastrarVendedorActionPerformed
 
     private void btnSalvarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarUsuarioActionPerformed
@@ -571,6 +608,8 @@ public class TelaCadastros extends javax.swing.JDialog {
 
     private void jListVendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListVendedoresMouseClicked
         txtNomeVendedor.setText((String) listaVendedoresModel.get(jListVendedores.getSelectedIndex()));
+        btnDeletarVendedor.setEnabled(true);
+        btnCadastrarVendedor.setEnabled(false);
     }//GEN-LAST:event_jListVendedoresMouseClicked
 
     private void btnAlterarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarUsuarioActionPerformed
@@ -582,12 +621,12 @@ public class TelaCadastros extends javax.swing.JDialog {
 
         if (!isUsuarioCadastrado(usuario)) {
             JOptionPane.showMessageDialog(null, "Usuário Não está cadastrado!",
-                "Falha", JOptionPane.WARNING_MESSAGE);
+                    "Falha", JOptionPane.WARNING_MESSAGE);
             return;
         }
         if (LoginDAO.excluir(usuario)) {
             JOptionPane.showMessageDialog(null, "Usuário excluido com Sucesso!",
-                "concluido", JOptionPane.WARNING_MESSAGE);
+                    "concluido", JOptionPane.WARNING_MESSAGE);
         }
         txtUsuario.setText("");
     }//GEN-LAST:event_btnDeletarUsuariosActionPerformed
@@ -640,6 +679,12 @@ public class TelaCadastros extends javax.swing.JDialog {
                         "Falha", JOptionPane.WARNING_MESSAGE);
             }
         }
+    }
+
+    public boolean isVendedorCadastrado(String nome) {
+        List<Vendedor> vendedorList = VendedorDAO.busca(nome.toUpperCase());
+
+        return !vendedorList.isEmpty();
     }
 
     private boolean isSenhasIguais(String senha, String confirmaSenha) {

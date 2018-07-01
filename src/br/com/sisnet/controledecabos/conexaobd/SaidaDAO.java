@@ -1,6 +1,6 @@
-/** 
+/**
  * @created  18/03/2018
- * @lastModified 06/04/2018 
+ * @lastModified 06/04/2018
  */
 package br.com.sisnet.controledecabos.conexaobd;
 
@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  * Classe responsável por fazer o CRUD na tabela saída.
+ *
  * @author Israel Gomes
  * @version 1.5
  * @since 1.0
@@ -36,7 +37,7 @@ public class SaidaDAO {
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null,"       Falha ao tentar Salvar\n" 
+            JOptionPane.showMessageDialog(null, "       Falha ao tentar Salvar\n"
                     + ex.getMessage(),
                     "Falha", JOptionPane.ERROR_MESSAGE);
             return false;
@@ -190,7 +191,7 @@ public class SaidaDAO {
         }
         return null;
     }
-    
+
     public static boolean excluir(int idSaida) {
         String sql = "DELETE FROM Saida "
                 + "WHERE idSaida = ?;";
@@ -203,7 +204,45 @@ public class SaidaDAO {
 
             return true;
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "      Falha ao tentar excluir\n" 
+            JOptionPane.showMessageDialog(null, "      Falha ao tentar excluir\n"
+                    + ex.getMessage(),
+                    "Falha", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+
+    public static boolean excluirTudoPorCodigo(int codigoCabo) {
+        String sql = "DELETE FROM Saida "
+                + "WHERE id_Cabo = ?;";
+
+        try (Connection com = ConnectionFactory.getConexao();
+                PreparedStatement ps = com.prepareStatement(sql);) {
+
+            ps.setInt(1, codigoCabo);
+            ps.executeUpdate();
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "      Falha ao tentar excluir\n"
+                    + ex.getMessage(),
+                    "Falha", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+
+    public static boolean excluirTudoPorVendedor(String nomeVendedor) {
+        String sql = "delete from saida "
+                + "where id_Vendedor = (select idVendedor from Vendedor where nome = ?);";
+
+        try (Connection com = ConnectionFactory.getConexao();
+                PreparedStatement ps = com.prepareStatement(sql);) {
+
+            ps.setString(1, nomeVendedor);
+            ps.executeUpdate();
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "      Falha ao tentar excluir\n"
                     + ex.getMessage(),
                     "Falha", JOptionPane.ERROR_MESSAGE);
             return false;

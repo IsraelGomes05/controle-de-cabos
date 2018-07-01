@@ -1518,7 +1518,7 @@
                                       </Group>
                                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="392" max="32767" attributes="0"/>
+                                  <EmptySpace pref="397" max="32767" attributes="0"/>
                                   <Component id="btnImprimirRelatoriosSaidas" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="btnDeletarRelatorioSaidas" min="-2" max="-2" attributes="0"/>
@@ -1583,7 +1583,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Deletar"/>
+                            <Property name="text" type="java.lang.String" value="Excluir"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                               <Color id="Cursor em Forma de M&#xe3;o"/>
                             </Property>
@@ -2036,7 +2036,6 @@
                                     </Column>
                                   </TableColumnModel>
                                 </Property>
-                                <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                                 <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="7c" green="d3" red="25" type="rgb"/>
                                 </Property>

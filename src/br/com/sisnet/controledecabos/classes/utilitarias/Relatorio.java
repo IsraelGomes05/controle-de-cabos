@@ -1,5 +1,5 @@
  /** 
- * @created  15/04/2018
+ * @created      15/04/2018
  * @lastModified 21/04/2018 
  */
 package br.com.sisnet.controledecabos.classes.utilitarias;
@@ -15,14 +15,14 @@ import net.sf.jasperreports.view.JasperViewer;
 
 /**
  * Classe utilitária para exibir relatórios.
- * @author Israel Gomes
+ * @author  Israel Gomes
  * @version 1.0
- * @since 1.0
+ * @since   1.0
  */
 public class Relatorio {
     
     /**
-     * exibe um relatório externo.
+     * Exibe um relatório externo.
      * 
      * @param parametro String - parametro para filtrar a consulta.
      * @param diretorio String - local onde o relatorio está.
@@ -52,7 +52,7 @@ public class Relatorio {
     }
 
     /**
-     * exibe um relatório externo.
+     * Exibe um relatório externo.
      * 
      * @param parametro int - parametro para filtrar a consulta.
      * @param diretorio String - local onde o relatorio está.
@@ -82,7 +82,7 @@ public class Relatorio {
     }
     
     /**
-     * exibe um relatório externo.
+     * Exibe um relatório externo.
      * 
      * @param parametros HashMap - parametros para filtrar a consulta.
      * @param diretorio String - local onde o relatorio está.
