@@ -21,19 +21,17 @@ import org.sqlite.javax.SQLiteConnectionPoolDataSource;
  */
 public class ConnectionFactory {
 
-    private static DataSource con = null;
+    private static SQLiteConnectionPoolDataSource pool = null; 
     private static final String URL = "jdbc:sqlite:/C:/Controle de Cabos/ControleDeCabos_BD.db";
 
     public static Connection getConexao() {
         try {
             Class.forName("org.sqlite.JDBC");
-
-            if (con == null) {
-                SQLiteConnectionPoolDataSource pool = new SQLiteConnectionPoolDataSource();
+            if (pool == null) {
+                pool = new SQLiteConnectionPoolDataSource();
                 pool.setUrl(URL);
-                con = pool;
             }
-            return con.getConnection();
+            return pool.getConnection();
 
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "<html><h3>    Não foi possível conectar ao Banco de dados</h3></html> \n" + ex.getMessage(),
