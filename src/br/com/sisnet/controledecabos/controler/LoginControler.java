@@ -4,6 +4,7 @@
  */
 package br.com.sisnet.controledecabos.controler;
 
+import br.com.sisnet.controledecabos.classes.Login;
 import br.com.sisnet.controledecabos.classes.utilitarias.Cripto;
 import br.com.sisnet.controledecabos.conexaobd.LoginDAO;
 import br.com.sisnet.controledecabos.telas.TelaPrincipal;
@@ -21,11 +22,11 @@ import javax.swing.JOptionPane;
  */
 public class LoginControler {
 
-    static int tentativa = 4;
+    private int tentativa = 4;
 
-    public static boolean logar(JDialog tela, String senha, String usuario, JLabel lblTentativas) {
+    public boolean logar(JDialog tela, String senha, String usuario, JLabel lblTentativas, boolean isUsuarioInicial) {
 
-        if (checkLogin(Cripto.criptografar(senha), usuario)) {
+        if (checkLogin(Cripto.criptografar(senha), usuario, isUsuarioInicial)) {
             tela.dispose();
             return true;
         } else {
@@ -41,21 +42,26 @@ public class LoginControler {
         }
     }
 
-    public static boolean checkLogin(String senha, String usuario) {
+    public boolean checkLogin(String senha, String usuario, boolean isUsuarioInicial) {
         if (senha.equals("") || usuario.equals("")) {
             return false;
         } else {
             String senhaBd;
-            List<br.com.sisnet.controledecabos.classes.Login> loginList;
-            loginList = LoginDAO.busca(usuario);
-            if (loginList != null && loginList.isEmpty()) {
+            Login login = LoginDAO.busca(usuario);
+            if (login == null) {
                 return false;
             } else {
-                TelaPrincipal.usuario = loginList.get(0);
-                senhaBd = loginList.get(0).getSenha();
+                if (isUsuarioInicial) {
+                    TelaPrincipal.usuario = login;
+                }
+                senhaBd = login.getSenha();
                 return senhaBd.equals(senha);
             }
         }
+    }
+
+    public Login getPermissoes(String usuario) {
+        return LoginDAO.busca(usuario);
     }
 
 }

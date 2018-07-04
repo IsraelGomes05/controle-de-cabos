@@ -1104,7 +1104,7 @@ jPanel9Layout.setHorizontalGroup(
 
         },
         new String [] {
-            "CÓD. SAÍDA", "DATA", "CÓD. CABO", "DESCRIÇÃO", "QTD", "VENDEDOR", "BOBINA"
+            "CÓD. SAÍDA", "VENDEDOR", "DATA", "CÓD. CABO", "DESCRIÇÃO", "QTD", "BOBINA"
         }
     ) {
         boolean[] canEdit = new boolean [] {
@@ -1126,15 +1126,15 @@ jPanel9Layout.setHorizontalGroup(
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(0).setResizable(false);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(0).setPreferredWidth(60);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setResizable(false);
-        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setPreferredWidth(60);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(1).setPreferredWidth(100);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setResizable(false);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(2).setPreferredWidth(60);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setResizable(false);
-        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setPreferredWidth(500);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(3).setPreferredWidth(60);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setResizable(false);
-        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setPreferredWidth(40);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(4).setPreferredWidth(500);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setResizable(false);
-        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setPreferredWidth(100);
+        jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setPreferredWidth(40);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setResizable(false);
         jtbTabelaRelatorioSaidas.getColumnModel().getColumn(6).setPreferredWidth(40);
     }
@@ -2026,11 +2026,11 @@ jPanel9Layout.setHorizontalGroup(
             for (int i = 0; i < saidaList.size(); i++) {
                 Object[] cabo = {
                     saidaList.get(i).getIdSaida(),
+                    saidaList.get(i).getNomeVendedor(),
                     saidaList.get(i).getData(),
                     saidaList.get(i).getCodigoCabo(),
                     saidaList.get(i).getDescricao(),
                     saidaList.get(i).getQuantidade(),
-                    saidaList.get(i).getNomeVendedor(),
                     saidaList.get(i).getCaboPossuiBobina().equals("s") ? saidaList.get(i).getNumBobina() : " - - - -",};
 
                 tabelaRelatorioSaidas.addRow(cabo);
@@ -2085,10 +2085,10 @@ jPanel9Layout.setHorizontalGroup(
                         true,
                         true,
                         Double.parseDouble(tabelaRelatorioSaidas.getValueAt(
-                                jtbTabelaRelatorioSaidas.getSelectedRow(), 4).toString()
+                                jtbTabelaRelatorioSaidas.getSelectedRow(), 5).toString()
                         ),
                         Integer.parseInt(tabelaRelatorioSaidas.getValueAt(
-                                jtbTabelaRelatorioSaidas.getSelectedRow(), 2).toString()
+                                jtbTabelaRelatorioSaidas.getSelectedRow(), 3).toString()
                         )
                 );
                 caboGerenciar.setVisible(true);

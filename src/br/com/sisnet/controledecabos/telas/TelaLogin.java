@@ -10,18 +10,20 @@ import java.awt.event.KeyEvent;
 /**
  * Classe responsável realizar o login do usuário.
  *
- * @author Israel Gomes
+ * @author  Israel Gomes
  * @version 3.0
- * @since 1.0
+ * @since   1.0
  */
 public class TelaLogin extends javax.swing.JDialog {
 
     ViewUtil viewUtil;
-
+    LoginControler controler;
+    
     public TelaLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        initComponents();
+        controler = new LoginControler();
         viewUtil = new ViewUtil();
+        initComponents();
     }
 
     @SuppressWarnings("unchecked")
@@ -263,7 +265,7 @@ public class TelaLogin extends javax.swing.JDialog {
         String senha = new String(txtSenha.getPassword());
         String usuario = txtUsuario.getText();
 
-        if (!LoginControler.logar(this, senha, usuario, lblTentativas)) {
+        if (!controler.logar(this, senha, usuario, lblTentativas, true)) {
             viewUtil.alterarIcone(lblSenha, "icons8-senha-32-red.png");
             viewUtil.alterarIcone(lblUsuario, "icons8-usuario-de-genero-neutro-32 red.png");
         }

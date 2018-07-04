@@ -424,8 +424,8 @@ public class TelaCadastros extends javax.swing.JDialog {
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            List<Login> loginList;
-            loginList = LoginDAO.busca(txtUsuario.getText());
+            
+            Login usuario = LoginDAO.busca(txtUsuario.getText());
             if (txtUsuario.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Digite um nome de Usuário!",
                         "Falha", JOptionPane.WARNING_MESSAGE);
@@ -433,7 +433,7 @@ public class TelaCadastros extends javax.swing.JDialog {
                 btnSalvarUsuario.setEnabled(false);
                 return;
             }
-            if (loginList.isEmpty()) {
+            if (usuario == null) {
                 txtSenha.requestFocus();
                 jcbAlterarDados.setSelected(false);
                 jcbAlterarDados.setEnabled(true);
@@ -444,7 +444,7 @@ public class TelaCadastros extends javax.swing.JDialog {
                 jcbAlterarDados.setEnabled(true);
                 btnAlterarUsuario.setEnabled(true);
                 btnDeletarUsuarios.setEnabled(true);
-                if (loginList.get(0).getAlterarDados().equals("s")) {
+                if (usuario.getAlterarDados().equals("s")) {
                     jcbAlterarDados.setSelected(true);
                 } else {
                     jcbAlterarDados.setSelected(false);
@@ -658,9 +658,9 @@ public class TelaCadastros extends javax.swing.JDialog {
     }
 
     private boolean isUsuarioCadastrado(String usuario) {
-        List<Login> loginList;
-        loginList = LoginDAO.busca(usuario);
-        return !loginList.isEmpty();
+        
+        Login login = LoginDAO.busca(usuario);
+        return !(login == null);
     }
 
     private void cadastrarUsuario(Login usuario, String confirmarSenha) {

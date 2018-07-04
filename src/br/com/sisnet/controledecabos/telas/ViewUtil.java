@@ -12,11 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
- * funcion...
+ * Funcion...
  *
- * @author Israel Gomes
+ * @author  Israel Gomes
  * @version 1.0
- * @since 1.0
+ * @since   1.0
  */
 public class ViewUtil {
 

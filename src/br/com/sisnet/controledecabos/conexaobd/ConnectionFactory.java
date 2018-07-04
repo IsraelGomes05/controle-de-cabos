@@ -8,16 +8,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.sql.DataSource;
 import javax.swing.JOptionPane;
 import org.sqlite.javax.SQLiteConnectionPoolDataSource;
 
 /**
  * Classe responsável por abrir e fechar conexões com o banco de dados.
  *
- * @author Israel Gomes
+ * @author  Israel Gomes
  * @version 2.8
- * @since 1.0
+ * @since   1.0
  */
 public class ConnectionFactory {
 
