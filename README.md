@@ -8,8 +8,8 @@
 		<h2><br>Para executar</h2>
 		<h4>
 			1. Baixe o projeto, utilize o NetBeans para abri-lo.<br>
-			2. Copie a pasta <b>Dependencias</b> renomeie-a para <b>Controle de Cabos</b> cole na pasta C:\<br>
-			Exemplo: C:\Controle de Cabos
+			2. Copie a pasta <em>Dependencias</em> renomeie-a para <em>Controle de Cabos</em> cole na pasta C:\<br>
+			Exemplo: C:\Controle de Cabos<br>
 			3. Execute o projeto.
 		</h4>
 	</body>
