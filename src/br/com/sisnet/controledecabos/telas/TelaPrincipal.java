@@ -14,6 +14,7 @@ import br.com.sisnet.controledecabos.conexaobd.PontaDAO;
 import br.com.sisnet.controledecabos.conexaobd.SaidaDAO;
 import br.com.sisnet.controledecabos.conexaobd.VendedorDAO;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
@@ -24,7 +25,10 @@ import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import org.jfree.ui.DateCellRenderer;
 
 /**
  * Função<br>.
@@ -81,6 +85,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tabelaRelatorioSaidas = (DefaultTableModel) jtbTabelaRelatorioSaidas.getModel();
             tabelaRelatorioBobinas = (DefaultTableModel) jtbBobinasRelatorios.getModel();
             tabelaRelatorioCabos = (DefaultTableModel) jtbCabosRelatorios.getModel();
+            
+            DefaultTableCellRenderer align = new DefaultTableCellRenderer();
+            align.setBackground(Color.red);
+            align.setHorizontalAlignment(SwingConstants.RIGHT);
+            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setCellRenderer(align);
+            
             //Obtendo os dados dos Vendedores
             this.preencherJComboBoxVendedores(jcbVendedoresCabos, "SELECIONE");
 
