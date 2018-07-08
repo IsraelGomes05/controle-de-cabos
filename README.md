@@ -5,11 +5,11 @@
 		<h2>Software para auxiliar o controle de saídas de Cabos elétricos</h2>
 		<h3>Para baixar o instalador acesse os links abaixo</h3>
 		<h4>
-			Novo!<br>
-			<a href="https://drive.google.com/open?id=1McHwip6ZFhvPnrD6ZGT7BUyBmdi7Rr0w" target="_blank">Download v3.0.0</a>,
+			Novo! 
+			<a href="https://drive.google.com/open?id=1McHwip6ZFhvPnrD6ZGT7BUyBmdi7Rr0w" target="_blank">Download v3.0.0</a>
 		</h4>
 		<h4>
-			<a href="https://drive.google.com/open?id=1IAb3oPwzUE_2kmZ_3GIrmocP6c80EwTT" target="_blank">Download v2.0.0</a>,		</h4>
+			<a href="https://drive.google.com/open?id=1IAb3oPwzUE_2kmZ_3GIrmocP6c80EwTT" target="_blank">Download v2.0.0</a>		</h4>
 		usuário: admin senha: 053923
 		<h2><br>Para executar</h2>
 		<h4>
