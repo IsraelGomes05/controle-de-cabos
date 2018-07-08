@@ -57,47 +57,57 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             int codigoCabo
     ) {
         super(parent, modal);
-        setAcessibilidade();
-        initComponents();
-        viewUtil = new ViewUtil();
+        try {
 
-        /*Cabo*/
-        btnAlterarCabo.setEnabled(false);
-        btnCadastrarCabo.setEnabled(false);
-        btnDeletarCabo.setEnabled(false);
-        txtDescricaoCabos.setEditable(false);
-        
-        /*Pontas*/
-        btnPontas.setBackground(Color.YELLOW);
-        btnDeletarPonta.setEnabled(false);
-        btnAtualizarPonta.setEnabled(false);
-        btnCadastrarPonta.setEnabled(false);
-        txtCodigoPonta.setEditable(false);
-        txtQuantidadePonta.setEditable(false);
-        txtLocalPonta.setEditable(false);
-        jcbSubtrairBobinaPonta.setEnabled(false);
-        viewUtil.alterarIcone(btnPontas, "icons8-ponta-64-selecionado.png");
+            setAcessibilidade();
+            initComponents();
+            viewUtil = new ViewUtil();
 
-        if (externo) {
-            btnGerarPontas.doClick();
-            btnPontas.doClick();
-            txtCodigoPonta.setText("" + codigoCabo);
-            txtQuantidadePonta.setText("" + quantidade);
-            txtCodigoPontaKeyPressed(new KeyEvent(parent, WIDTH, WIDTH, SOMEBITS, KeyEvent.VK_ENTER));
-            txtCodigoPonta.setActionCommand("");
-            txtLocalPonta.setEditable(true);
+            /*Cabo*/
+            btnAlterarCabo.setEnabled(false);
+            btnCadastrarCabo.setEnabled(false);
+            btnDeletarCabo.setEnabled(false);
+            txtDescricaoCabos.setEditable(false);
+
+            /*Pontas*/
+            btnPontas.setBackground(Color.YELLOW);
+            btnDeletarPonta.setEnabled(false);
+            btnAtualizarPonta.setEnabled(false);
+            btnCadastrarPonta.setEnabled(false);
+            txtCodigoPonta.setEditable(false);
+            txtQuantidadePonta.setEditable(false);
+            txtLocalPonta.setEditable(false);
             jcbSubtrairBobinaPonta.setEnabled(false);
-            btnCadastrarPonta.setEnabled(true);
-            txtLocalPonta.requestFocus();
-            btnCabos.setEnabled(false);
-            btnBobinas.setEnabled(false);
+            viewUtil.alterarIcone(btnPontas, "icons8-ponta-64-selecionado.png");
+
+            if (externo) {
+                btnGerarPontas.doClick();
+                btnPontas.doClick();
+                txtCodigoPonta.setText("" + codigoCabo);
+                txtQuantidadePonta.setText("" + quantidade);
+                txtCodigoPontaKeyPressed(new KeyEvent(parent, WIDTH, WIDTH, SOMEBITS, KeyEvent.VK_ENTER));
+                txtCodigoPonta.setActionCommand("");
+                txtLocalPonta.setEditable(true);
+                jcbSubtrairBobinaPonta.setEnabled(false);
+                btnCadastrarPonta.setEnabled(true);
+                txtLocalPonta.requestFocus();
+                btnCabos.setEnabled(false);
+                btnBobinas.setEnabled(false);
+            }
+            /*Bobinas*/
+            txtQuantidadeBobinas.setEditable(false);
+            jcbAtivo.setEnabled(false);
+            tabelaBusca = (DefaultTableModel) jtbTabelaBobina.getModel();
+            lblBobinaCadastrada.setVisible(false);
+            btnCadastrarBobina.setEnabled(false);
+        } catch (Exception th) {
+            String erro = "";
+            for (Object object : th.getStackTrace()) {
+                erro += object + "\n";
+            }
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + th.getMessage() + erro,
+                    "Falha", JOptionPane.ERROR_MESSAGE);
         }
-        /*Bobinas*/
-        txtQuantidadeBobinas.setEditable(false);
-        jcbAtivo.setEnabled(false);
-        tabelaBusca = (DefaultTableModel) jtbTabelaBobina.getModel();
-        lblBobinaCadastrada.setVisible(false);
-        btnCadastrarBobina.setEnabled(false);
 
     }
 
@@ -675,7 +685,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         lblBobinaCadastrada.setText("Bobina já cadastrada");
 
         btnGerarBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnGerarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-confirmação-e-atualizacao-32-azul.png"))); // NOI18N
+        btnGerarBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-confirmacao-e-atualizacao-32-azul.png"))); // NOI18N
         btnGerarBobinas.setText("Gerar Num");
         btnGerarBobinas.setToolTipText("Gera um número disponível para cadastro");
         btnGerarBobinas.setContentAreaFilled(false);
@@ -1646,46 +1656,48 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+            /* Set the Nimbus look and feel */
+            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+             */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
 
+                    }
                 }
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(TelaGerenciarCabos.class
+                        .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro!!", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaGerenciarCabos.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Erro!!", JOptionPane.ERROR_MESSAGE);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
 
-        //</editor-fold>
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(() -> {
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            TelaGerenciarCabos dialog = new TelaGerenciarCabos(new javax.swing.JFrame(), true, false, 0, 0);
-            dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                @Override
-                public void windowClosing(java.awt.event.WindowEvent e) {
-                    System.exit(0);
-                }
+                TelaGerenciarCabos dialog = new TelaGerenciarCabos(new javax.swing.JFrame(), true, false, 0, 0);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             });
-            dialog.setVisible(true);
-        });
+        } catch (Exception th) {
+            String erro = "";
+            for (Object object : th.getStackTrace()) {
+                erro += object + "\n";
+            }
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + th.getMessage() + erro,
+                    "Falha", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

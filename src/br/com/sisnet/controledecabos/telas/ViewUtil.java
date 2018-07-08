@@ -4,7 +4,6 @@
  */
 package br.com.sisnet.controledecabos.telas;
 
-import java.io.File;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -26,18 +25,16 @@ public class ViewUtil {
         try {
 
             URL resource = getClass().getResource(diretorio);
-            File file = new File(resource.toURI());
-            //setando o icone
-            ImageIcon img = new ImageIcon(file.getPath());
+            ImageIcon img = new ImageIcon(resource);
 
             label.setIcon(img);
 
         } catch (Exception ex) {
-            String erro = "";
+            String erro = "\n";
             for (Object object : ex.getStackTrace()) {
                 erro += object + "\n";
             }
-            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + ex.getMessage() + erro,
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + ex.getMessage() + "\n"+ erro,
                     "Falha", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -47,10 +44,8 @@ public class ViewUtil {
 
         try {
 
-            URL resource = getClass().getResource(diretorio);
-            File file = new File(resource.toURI());
-            //setando o icone
-            ImageIcon img = new ImageIcon(file.getPath());
+             URL resource = getClass().getResource(diretorio);
+            ImageIcon img = new ImageIcon(resource);
 
             botao.setIcon(img);
 
