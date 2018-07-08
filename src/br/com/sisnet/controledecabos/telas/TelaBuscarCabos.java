@@ -243,11 +243,11 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
             int codigo = Integer.parseInt(txtParametrosBusca.getText());
             caboList = CaboDAO.busca(codigo, "s");
             if (caboList.isEmpty()) {
-                Tabela.limpa(tabelaBusca);
+                Tabela.limpar(tabelaBusca);
                 JOptionPane.showMessageDialog(null, "Nenhum registro encontrado",
                         "Falha", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                Tabela.limpa(tabelaBusca);
+                Tabela.limpar(tabelaBusca);
                 Object[] cabo = {caboList.get(0).getCodigoCabo(), caboList.get(0).getDescricao(),
                     caboList.get(0).getPossuiBobina().equals("s") ? caboList.get(0).getQtdAtual() : " - - - -",
                     caboList.get(0).getPossuiBobina().equals("s") ? caboList.get(0).getIdBobina() : " - - - -", " - - - -"};
@@ -260,11 +260,11 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
             caboList = CaboDAO.buscaPorDescricao(txtParametrosBusca.getText().toUpperCase());
 
             if (caboList.isEmpty()) {
-                Tabela.limpa(tabelaBusca);
+                Tabela.limpar(tabelaBusca);
                 JOptionPane.showMessageDialog(null, "Nenhum registro encontrado",
                         "Falha", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                Tabela.limpa(tabelaBusca);
+                Tabela.limpar(tabelaBusca);
                 for (int i = 0; i < caboList.size(); i++) {
                     Object[] cabo = {caboList.get(i).getCodigoCabo(), caboList.get(i).getDescricao(),
                         caboList.get(i).getPossuiBobina().equals("s") ? caboList.get(i).getQtdAtual() : " - - - -",
@@ -297,11 +297,11 @@ public class TelaBuscarCabos extends javax.swing.JDialog {
         List<PontaCabo> pontaList = PontaDAO.buscaCodigoCabo(codigo, 0);
 
         if (pontaList.isEmpty()) {
-            Tabela.limpa(tabelaBusca);
+            Tabela.limpar(tabelaBusca);
             JOptionPane.showMessageDialog(null, "Nenhum registro encontrado",
                     "Falha", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            Tabela.limpa(tabelaBusca);
+            Tabela.limpar(tabelaBusca);
 
             for (int i = 0; i < pontaList.size(); i++) {
                 Object[] cabo = {pontaList.get(i).getCodigoCabo(), pontaList.get(i).getDescricao(),

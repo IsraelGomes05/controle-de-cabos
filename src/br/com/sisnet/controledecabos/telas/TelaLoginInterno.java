@@ -1,20 +1,14 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
- */
+
 package br.com.sisnet.controledecabos.telas;
 
 import br.com.sisnet.controledecabos.classes.Login;
 import br.com.sisnet.controledecabos.classes.utilitarias.Cripto;
-import br.com.sisnet.controledecabos.conexaobd.LoginDAO;
 import br.com.sisnet.controledecabos.controler.LoginControler;
 import java.awt.event.KeyEvent;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
  * @author Israel Gomes Da Silva
- * @contact israelgomes05@gmail.com
  * @created 30/03/2018
  * @lastModified 30/03/2018
  * @version 1.0

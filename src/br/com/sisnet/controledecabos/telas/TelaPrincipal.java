@@ -7,6 +7,7 @@ import br.com.sisnet.controledecabos.classes.Saida;
 import br.com.sisnet.controledecabos.classes.Vendedor;
 import br.com.sisnet.controledecabos.classes.utilitarias.Conversor;
 import br.com.sisnet.controledecabos.classes.utilitarias.Relatorio;
+import br.com.sisnet.controledecabos.classes.utilitarias.RenderizadorTabela;
 import br.com.sisnet.controledecabos.classes.utilitarias.Tabela;
 import br.com.sisnet.controledecabos.conexaobd.BobinaDAO;
 import br.com.sisnet.controledecabos.conexaobd.CaboDAO;
@@ -14,7 +15,6 @@ import br.com.sisnet.controledecabos.conexaobd.PontaDAO;
 import br.com.sisnet.controledecabos.conexaobd.SaidaDAO;
 import br.com.sisnet.controledecabos.conexaobd.VendedorDAO;
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.text.DateFormat;
@@ -25,20 +25,17 @@ import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import org.jfree.ui.DateCellRenderer;
 
 /**
- * Função<br>.
+ * Função<br>
  *
- * created 01/03/2018<br>
+ * created      01/03/2018<br>
  * lastModified 09/06/2018
  *
- * @author Israel Gomes
- * @version 5.2
- * @since 1.0
+ * @author      Israel Gomes
+ * @version     5.2
+ * @since       1.0
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
@@ -86,10 +83,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tabelaRelatorioBobinas = (DefaultTableModel) jtbBobinasRelatorios.getModel();
             tabelaRelatorioCabos = (DefaultTableModel) jtbCabosRelatorios.getModel();
             
-            DefaultTableCellRenderer align = new DefaultTableCellRenderer();
-            align.setBackground(Color.red);
-            align.setHorizontalAlignment(SwingConstants.RIGHT);
-            jtbTabelaRelatorioSaidas.getColumnModel().getColumn(5).setCellRenderer(align);
+            jtbTabelaCabos.setDefaultRenderer(Object.class, new RenderizadorTabela(true));
+            jtbTabelaCabos.setShowVerticalLines(true);
+            Tabela.alinharColunaDireita(jtbTabelaRelatorioSaidas, new int[]{5});
+            Tabela.alinharColunaDireita(jtbBobinasRelatorios, new int[]{3, 4, 5, 6});
+            Tabela.alinharColunaDireita(jtbCabosRelatorios, new int[]{3, 4, 5});
+            Tabela.alinharColunaDireita(jtbPontas, new int[]{3});
             
             //Obtendo os dados dos Vendedores
             this.preencherJComboBoxVendedores(jcbVendedoresCabos, "SELECIONE");
@@ -604,7 +603,7 @@ jPanel9Layout.setHorizontalGroup(
             return canEdit [columnIndex];
         }
     });
-    jtbTabelaCabos.setGridColor(new java.awt.Color(255, 255, 255));
+    jtbTabelaCabos.setGridColor(new java.awt.Color(51, 51, 51));
     jtbTabelaCabos.setName(""); // NOI18N
     jtbTabelaCabos.setSelectionBackground(new java.awt.Color(37, 211, 124));
     jtbTabelaCabos.setSelectionForeground(new java.awt.Color(0, 0, 0));
@@ -1933,7 +1932,7 @@ jPanel9Layout.setHorizontalGroup(
 
     private void btnLimparCabosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCabosActionPerformed
         if (JOptionPane.showConfirmDialog(null, "           Limpar a tela?", "Confirmar", JOptionPane.YES_NO_OPTION) == 0) {
-            Tabela.limpa(tabelaCabos);
+            Tabela.limpar(tabelaCabos);
             txtCodigoCabos.setText("");
             txtBubinaCabos.setText("");
             txtDescricaoCabos.setText("");
@@ -2018,7 +2017,7 @@ jPanel9Layout.setHorizontalGroup(
 
     private void btnBuscarRelarorioSaidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRelarorioSaidasActionPerformed
         //ação para preencher a tabela de saidas por data.
-        Tabela.limpa(tabelaRelatorioSaidas);
+        Tabela.limpar(tabelaRelatorioSaidas);
         List<Saida> saidaList;
         if (jcbVendedorRelatorio.getSelectedItem().toString().equals("TODOS")) {
             saidaList = SaidaDAO.busca(txtDataInicialRelatorioSaidas.getText(),
@@ -2083,7 +2082,7 @@ jPanel9Layout.setHorizontalGroup(
         if (jtbTabelaRelatorioSaidas.getSelectedRow() != -1) {
             int escolha = JOptionPane.showConfirmDialog(null, "    Este procedimento excluirá o registro de saída\n"
                     + "Deseja registrar os dados como uma ponta de Cabo?",
-                    "Deletar Saída", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    "Excluir Saída", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             int numSaida = Integer.parseInt(tabelaRelatorioSaidas.getValueAt(
                     jtbTabelaRelatorioSaidas.getSelectedRow(), 0).toString()
@@ -2140,7 +2139,7 @@ jPanel9Layout.setHorizontalGroup(
         try {
             int codigoCabo = Integer.parseInt(txtCodigoRelatoriosPontas.getText());
             txtTotalPontasRelatoriosPontas.setText("");
-            Tabela.limpa(tabelaRelatorioPontas);
+            Tabela.limpar(tabelaRelatorioPontas);
 
             if (codigoCabo > 0 && ! txtCodigoRelatoriosPontas.getText().equals("")) {
                 List<PontaCabo> pontaList = PontaDAO.buscaCodigoCabo(codigoCabo, 0);
@@ -2275,7 +2274,7 @@ jPanel9Layout.setHorizontalGroup(
             JOptionPane.showMessageDialog(null, "Cabo não encontrado!", "Falha",
                     JOptionPane.WARNING_MESSAGE);
         } else {
-            Tabela.limpa(tabelaRelatorioCabos);
+            Tabela.limpar(tabelaRelatorioCabos);
             for (int i = 0; i < listCabo.size(); i++) {
                 double qtdTotalBobina = this.getQtdEstoqueBobina(listCabo.get(i).getCodigoCabo());
                 double qtdTotalPonta = this.getQtdPonta(listCabo.get(i).getCodigoCabo());
@@ -2293,7 +2292,7 @@ jPanel9Layout.setHorizontalGroup(
     }
 
     public void preencherTabelaPonta(List<PontaCabo> pontaList) {
-        Tabela.limpa(tabelaRelatorioPontas);
+        Tabela.limpar(tabelaRelatorioPontas);
         for (int i = 0; i < pontaList.size(); i++) {
             Object[] LinhaPonta = {
                 pontaList.get(i).getIdPontaCabo(),
@@ -2388,7 +2387,7 @@ jPanel9Layout.setHorizontalGroup(
                         "Falha", JOptionPane.INFORMATION_MESSAGE);
             } else {
 
-                Tabela.limpa(tabelaRelatorioBobinas);
+                Tabela.limpar(tabelaRelatorioBobinas);
 
                 for (int i = 0; i < listBobina.size(); i++) {
                     if (jcbAtivoRelatorios.isSelected()) {
@@ -2469,11 +2468,11 @@ jPanel9Layout.setHorizontalGroup(
                 dialog.setVisible(true);
             });
         } catch (Throwable th) {
-            String erro = "";
-            for (Object object : th.getStackTrace()) {
-                erro += object + "\n";
+            String rastroDePilha = "";
+            for (Object linha : th.getStackTrace()) {
+                rastroDePilha += linha + "\n";
             }
-            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + th.getMessage() + erro,
+            JOptionPane.showMessageDialog(null, "     Falha não tratada Detectada\n" + th.getMessage() + "\n" + rastroDePilha,
                     "Falha", JOptionPane.ERROR_MESSAGE);
         }
     }

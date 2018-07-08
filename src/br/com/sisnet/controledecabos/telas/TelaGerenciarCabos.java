@@ -66,7 +66,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         btnCadastrarCabo.setEnabled(false);
         btnDeletarCabo.setEnabled(false);
         txtDescricaoCabos.setEditable(false);
-        viewUtil.alterarIcone(btnCabos, "icons8-eletrico-64-selecionado.png");
+        
         /*Pontas*/
         btnPontas.setBackground(Color.YELLOW);
         btnDeletarPonta.setEnabled(false);
@@ -76,6 +76,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         txtQuantidadePonta.setEditable(false);
         txtLocalPonta.setEditable(false);
         jcbSubtrairBobinaPonta.setEnabled(false);
+        viewUtil.alterarIcone(btnPontas, "icons8-ponta-64-selecionado.png");
 
         if (externo) {
             btnGerarPontas.doClick();
@@ -105,6 +106,24 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        jpnPontas = new javax.swing.JPanel();
+        jpnUsuarios1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        txtNumeroPontas = new javax.swing.JTextField();
+        btnCadastrarPonta = new javax.swing.JButton();
+        btnAtualizarPonta = new javax.swing.JButton();
+        btnDeletarPonta = new javax.swing.JButton();
+        txtDescricaooPontas = new javax.swing.JTextField();
+        txtCodigoPonta = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtLocalPonta = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jcbSubtrairBobinaPonta = new javax.swing.JCheckBox();
+        txtQuantidadePonta = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        btnGerarPontas = new javax.swing.JButton();
         jpnCabos = new javax.swing.JPanel();
         btnCadastrarCabo = new javax.swing.JButton();
         btnAlterarCabo = new javax.swing.JButton();
@@ -137,24 +156,6 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         btnSelecionarBobinas = new javax.swing.JButton();
         lblBobinaCadastrada = new javax.swing.JLabel();
         btnGerarBobinas = new javax.swing.JButton();
-        jpnPontas = new javax.swing.JPanel();
-        jpnUsuarios1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        txtNumeroPontas = new javax.swing.JTextField();
-        btnCadastrarPonta = new javax.swing.JButton();
-        btnAtualizarPonta = new javax.swing.JButton();
-        btnDeletarPonta = new javax.swing.JButton();
-        txtDescricaooPontas = new javax.swing.JTextField();
-        txtCodigoPonta = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtLocalPonta = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jcbSubtrairBobinaPonta = new javax.swing.JCheckBox();
-        txtQuantidadePonta = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        btnGerarPontas = new javax.swing.JButton();
         btnBobinas = new javax.swing.JButton();
         btnCabos = new javax.swing.JButton();
         btnPontas = new javax.swing.JButton();
@@ -164,6 +165,217 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         setResizable(false);
 
         jPanel2.setLayout(new java.awt.CardLayout());
+
+        jpnUsuarios1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jLabel4.setText("Número");
+
+        txtNumeroPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        txtNumeroPontas.setPreferredSize(new java.awt.Dimension(14, 30));
+        txtNumeroPontas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumeroPontasKeyPressed(evt);
+            }
+        });
+
+        btnCadastrarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnCadastrarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
+        btnCadastrarPonta.setText("Cadastrar");
+        btnCadastrarPonta.setContentAreaFilled(false);
+        btnCadastrarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCadastrarPonta.setRolloverEnabled(true);
+        btnCadastrarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
+        btnCadastrarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCadastrarPonta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarPontaActionPerformed(evt);
+            }
+        });
+        btnCadastrarPonta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnCadastrarPontaKeyTyped(evt);
+            }
+        });
+
+        btnAtualizarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnAtualizarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
+        btnAtualizarPonta.setText("Alterar");
+        btnAtualizarPonta.setContentAreaFilled(false);
+        btnAtualizarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAtualizarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAtualizarPonta.setRolloverEnabled(true);
+        btnAtualizarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-amarelo.png"))); // NOI18N
+        btnAtualizarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAtualizarPonta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarPontaActionPerformed(evt);
+            }
+        });
+
+        btnDeletarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnDeletarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
+        btnDeletarPonta.setText("Excluir");
+        btnDeletarPonta.setContentAreaFilled(false);
+        btnDeletarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeletarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDeletarPonta.setRolloverEnabled(true);
+        btnDeletarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
+        btnDeletarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnDeletarPonta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarPontaActionPerformed(evt);
+            }
+        });
+
+        txtDescricaooPontas.setEditable(false);
+        txtDescricaooPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        txtDescricaooPontas.setPreferredSize(new java.awt.Dimension(14, 30));
+
+        txtCodigoPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        txtCodigoPonta.setPreferredSize(new java.awt.Dimension(14, 30));
+        txtCodigoPonta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoPontaActionPerformed(evt);
+            }
+        });
+        txtCodigoPonta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCodigoPontaKeyPressed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jLabel8.setText("Código");
+
+        txtLocalPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        txtLocalPonta.setPreferredSize(new java.awt.Dimension(14, 30));
+        txtLocalPonta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLocalPontaKeyPressed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jLabel9.setText("Local");
+
+        jcbSubtrairBobinaPonta.setBackground(new java.awt.Color(204, 204, 204));
+        jcbSubtrairBobinaPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jcbSubtrairBobinaPonta.setText("Subtrair da bobina");
+
+        txtQuantidadePonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        txtQuantidadePonta.setPreferredSize(new java.awt.Dimension(14, 30));
+        txtQuantidadePonta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtQuantidadePontaKeyPressed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jLabel12.setText("Quantidade");
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        jLabel13.setText("Descrição");
+
+        jLabel17.setText("Metros");
+
+        btnGerarPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+        btnGerarPontas.setText("Gerar");
+        btnGerarPontas.setToolTipText("Gera um número disponível para cadastro");
+        btnGerarPontas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerarPontasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpnUsuarios1Layout = new javax.swing.GroupLayout(jpnUsuarios1);
+        jpnUsuarios1.setLayout(jpnUsuarios1Layout);
+        jpnUsuarios1Layout.setHorizontalGroup(
+            jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcbSubtrairBobinaPonta)
+                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(txtCodigoPonta, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(38, 38, 38)
+                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                                    .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel9)
+                                        .addComponent(txtLocalPonta, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(30, 30, 30)
+                                    .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel12)
+                                        .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                                            .addComponent(txtQuantidadePonta, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jLabel17))))
+                                .addComponent(txtDescricaooPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                                    .addComponent(btnDeletarPonta)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnAtualizarPonta)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnCadastrarPonta, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                        .addComponent(txtNumeroPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnGerarPontas)))
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+        jpnUsuarios1Layout.setVerticalGroup(
+            jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnUsuarios1Layout.createSequentialGroup()
+                .addContainerGap(85, Short.MAX_VALUE)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNumeroPontas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDescricaooPontas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGerarPontas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel12))
+                .addGap(5, 5, 5)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigoPonta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLocalPonta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtQuantidadePonta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addGap(18, 18, 18)
+                .addComponent(jcbSubtrairBobinaPonta)
+                .addGap(35, 35, 35)
+                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnDeletarPonta)
+                        .addComponent(btnAtualizarPonta))
+                    .addComponent(btnCadastrarPonta))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jpnPontasLayout = new javax.swing.GroupLayout(jpnPontas);
+        jpnPontas.setLayout(jpnPontasLayout);
+        jpnPontasLayout.setHorizontalGroup(
+            jpnPontasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpnUsuarios1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jpnPontasLayout.setVerticalGroup(
+            jpnPontasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpnUsuarios1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jpnPontas, "Pontas");
 
         jpnCabos.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -552,217 +764,6 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         );
 
         jPanel2.add(jpnBobinas, "Bobinas");
-
-        jpnUsuarios1.setBackground(new java.awt.Color(204, 204, 204));
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jLabel4.setText("Número");
-
-        txtNumeroPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        txtNumeroPontas.setPreferredSize(new java.awt.Dimension(14, 30));
-        txtNumeroPontas.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNumeroPontasKeyPressed(evt);
-            }
-        });
-
-        btnCadastrarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnCadastrarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32-azul.png"))); // NOI18N
-        btnCadastrarPonta.setText("Cadastrar");
-        btnCadastrarPonta.setContentAreaFilled(false);
-        btnCadastrarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCadastrarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCadastrarPonta.setRolloverEnabled(true);
-        btnCadastrarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-salvar-32 azul-claro.png"))); // NOI18N
-        btnCadastrarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnCadastrarPonta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarPontaActionPerformed(evt);
-            }
-        });
-        btnCadastrarPonta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                btnCadastrarPontaKeyTyped(evt);
-            }
-        });
-
-        btnAtualizarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnAtualizarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-azul.png"))); // NOI18N
-        btnAtualizarPonta.setText("Alterar");
-        btnAtualizarPonta.setContentAreaFilled(false);
-        btnAtualizarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAtualizarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAtualizarPonta.setRolloverEnabled(true);
-        btnAtualizarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lapis-32-amarelo.png"))); // NOI18N
-        btnAtualizarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAtualizarPonta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtualizarPontaActionPerformed(evt);
-            }
-        });
-
-        btnDeletarPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnDeletarPonta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-lixo-32-azul.png"))); // NOI18N
-        btnDeletarPonta.setText("Excluir");
-        btnDeletarPonta.setContentAreaFilled(false);
-        btnDeletarPonta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnDeletarPonta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnDeletarPonta.setRolloverEnabled(true);
-        btnDeletarPonta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-excluir-32-red.png"))); // NOI18N
-        btnDeletarPonta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnDeletarPonta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeletarPontaActionPerformed(evt);
-            }
-        });
-
-        txtDescricaooPontas.setEditable(false);
-        txtDescricaooPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        txtDescricaooPontas.setPreferredSize(new java.awt.Dimension(14, 30));
-
-        txtCodigoPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        txtCodigoPonta.setPreferredSize(new java.awt.Dimension(14, 30));
-        txtCodigoPonta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoPontaActionPerformed(evt);
-            }
-        });
-        txtCodigoPonta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCodigoPontaKeyPressed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jLabel8.setText("Código");
-
-        txtLocalPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        txtLocalPonta.setPreferredSize(new java.awt.Dimension(14, 30));
-        txtLocalPonta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtLocalPontaKeyPressed(evt);
-            }
-        });
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jLabel9.setText("Local");
-
-        jcbSubtrairBobinaPonta.setBackground(new java.awt.Color(204, 204, 204));
-        jcbSubtrairBobinaPonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jcbSubtrairBobinaPonta.setText("Subtrair da bobina");
-
-        txtQuantidadePonta.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        txtQuantidadePonta.setPreferredSize(new java.awt.Dimension(14, 30));
-        txtQuantidadePonta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtQuantidadePontaKeyPressed(evt);
-            }
-        });
-
-        jLabel12.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jLabel12.setText("Quantidade");
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        jLabel13.setText("Descrição");
-
-        jLabel17.setText("Metros");
-
-        btnGerarPontas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
-        btnGerarPontas.setText("Gerar");
-        btnGerarPontas.setToolTipText("Gera um número disponível para cadastro");
-        btnGerarPontas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarPontasActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jpnUsuarios1Layout = new javax.swing.GroupLayout(jpnUsuarios1);
-        jpnUsuarios1.setLayout(jpnUsuarios1Layout);
-        jpnUsuarios1Layout.setHorizontalGroup(
-            jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcbSubtrairBobinaPonta)
-                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(txtCodigoPonta, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(38, 38, 38)
-                        .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                                    .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel9)
-                                        .addComponent(txtLocalPonta, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(30, 30, 30)
-                                    .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel12)
-                                        .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                                            .addComponent(txtQuantidadePonta, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jLabel17))))
-                                .addComponent(txtDescricaooPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                                    .addComponent(btnDeletarPonta)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnAtualizarPonta)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnCadastrarPonta, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                        .addComponent(txtNumeroPontas, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnGerarPontas)))
-                .addContainerGap(79, Short.MAX_VALUE))
-        );
-        jpnUsuarios1Layout.setVerticalGroup(
-            jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnUsuarios1Layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumeroPontas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDescricaooPontas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGerarPontas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel12))
-                .addGap(5, 5, 5)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCodigoPonta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtLocalPonta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtQuantidadePonta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addGap(18, 18, 18)
-                .addComponent(jcbSubtrairBobinaPonta)
-                .addGap(35, 35, 35)
-                .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jpnUsuarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnDeletarPonta)
-                        .addComponent(btnAtualizarPonta))
-                    .addComponent(btnCadastrarPonta))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jpnPontasLayout = new javax.swing.GroupLayout(jpnPontas);
-        jpnPontas.setLayout(jpnPontasLayout);
-        jpnPontasLayout.setHorizontalGroup(
-            jpnPontasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnUsuarios1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jpnPontasLayout.setVerticalGroup(
-            jpnPontasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnUsuarios1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jpnPontas, "Pontas");
 
         btnBobinas.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
         btnBobinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sisnet/controledecabos/telas/imagens/icons8-bobina-64-azul.png"))); // NOI18N
@@ -1284,7 +1285,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
 
             lblBobinaCadastrada.setVisible(false);
             if (txtCodigoCaboBobinas.getText().equals("")) {
-                Tabela.limpa(tabelaBusca);
+                Tabela.limpar(tabelaBusca);
                 JOptionPane.showMessageDialog(null, "Digite um Código "
                         + "para pesquisar", "Falha", JOptionPane.WARNING_MESSAGE);
                 this.limparTelaBobinas();
@@ -1297,15 +1298,15 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                 List<Cabo> caboBobina = CaboDAO.buscaPorCodigo(codigoCabo);
 
                 if (caboBobina.isEmpty()) {
-                    Tabela.limpa(tabelaBusca);
+                    Tabela.limpar(tabelaBusca);
                     caboBobina = CaboDAO.busca(codigoCabo, "s");
                     if (caboBobina.isEmpty()) {
-                        Tabela.limpa(tabelaBusca);
+                        Tabela.limpar(tabelaBusca);
                         this.limparTelaBobinas();
                         Cabo.buscarCabo(txtCodigoCaboBobinas);
 
                     } else {
-                        Tabela.limpa(tabelaBusca);
+                        Tabela.limpar(tabelaBusca);
                         txtDescricaoBobinas.setText(caboBobina.get(0).getDescricao());
                         jcbAtivo.setSelectedIndex(0);
                         txtNumBobinaBobinas.setText("");
@@ -1315,7 +1316,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                     txtNumBobinaBobinas.setText("");
                     jcbAtivo.setSelectedIndex(0);
                     txtQuantidadeBobinas.setText("");
-                    Tabela.limpa(tabelaBusca);
+                    Tabela.limpar(tabelaBusca);
                     txtDescricaoBobinas.setText(caboBobina.get(0).getDescricao());
 
                     for (int i = 0; i < caboBobina.size(); i++) {
@@ -1397,7 +1398,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             List<Cabo> caboList = CaboDAO.busca(codigoCabo, "s");
 
             if (caboBobina.isEmpty()) {
-                Tabela.limpa(tabelaBusca);
+                Tabela.limpar(tabelaBusca);
                 JOptionPane.showMessageDialog(null, "Bobina não Encontrada",
                         "Falha", JOptionPane.WARNING_MESSAGE);
                 txtDescricaoBobinas.setText("");
@@ -1468,7 +1469,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
         jcbAtivo.setSelectedIndex(0);
         txtQuantidadeBobinas.setText("");
         txtQuantidadeBobinas.setEditable(false);
-        Tabela.limpa(tabelaBusca);
+        Tabela.limpar(tabelaBusca);
     }
 
     private void btnDeletarBobinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarBobinasActionPerformed
@@ -1484,7 +1485,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
             List<Cabo> caboBobinaList = BobinaDAO.buscaPorNumBobina(idBobina);
 
             if (caboBobinaList.isEmpty()) {
-                Tabela.limpa(tabelaBusca);
+                Tabela.limpar(tabelaBusca);
                 JOptionPane.showMessageDialog(null, "Bobina não Encontrada",
                         "Falha", JOptionPane.WARNING_MESSAGE);
                 this.limparTelaBobinas();
@@ -1493,7 +1494,7 @@ public class TelaGerenciarCabos extends javax.swing.JDialog {
                 if (JOptionPane.showConfirmDialog(null, "Este Procedimento excluirá a Bobina\n"
                         + "E causará uma alteração no cabo: " + codigoCabo
                         + "\nDeseja Continuar? ", "Deletar", WIDTH, JOptionPane.QUESTION_MESSAGE) == 0) {
-                    Tabela.limpa(tabelaBusca);
+                    Tabela.limpar(tabelaBusca);
                     if (BobinaDAO.excluir(caboBobina)) {
                         JOptionPane.showMessageDialog(null, "     Bobina excluida com sucesso!",
                                 "Concluído", JOptionPane.INFORMATION_MESSAGE);

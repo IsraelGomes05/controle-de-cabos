@@ -1,7 +1,4 @@
-/**
- * Copyright(c)  Israel Silva, All Rights Reserved.
- * This software is the proprietary of physical person, Israel Silva.
- */
+
 package br.com.sisnet.controledecabos.telas;
 
 import br.com.sisnet.controledecabos.classes.Login;
@@ -24,7 +21,7 @@ import javax.swing.KeyStroke;
  * @author Israel Gomes Da Silva
  * @created 05/03/2018
  * @lastModified 01/07/2018
- * @version 4.1.0
+ * @version 4.1
  *
  * @Function...
  */
@@ -36,16 +33,20 @@ public class TelaCadastros extends javax.swing.JDialog {
     public TelaCadastros(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
         btnAlterarUsuario.setEnabled(false);
         btnSalvarUsuario.setEnabled(false);
         btnDeletarUsuarios.setEnabled(false);
         jcbAlterarDados.setEnabled(false);
         btnCadastrarVendedor.setEnabled(false);
         btnDeletarVendedor.setEnabled(false);
+        
         viewUtil = new ViewUtil();
         setAcessibilidade();
+        
         listaVendedoresModel = new DefaultListModel();
         jListVendedores.setModel(listaVendedoresModel);
+        
         preencherLista();
     }
 
