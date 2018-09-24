@@ -3,6 +3,7 @@
 	</head>
 	<body>
 		<h2>Software para auxiliar o controle de saídas de Cabos elétricos</h2>
+		<a href='https://coveralls.io/github/IsraelGomes05/Controle-de-Cabos?branch=master'><img 	src='https://coveralls.io/repos/github/IsraelGomes05/Controle-de-Cabos/badge.svg?branch=master' alt='Coverage Status' /></a>
 		<h3>Para baixar o instalador acesse os links abaixo</h3>
 		<h4>
 			Novo! 
