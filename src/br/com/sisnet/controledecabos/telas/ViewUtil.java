@@ -44,7 +44,7 @@ public class ViewUtil {
 
         try {
 
-             URL resource = getClass().getResource(diretorio);
+            URL resource = getClass().getResource(diretorio);
             ImageIcon img = new ImageIcon(resource);
 
             botao.setIcon(img);

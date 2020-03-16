@@ -11,9 +11,11 @@ import br.com.sisnet.controledecabos.classes.utilitarias.RenderizadorTabela;
 import br.com.sisnet.controledecabos.classes.utilitarias.Tabela;
 import br.com.sisnet.controledecabos.conexaobd.BobinaDAO;
 import br.com.sisnet.controledecabos.conexaobd.CaboDAO;
+import br.com.sisnet.controledecabos.conexaobd.ConnectionFactory;
 import br.com.sisnet.controledecabos.conexaobd.PontaDAO;
 import br.com.sisnet.controledecabos.conexaobd.SaidaDAO;
 import br.com.sisnet.controledecabos.conexaobd.VendedorDAO;
+import br.org.queryeditor.forms.QueryTelaPrincipal;
 import java.awt.CardLayout;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
@@ -21,6 +23,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -222,6 +225,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jmAjustes = new javax.swing.JMenu();
         jmUsuariosBarraMenu = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jmGerenciarCabos = new javax.swing.JMenuItem();
         jmInformacoes = new javax.swing.JMenu();
@@ -1047,7 +1051,7 @@ jPanel9Layout.setHorizontalGroup(
         }
     });
 
-    jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 13), new java.awt.Color(51, 51, 51))); // NOI18N
+    jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "", 0, 0, new java.awt.Font("Dialog", 0, 13), new java.awt.Color(51, 51, 51))); // NOI18N
 
     try {
         txtDataInicialRelatorioSaidas.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -1624,6 +1628,15 @@ jPanel9Layout.setHorizontalGroup(
         }
     });
     jmAjustes.add(jmUsuariosBarraMenu);
+
+    jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+    jMenuItem1.setText("Manutenção");
+    jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jMenuItem1ActionPerformed(evt);
+        }
+    });
+    jmAjustes.add(jMenuItem1);
 
     jMenuBar1.add(jmAjustes);
 
@@ -2269,6 +2282,11 @@ jPanel9Layout.setHorizontalGroup(
         this.viewUtil.alterarIcone(btnAdicionarCabos, "icons8-selecionado-verde-32.png");
     }//GEN-LAST:event_btnAdicionarCabosFocusLost
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        QueryTelaPrincipal query = new QueryTelaPrincipal(this, true, ConnectionFactory.getConexao(), "http://dontpad.com/testequerytotem", true, "", Logger.getGlobal());
+        query.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     public void preecherTabelaCaboRelatorio(List<Cabo> listCabo) {
         if (listCabo.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Cabo não encontrado!", "Falha",
@@ -2524,6 +2542,7 @@ jPanel9Layout.setHorizontalGroup(
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
